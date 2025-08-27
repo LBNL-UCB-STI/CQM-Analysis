@@ -1,0 +1,9 @@
+Project Title: Pathways to productivity: mapping the relationship between multimodal transportation infrastructure, commute quality, and economic vitality for the United States workforce
+
+Authors: [redacted during double blind review process… will be added in upon publication]
+
+Contact: [redacted during double blind review process… will be added in upon publication]
+
+Description: This repository contains the data and code necessary to reproduce the primary analysis and figures for the manuscript “Pathways to productivity: mapping the relationship between multimodal transportation infrastructure, commute quality, and economic vitality for the United States workforce”. The analysis demonstrates a newly defined commute quality metric (CQM) characterizing the quality, as a monetized consumer surplus, of travel for the purpose of work for every census tract in the continental United States. The analysis additionally demonstrates the correlation of that CQM with key economic vitality indicators. Specifically median household income and unemployment rate. 
+
+The code and data necessary for generation of the CQM itself relies on data that is restricted and cannot be made public due to the terms of the data access agreement governing the access to those data for the researchers. Specifically, the National Household Travel Data (NHTS) data from 2017 were provided with the census tract, in 2010 census geographies, of home location, and the origin and destination of all trips, was provided under this data access agreement. These data are necessary for estimation of the mode choice and destination choice models underpinning the CQM. The data and code provided in this repository uses the generated census tract level CQM output from the pipeline dependent on the proprietary data, and includes the code used to generate the figures and regression results presented in the main results section of the manuscript.
