@@ -10,7 +10,7 @@ dir\process
 dir\code
 
 and the file dir\raw must contain the following data file:
-cqm_analysis_data
+cqm_analysis_data.dta
 
 IMPORTANT: CODE WILL ONLY RUN ONCE A FILE DIRECTORY PATH IS ADDED IN THE FOLLOWING TWO COMMAND LINES AS INDICATED BELOW
 */
@@ -230,4 +230,5 @@ geo_B geo_C geo_D busavailability busavailability2 ///
 $socioec hhmedianincome, fe vce(cl county_enc)
 
 log close
+
 
