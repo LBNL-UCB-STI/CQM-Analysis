@@ -38,6 +38,6 @@
 
 
 <p><b>Other Essential Files:</b></p>
-<p>LICENSE: [[[A plain text file containing the full text of your chosen license (e.g., MIT, GPL, CC-BY). GitHub can help you generate this. Without a license, your code is technically not open source, and no one has permission to use it.]]]</p>
-<p>CITATION.cff: [[[A plain text file in Citation File Format. GitHub automatically uses this to create a "Cite this repository" widget, making it easy for others to cite your work correctly. Many tools can generate this for you.]]]</p>
+<p>LICENSE: [TO BE ADDED]</p>
+<p>CITATION.cff: [TO BE ADDED ONCE CITATION IS AVAILABLE - FOR NOW PLEASE DO NOT CITE]</p>
 
