@@ -135,21 +135,21 @@ by transavail2,s: sum cs_baseline if urban==0, d
 ** Generate figures for urban regions
 
 /*Generate and save each plot individually*/
-cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(orange*1.4 orange*1.2 orange orange*.6 orange*.3) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Urban 1") lab(2 "Urban 2") lab(3 "Urban 3") lab(4 "Urban 4") lab(5 "Urban 5") position(10) ring(0))) xlab(0(30)120) name(network_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(orange*1.4 orange*1.2 orange orange*.6 orange*.3) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Urban 1") lab(2 "Urban 2") lab(3 "Urban 3") lab(4 "Urban 4") lab(5 "Urban 5") position(10) ring(0))) name(network_plot, replace)
 
-cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(microtype) opt1(lc("22 22 156" blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban center") lab(2 "Urban mixed-use") lab(3 "Suburban") lab(4 "Rural town center") lab(5 "Rural agriculture") position(10) ring(0))) xlab(0(30)120) name(micro_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(microtype) opt1(lc("22 22 156" blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban center") lab(2 "Urban mixed-use") lab(3 "Suburban") lab(4 "Rural town center") lab(5 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
 
-cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("213 122 100" emerald) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "A") lab(2 "B") position(10) ring(0))) xlab(0(30)120) name(geo_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("213 122 100" emerald) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "A") lab(2 "B") position(10) ring(0))) name(geo_plot, replace)
 
-cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(transavail) opt1(lc(edkblue*.2 edkblue*.4 edkblue*.6 edkblue*.8 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "0 - 0.30") lab(3 "0.30 - 0.60") lab(4 "0.60 - 0.90") lab(5 "above 0.90") position(10) ring(0))) xlab(0(30)120) name(transit_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(transavail) opt1(lc(edkblue*.2 edkblue*.4 edkblue*.6 edkblue*.8 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "0 - 0.30") lab(3 "0.30 - 0.60") lab(4 "0.60 - 0.90") lab(5 "above 0.90") position(10) ring(0))) name(transit_plot, replace)
 
 
 /*Combine plots into single figure*/
 graph combine geo_plot network_plot micro_plot transit_plot, ///
     col(2) row(2) ///
     title("") ///
-    ycommon ysize(medium) ///
-    xcommon xsize(medium)
+    ycommon ///
+    xcommon iscale(*.88)
 
 /*Export combined figure*/
 graph export "$fig\combined_cs_urban.png", replace
@@ -157,20 +157,20 @@ graph export "$fig\combined_cs_urban.png", replace
 ** Generate figures for rural regions
 
 /*Generate and save each plot individually*/
-cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(emerald*1.2 emerald*.6 emerald*.4) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Rural 1") lab(2 "Rural 2") lab(3 "Rural 3") position(10) ring(0))) xlab(0(30)120) name(network_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(emerald*1.2 emerald*.6 emerald*.4) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Rural 1") lab(2 "Rural 2") lab(3 "Rural 3") position(10) ring(0))) name(network_plot, replace)
 
-cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1 & microtype!="1: Urban center", by(microtype) opt1(lc(blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban mixed-use") lab(2 "Suburban") lab(3 "Rural town center") lab(4 "Rural agriculture") position(10) ring(0))) xlab(0(30)120) name(micro_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1 & microtype!="1: Urban center", by(microtype) opt1(lc(blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban mixed-use") lab(2 "Suburban") lab(3 "Rural town center") lab(4 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
 
-cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("49 67 76" sand) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "C") lab(2 "D") position(10) ring(0))) xlab(0(30)120) name(geo_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("49 67 76" sand) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "C") lab(2 "D") position(10) ring(0))) name(geo_plot, replace)
 
-cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(transavail2) opt1(lc(edkblue*.4 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "above 0") position(10) ring(0))) xlab(0(30)120) name(transit_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(transavail2) opt1(lc(edkblue*.4 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "above 0") position(10) ring(0))) name(transit_plot, replace)
 
 /*Combine plots into single figure*/
 graph combine geo_plot network_plot micro_plot transit_plot, ///
     col(2) row(2) ///
     title("") ///
-    ycommon ysize(medium) ///
-    xcommon xsize(medium)
+    ycommon ///
+    xcommon iscale(*.88)
 
 /*Export combined figure*/
 graph export "$fig\combined_cs_rural.png", replace
