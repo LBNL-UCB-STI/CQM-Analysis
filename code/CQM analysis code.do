@@ -15,8 +15,8 @@ cqm_analysis_data.dta
 IMPORTANT: CODE WILL ONLY RUN ONCE A FILE DIRECTORY PATH IS ADDED IN THE FOLLOWING TWO COMMAND LINES AS INDICATED BELOW
 */
 
-cd "<input path to local directory here>"
-global dir "<input path to local directory here>"
+cd "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"
+global dir "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"
 
 global fig $dir\figures
 global tab $dir\tables
@@ -103,6 +103,14 @@ replace unemployment_rate=unemployment_rate*100
 /*keep varibles used in following analysis*/
 keep o_geoid cs_baseline microtype networktype geotype geo_A geo_B geo_C geo_D micro_1 micro_2 micro_3 micro_4 micro_5 network_U1 network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 transavail transavail2 urban busavailability busavailability2 geotype_enc microtype_enc network_enc transavail_enc st_code county county_enc frac_age_above_65 edu_above_bs frac_hh_no_veh frac_tenure_renter  frac_below_poverty frac_hh_inc_below_40k frac_hh_inc_above_100k job_density hhmedianincome unemployment_rate
 
+/*generate an indicator for observations where the cs_baseline is between the .05 percentile and the 99.95 percentile in order to be able to generate plots without more extreme outliers - this tags 0.1% of the data (72 observations) as outliers*/
+egen lower_outlier=pctile(cs_baseline), p(.05)
+egen upper_outlier=pctile(cs_baseline), p(99.95)
+gen cs_baseline_nooutliers=1
+replace cs_baseline_nooutliers=0 if cs_baseline<lower_outlier
+replace cs_baseline_nooutliers=0 if cs_baseline>upper_outlier
+drop lower_outlier upper_outlier
+
 save "$proc\cqm_paper_data_for_regressions", replace
 export delimited using "$proc\cqm_paper_data_for_regressions.csv", replace
 
@@ -127,13 +135,13 @@ by transavail2,s: sum cs_baseline if urban==0, d
 ** Generate figures for urban regions
 
 /*Generate and save each plot individually*/
-cdfplot cs_baseline if urban==1, by(networktype) opt1(lc(orange*1.4 orange*1.2 orange orange*.6 orange*.3) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Urban 1") lab(2 "Urban 2") lab(3 "Urban 3") lab(4 "Urban 4") lab(5 "Urban 5") position(10) ring(0))) name(network_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(orange*1.4 orange*1.2 orange orange*.6 orange*.3) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Urban 1") lab(2 "Urban 2") lab(3 "Urban 3") lab(4 "Urban 4") lab(5 "Urban 5") position(10) ring(0))) name(network_plot, replace)
 
-cdfplot cs_baseline if urban==1, by(microtype) opt1(lc("22 22 156" blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban center") lab(2 "Urban mixed-use") lab(3 "Suburban") lab(4 "Rural town center") lab(5 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(microtype) opt1(lc("22 22 156" blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban center") lab(2 "Urban mixed-use") lab(3 "Suburban") lab(4 "Rural town center") lab(5 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
 
-cdfplot cs_baseline if urban==1, by(geotype) opt1(lc("213 122 100" emerald) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "A") lab(2 "B") position(10) ring(0))) name(geo_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("213 122 100" emerald) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "A") lab(2 "B") position(10) ring(0))) name(geo_plot, replace)
 
-cdfplot cs_baseline if urban==1, by(transavail) opt1(lc(edkblue*.2 edkblue*.4 edkblue*.6 edkblue*.8 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "0 - 0.30") lab(3 "0.30 - 0.60") lab(4 "0.60 - 0.90") lab(5 "above 0.90") position(10) ring(0))) name(transit_plot, replace)
+cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(transavail) opt1(lc(edkblue*.2 edkblue*.4 edkblue*.6 edkblue*.8 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "0 - 0.30") lab(3 "0.30 - 0.60") lab(4 "0.60 - 0.90") lab(5 "above 0.90") position(10) ring(0))) name(transit_plot, replace)
 
 
 /*Combine plots into single figure*/
@@ -149,13 +157,13 @@ graph export "$fig\combined_cs_urban.png", replace
 ** Generate figures for rural regions
 
 /*Generate and save each plot individually*/
-cdfplot cs_baseline if urban==0, by(networktype) opt1(lc(emerald*1.2 emerald*.6 emerald*.4) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Rural 1") lab(2 "Rural 2") lab(3 "Rural 3") position(10) ring(0))) name(network_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(emerald*1.2 emerald*.6 emerald*.4) xtitle("Commute Quality Metric" "(b)") legend(lab(1 "Rural 1") lab(2 "Rural 2") lab(3 "Rural 3") position(10) ring(0))) name(network_plot, replace)
 
-cdfplot cs_baseline if urban==0 & microtype!="1: Urban center", by(microtype) opt1(lc(blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban mixed-use") lab(2 "Suburban") lab(3 "Rural town center") lab(4 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1 & microtype!="1: Urban center", by(microtype) opt1(lc(blue purple gold dkorange) xtitle("Commute Quality Metric" "(c)") legend(lab(1 "Urban mixed-use") lab(2 "Suburban") lab(3 "Rural town center") lab(4 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
 
-cdfplot cs_baseline if urban==0, by(geotype) opt1(lc("49 67 76" sand) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "C") lab(2 "D") position(10) ring(0))) name(geo_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("49 67 76" sand) xtitle("Commute Quality Metric" "(a)") legend(lab(1 "C") lab(2 "D") position(10) ring(0))) name(geo_plot, replace)
 
-cdfplot cs_baseline if urban==0, by(transavail2) opt1(lc(edkblue*.4 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "above 0") position(10) ring(0))) name(transit_plot, replace)
+cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(transavail2) opt1(lc(edkblue*.4 edkblue) xtitle("Commute Quality Metric" "(d)") legend(lab(1 "0") lab(2 "above 0") position(10) ring(0))) name(transit_plot, replace)
 
 /*Combine plots into single figure*/
 graph combine geo_plot network_plot micro_plot transit_plot, ///
