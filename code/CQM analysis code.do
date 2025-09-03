@@ -12,11 +12,11 @@ dir\code
 and the file dir\raw must contain the following data file:
 cqm_analysis_data.dta
 
-IMPORTANT: CODE WILL ONLY RUN ONCE A FILE DIRECTORY PATH IS ADDED IN THE FOLLOWING TWO COMMAND LINES AS INDICATED BELOW
+IMPORTANT: CODE WILL ONLY RUN ONCE A FILE DIRECTORY PATH IS ADDED IN THE FOLLOWING TWO COMMAND LINES WHERE IT SAYS "<input path to local directory here>" 
 */
 
-cd "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"
-global dir "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"
+cd "<input path to local directory here>"
+global dir "<input path to local directory here>"
 
 global fig $dir\figures
 global tab $dir\tables
@@ -238,5 +238,6 @@ geo_B geo_C geo_D busavailability busavailability2 ///
 $socioec hhmedianincome, fe vce(cl county_enc)
 
 log close
+
 
 
