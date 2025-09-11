@@ -48,6 +48,6 @@ If you use the data or code from this repository in your research, please cite t
 [FULL CITATION TO BE ADDED UPON PUBLICATION]
 
 **Other Essential Files:**
-- LICENSE: [TO BE ADDED]
+- LICENSE: [TO BE ADDED - Users are subject to the licence terms for any software necessary to execution of this code, including Stata and Stata user-developed packages.]
 - CITATION.cff: [TO BE ADDED ONCE CITATION IS AVAILABLE - FOR NOW PLEASE DO NOT CITE]
 
