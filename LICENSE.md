@@ -1,4 +1,5 @@
 *Disclaimer*
+
 Users accessing other third-party software/code required for executing this code (such as outreg2) are subject to the terms and conditions of the specific licenses for those third-party software.
 
 *License Agreement*
