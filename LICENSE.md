@@ -1,4 +1,7 @@
-License Agreement
+*Disclaimer*
+Users accessing other third-party software/code required for executing this code (such as outreg2) are subject to the terms and conditions of the specific licenses for those third-party software.
+
+*License Agreement*
 
 CQM-Analysis Copyright (c) 2025, The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any required approvals from the U.S. Dept. of Energy). All rights reserved.
 
@@ -14,4 +17,3 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 You are under no obligation whatsoever to provide any bug fixes, patches, or upgrades to the features, functionality or performance of the source code ("Enhancements") to anyone; however, if you choose to make your Enhancements available either publicly, or directly to Lawrence Berkeley National Laboratory, without imposing a separate written license agreement for such Enhancements, then you hereby grant the following license: a non-exclusive, royalty-free perpetual license to install, use, modify, prepare derivative works, incorporate into other computer software, distribute, and sublicense such enhancements or derivative works thereof, in binary and source code form.
 
-Users accessing other third-party software/code required for executing this code (such as outreg2) are subject to the terms and conditions of the specific licenses for those third-party software.
