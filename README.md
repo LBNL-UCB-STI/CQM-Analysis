@@ -69,5 +69,7 @@ works, and perform publicly and display publicly, and to permit others to do so.
 *License Agreement*
 - See the full [LICENSE](LICENSE.md) file.
 
+*Citation*
+
 - CITATION.cff: [TO BE ADDED ONCE CITATION IS AVAILABLE - FOR NOW PLEASE DO NOT CITE]
 
