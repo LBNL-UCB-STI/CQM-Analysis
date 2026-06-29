@@ -1,0 +1,1642 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\log_cqm_paper_analysis.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}29 Jun 2026, 12:48:30
+{txt}
+{com}. use "$proc\cqm_paper_data_for_regressions"
+{txt}
+{com}. 
+. **summarize data
+. sum cs_baseline, d
+
+                         {txt}CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}  36.3228      -53.97449
+{txt} 5%    {res} 53.33286      -45.89453
+{txt}10%    {res} 60.35781      -41.53246       {txt}Obs         {res}     73,056
+{txt}25%    {res}  67.1298      -39.68607       {txt}Sum of wgt. {res}     73,056
+
+{txt}50%    {res} 73.94637                      {txt}Mean          {res} 74.50406
+                        {txt}Largest       Std. dev.     {res} 13.26292
+{txt}75%    {res} 82.66951       111.8772
+{txt}90%    {res} 91.11631        111.896       {txt}Variance      {res}  175.905
+{txt}95%    {res}  95.9784       112.0091       {txt}Skewness      {res}-.4041666
+{txt}99%    {res} 106.6589       112.1871       {txt}Kurtosis      {res} 5.392931
+{txt}
+{com}. by microtype,s: sum cs_baseline if urban==1, d
+
+{txt}{hline}
+-> microtype = 1: Urban center
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 51.05137       16.40865
+{txt} 5%    {res} 66.09158       17.58733
+{txt}10%    {res} 71.67278       19.76549       {txt}Obs         {res}     19,644
+{txt}25%    {res} 77.71108       30.07932       {txt}Sum of wgt. {res}     19,644
+
+{txt}50%    {res} 85.13265                      {txt}Mean          {res} 85.24085
+                        {txt}Largest       Std. dev.     {res} 11.93813
+{txt}75%    {res} 92.71111       111.8772
+{txt}90%    {res} 101.1672        111.896       {txt}Variance      {res}  142.519
+{txt}95%    {res} 105.4755       112.0091       {txt}Skewness      {res}-.4019489
+{txt}99%    {res} 109.4144       112.1871       {txt}Kurtosis      {res} 3.808996
+
+{txt}{hline}
+-> microtype = 2: Urban mixed-use
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 41.57517      -1.110999
+{txt} 5%    {res} 54.87538       .9261831
+{txt}10%    {res} 61.10514       9.343739       {txt}Obs         {res}     23,582
+{txt}25%    {res} 66.58425       9.902208       {txt}Sum of wgt. {res}     23,582
+
+{txt}50%    {res} 72.42672                      {txt}Mean          {res} 72.61312
+                        {txt}Largest       Std. dev.     {res} 10.65778
+{txt}75%    {res} 78.77814       109.7449
+{txt}90%    {res} 86.61636       110.2158       {txt}Variance      {res} 113.5882
+{txt}95%    {res} 89.97439       110.3619       {txt}Skewness      {res}-.3584019
+{txt}99%    {res} 97.12057        110.979       {txt}Kurtosis      {res}  4.71661
+
+{txt}{hline}
+-> microtype = 3: Suburban
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 40.84751      -45.89453
+{txt} 5%    {res} 57.57142         2.0144
+{txt}10%    {res} 61.59154       7.437131       {txt}Obs         {res}     17,984
+{txt}25%    {res} 66.75449       10.59159       {txt}Sum of wgt. {res}     17,984
+
+{txt}50%    {res} 71.91815                      {txt}Mean          {res} 71.69243
+                        {txt}Largest       Std. dev.     {res}  9.32708
+{txt}75%    {res} 76.92212       102.4179
+{txt}90%    {res} 83.39932       103.2877       {txt}Variance      {res} 86.99442
+{txt}95%    {res} 86.21204       103.4578       {txt}Skewness      {res} -.953872
+{txt}99%    {res}  90.5489       108.9128       {txt}Kurtosis      {res} 7.571684
+
+{txt}{hline}
+-> microtype = 4: Rural town center
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 46.16824       17.21263
+{txt} 5%    {res} 58.53401       17.39341
+{txt}10%    {res} 61.90359       28.36353       {txt}Obs         {res}      3,038
+{txt}25%    {res} 66.57445       30.32443       {txt}Sum of wgt. {res}      3,038
+
+{txt}50%    {res} 70.96255                      {txt}Mean          {res} 70.63264
+                        {txt}Largest       Std. dev.     {res} 7.945476
+{txt}75%    {res} 74.56278       91.86008
+{txt}90%    {res} 79.24954       91.86465       {txt}Variance      {res} 63.13059
+{txt}95%    {res} 84.36762       92.34251       {txt}Skewness      {res}-.5498169
+{txt}99%    {res}  90.4881        92.7315       {txt}Kurtosis      {res} 6.456152
+
+{txt}{hline}
+-> microtype = 5: Rural agriculture
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 25.55759      -41.53246
+{txt} 5%    {res}  37.1448      -39.68607
+{txt}10%    {res} 43.97953      -36.95788       {txt}Obs         {res}      3,949
+{txt}25%    {res} 56.98719      -27.86224       {txt}Sum of wgt. {res}      3,949
+
+{txt}50%    {res} 63.14135                      {txt}Mean          {res} 61.06289
+                        {txt}Largest       Std. dev.     {res} 12.21614
+{txt}75%    {res} 68.57674       88.18646
+{txt}90%    {res} 73.15784       92.20945       {txt}Variance      {res}  149.234
+{txt}95%    {res} 76.19057       93.38808       {txt}Skewness      {res} -1.54889
+{txt}99%    {res} 84.56599       97.68096       {txt}Kurtosis      {res} 9.104147
+
+{txt}
+{com}. by networktype,s: sum cs_baseline if urban==1, d
+
+{txt}{hline}
+-> networktype = 1: Urban 1
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 52.52398        29.4806
+{txt} 5%    {res} 67.12473        32.0811
+{txt}10%    {res} 71.60544       32.94019       {txt}Obs         {res}     11,539
+{txt}25%    {res} 78.69083       36.14345       {txt}Sum of wgt. {res}     11,539
+
+{txt}50%    {res} 87.80727                      {txt}Mean          {res}  87.4138
+                        {txt}Largest       Std. dev.     {res} 12.58101
+{txt}75%    {res} 95.49742       111.8772
+{txt}90%    {res} 104.8152        111.896       {txt}Variance      {res} 158.2817
+{txt}95%    {res} 107.2579       112.0091       {txt}Skewness      {res}-.3598707
+{txt}99%    {res} 110.1186       112.1871       {txt}Kurtosis      {res} 3.115909
+
+{txt}{hline}
+-> networktype = 2: Urban 2
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 44.06909      -41.53246
+{txt} 5%    {res} 58.31025      -3.976859
+{txt}10%    {res} 63.17238       .9261831       {txt}Obs         {res}     13,522
+{txt}25%    {res} 68.63226       14.36876       {txt}Sum of wgt. {res}     13,522
+
+{txt}50%    {res} 74.22166                      {txt}Mean          {res} 74.56699
+                        {txt}Largest       Std. dev.     {res} 10.54085
+{txt}75%    {res} 81.21176       108.2944
+{txt}90%    {res} 87.90504       108.6088       {txt}Variance      {res} 111.1096
+{txt}95%    {res} 91.81269       109.3646       {txt}Skewness      {res}-.4356137
+{txt}99%    {res} 99.16326        110.979       {txt}Kurtosis      {res}  5.90421
+
+{txt}{hline}
+-> networktype = 3: Urban 3
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 45.64304      -1.293369
+{txt} 5%    {res}  58.4906       16.48125
+{txt}10%    {res} 63.07468       19.49531       {txt}Obs         {res}     15,277
+{txt}25%    {res} 68.96764       21.31276       {txt}Sum of wgt. {res}     15,277
+
+{txt}50%    {res}   75.183                      {txt}Mean          {res} 75.39534
+                        {txt}Largest       Std. dev.     {res} 10.71626
+{txt}75%    {res} 82.48676       107.7186
+{txt}90%    {res} 89.58673       108.9128       {txt}Variance      {res} 114.8383
+{txt}95%    {res} 92.58597       109.2653       {txt}Skewness      {res}-.3659418
+{txt}99%    {res} 98.94079        110.817       {txt}Kurtosis      {res} 4.113171
+
+{txt}{hline}
+-> networktype = 4: Urban 4
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 44.19244       9.343739
+{txt} 5%    {res} 58.37209       9.902208
+{txt}10%    {res} 62.72298       16.40865       {txt}Obs         {res}     11,753
+{txt}25%    {res} 68.09016       17.39341       {txt}Sum of wgt. {res}     11,753
+
+{txt}50%    {res} 73.90204                      {txt}Mean          {res} 74.23918
+                        {txt}Largest       Std. dev.     {res} 10.31723
+{txt}75%    {res} 80.82222       106.2857
+{txt}90%    {res} 88.01073       106.7012       {txt}Variance      {res} 106.4453
+{txt}95%    {res} 91.11896       106.8044       {txt}Skewness      {res}-.3128446
+{txt}99%    {res} 97.69698       107.9996       {txt}Kurtosis      {res} 4.342603
+
+{txt}{hline}
+-> networktype = 5: Urban 5
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 31.88265      -45.89453
+{txt} 5%    {res} 46.01205      -39.68607
+{txt}10%    {res} 54.91313      -36.95788       {txt}Obs         {res}     16,106
+{txt}25%    {res} 62.73872      -27.86224       {txt}Sum of wgt. {res}     16,106
+
+{txt}50%    {res}   68.664                      {txt}Mean          {res} 67.71137
+                        {txt}Largest       Std. dev.     {res} 11.31061
+{txt}75%    {res} 73.85217       97.52529
+{txt}90%    {res} 80.95866        98.2169       {txt}Variance      {res} 127.9298
+{txt}95%    {res} 85.25864       100.0592       {txt}Skewness      {res}-1.124799
+{txt}99%    {res} 89.91534       103.8069       {txt}Kurtosis      {res} 7.331412
+
+{txt}{hline}
+-> networktype = 6: Rural 1
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> networktype = 7: Rural 2
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> networktype = 8: Rural 3
+
+                         CS_baseline
+{hline 61}
+no observations
+
+
+{com}. by geotype,s: sum cs_baseline if urban==1, d
+
+{txt}{hline}
+-> geotype = A
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 55.82503      -41.53246
+{txt} 5%    {res} 64.38354       38.52873
+{txt}10%    {res} 67.34972       39.02931       {txt}Obs         {res}     46,578
+{txt}25%    {res} 72.09395       39.10873       {txt}Sum of wgt. {res}     46,578
+
+{txt}50%    {res} 78.04123                      {txt}Mean          {res} 79.68996
+                        {txt}Largest       Std. dev.     {res} 10.91494
+{txt}75%    {res} 86.60044       111.8772
+{txt}90%    {res} 93.95514        111.896       {txt}Variance      {res}  119.136
+{txt}95%    {res} 100.2615       112.0091       {txt}Skewness      {res} .3538408
+{txt}99%    {res} 107.8897       112.1871       {txt}Kurtosis      {res} 3.499603
+
+{txt}{hline}
+-> geotype = B
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 31.48615      -45.89453
+{txt} 5%    {res} 44.73545      -39.68607
+{txt}10%    {res} 52.14254      -36.95788       {txt}Obs         {res}     21,619
+{txt}25%    {res} 61.04052      -27.86224       {txt}Sum of wgt. {res}     21,619
+
+{txt}50%    {res} 66.70171                      {txt}Mean          {res} 65.68624
+                        {txt}Largest       Std. dev.     {res} 10.94724
+{txt}75%    {res} 72.06055       93.90318
+{txt}90%    {res} 77.35104       94.25464       {txt}Variance      {res} 119.8422
+{txt}95%    {res}  81.6885       94.33965       {txt}Skewness      {res} -1.08175
+{txt}99%    {res} 88.59097       95.76268       {txt}Kurtosis      {res} 6.893129
+
+{txt}{hline}
+-> geotype = C
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> geotype = D
+
+                         CS_baseline
+{hline 61}
+no observations
+
+
+{com}. by transavail,s: sum cs_baseline if urban==1, d
+
+{txt}{hline}
+-> transavail = bin1: 0
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 34.56472      -45.89453
+{txt} 5%    {res} 49.46695      -41.53246
+{txt}10%    {res} 57.53943      -39.68607       {txt}Obs         {res}     28,187
+{txt}25%    {res} 63.98264      -36.95788       {txt}Sum of wgt. {res}     28,187
+
+{txt}50%    {res} 70.07855                      {txt}Mean          {res} 69.44794
+                        {txt}Largest       Std. dev.     {res} 11.30371
+{txt}75%    {res} 75.16429       107.8695
+{txt}90%    {res} 83.27447       108.1754       {txt}Variance      {res} 127.7739
+{txt}95%    {res} 86.98564       108.3893       {txt}Skewness      {res}-.7309638
+{txt}99%    {res} 96.36607        108.923       {txt}Kurtosis      {res} 6.771544
+
+{txt}{hline}
+-> transavail = bin2: (0 - 0.30]
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 46.09747       39.30779
+{txt} 5%    {res} 55.52809       41.16765
+{txt}10%    {res} 59.39705       41.49353       {txt}Obs         {res}      1,505
+{txt}25%    {res}  63.7149       41.55596       {txt}Sum of wgt. {res}      1,505
+
+{txt}50%    {res} 68.84901                      {txt}Mean          {res} 68.07246
+                        {txt}Largest       Std. dev.     {res} 7.151236
+{txt}75%    {res} 72.46428       85.80973
+{txt}90%    {res} 75.43433       85.90553       {txt}Variance      {res} 51.14018
+{txt}95%    {res} 79.57819       87.18719       {txt}Skewness      {res}-.5019714
+{txt}99%    {res}  83.7572        87.4291       {txt}Kurtosis      {res} 4.096885
+
+{txt}{hline}
+-> transavail = bin3: (0.30 - 0.60]
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 47.89594         2.0144
+{txt} 5%    {res} 61.29589       9.343739
+{txt}10%    {res} 64.81535       9.902208       {txt}Obs         {res}     11,743
+{txt}25%    {res} 69.26763       10.59159       {txt}Sum of wgt. {res}     11,743
+
+{txt}50%    {res}  74.1527                      {txt}Mean          {res} 73.57177
+                        {txt}Largest       Std. dev.     {res} 7.805956
+{txt}75%    {res} 78.02009       94.09988
+{txt}90%    {res} 83.56601       94.15156       {txt}Variance      {res} 60.93295
+{txt}95%    {res} 85.83851       94.29101       {txt}Skewness      {res}-.9423587
+{txt}99%    {res} 89.08379       94.46059       {txt}Kurtosis      {res} 7.090011
+
+{txt}{hline}
+-> transavail = bin4: (0.60 - 0.90]
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 48.65243      -1.110999
+{txt} 5%    {res} 63.47778       7.437131
+{txt}10%    {res} 66.82949       13.59064       {txt}Obs         {res}     20,941
+{txt}25%    {res} 74.07748       16.53136       {txt}Sum of wgt. {res}     20,941
+
+{txt}50%    {res} 82.99631                      {txt}Mean          {res} 82.80447
+                        {txt}Largest       Std. dev.     {res} 12.97857
+{txt}75%    {res}  91.2005       111.8772
+{txt}90%    {res} 100.6233        111.896       {txt}Variance      {res} 168.4432
+{txt}95%    {res} 105.2994       112.0091       {txt}Skewness      {res}-.2308948
+{txt}99%    {res} 109.3714       112.1871       {txt}Kurtosis      {res} 3.458047
+
+{txt}{hline}
+-> transavail = bin5: above 0.90
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 51.08812       26.95064
+{txt} 5%    {res} 58.32222       28.58651
+{txt}10%    {res} 69.47729       29.44036       {txt}Obs         {res}      5,821
+{txt}25%    {res} 76.22511        29.4806       {txt}Sum of wgt. {res}      5,821
+
+{txt}50%    {res} 81.93178                      {txt}Mean          {res} 81.41729
+                        {txt}Largest       Std. dev.     {res} 10.47262
+{txt}75%    {res}  90.2784       100.7489
+{txt}90%    {res} 93.55689       101.3255       {txt}Variance      {res} 109.6757
+{txt}95%    {res} 94.80264       103.0712       {txt}Skewness      {res}-1.004875
+{txt}99%    {res} 97.11356       106.0551       {txt}Kurtosis      {res} 4.445481
+
+{txt}
+{com}. by microtype,s: sum cs_baseline if urban==0, d
+
+{txt}{hline}
+-> microtype = 1: Urban center
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 24.96775       24.96775
+{txt} 5%    {res} 32.43327       32.43327
+{txt}10%    {res} 34.02756       34.02756       {txt}Obs         {res}         28
+{txt}25%    {res}  49.3816       35.09867       {txt}Sum of wgt. {res}         28
+
+{txt}50%    {res} 78.05612                      {txt}Mean          {res} 67.86768
+                        {txt}Largest       Std. dev.     {res} 20.12702
+{txt}75%    {res} 81.83767       85.25726
+{txt}90%    {res} 86.14038       86.14038       {txt}Variance      {res} 405.0969
+{txt}95%    {res} 89.66029       89.66029       {txt}Skewness      {res}-.8198487
+{txt}99%    {res} 90.54308       90.54308       {txt}Kurtosis      {res} 2.175044
+
+{txt}{hline}
+-> microtype = 2: Urban mixed-use
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 28.46279       11.14943
+{txt} 5%    {res} 37.20783       16.56502
+{txt}10%    {res} 44.25013       19.35923       {txt}Obs         {res}        606
+{txt}25%    {res} 59.92853       21.77658       {txt}Sum of wgt. {res}        606
+
+{txt}50%    {res} 67.24792                      {txt}Mean          {res} 65.52645
+                        {txt}Largest       Std. dev.     {res} 13.89974
+{txt}75%    {res} 73.66321       99.47305
+{txt}90%    {res} 81.26517        99.9482       {txt}Variance      {res} 193.2029
+{txt}95%    {res} 84.79391       100.6783       {txt}Skewness      {res}-.6798118
+{txt}99%    {res} 98.49907       101.3835       {txt}Kurtosis      {res} 4.054628
+
+{txt}{hline}
+-> microtype = 3: Suburban
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 22.29472       5.230891
+{txt} 5%    {res} 38.36782       8.638855
+{txt}10%    {res} 43.82252       11.06137       {txt}Obs         {res}        602
+{txt}25%    {res} 60.81923       18.96595       {txt}Sum of wgt. {res}        602
+
+{txt}50%    {res} 68.15585                      {txt}Mean          {res} 65.55494
+                        {txt}Largest       Std. dev.     {res}  13.8656
+{txt}75%    {res} 73.78638       95.58698
+{txt}90%    {res} 80.23637       97.82491       {txt}Variance      {res} 192.2548
+{txt}95%    {res} 83.29076       98.61917       {txt}Skewness      {res}-1.058057
+{txt}99%    {res} 91.29091       98.86351       {txt}Kurtosis      {res} 4.643245
+
+{txt}{hline}
+-> microtype = 4: Rural town center
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 32.72906       25.38544
+{txt} 5%    {res} 45.37899       26.02002
+{txt}10%    {res}   56.272       26.12525       {txt}Obs         {res}      1,029
+{txt}25%    {res} 65.24593       27.09563       {txt}Sum of wgt. {res}      1,029
+
+{txt}50%    {res} 72.58248                      {txt}Mean          {res} 71.63147
+                        {txt}Largest       Std. dev.     {res} 12.88707
+{txt}75%    {res} 80.71285       101.3542
+{txt}90%    {res} 85.28235       101.9226       {txt}Variance      {res} 166.0765
+{txt}95%    {res} 89.49541        102.115       {txt}Skewness      {res}-.8044998
+{txt}99%    {res} 99.78173       102.4808       {txt}Kurtosis      {res} 4.280133
+
+{txt}{hline}
+-> microtype = 5: Rural agriculture
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 8.645021      -53.97449
+{txt} 5%    {res} 30.61899      -37.82252
+{txt}10%    {res} 37.02194      -37.81836       {txt}Obs         {res}      2,594
+{txt}25%    {res} 52.16234      -34.54259       {txt}Sum of wgt. {res}      2,594
+
+{txt}50%    {res} 63.59254                      {txt}Mean          {res} 60.26077
+                        {txt}Largest       Std. dev.     {res} 16.78183
+{txt}75%    {res} 71.29878       95.47054
+{txt}90%    {res} 77.67554       95.89749       {txt}Variance      {res} 281.6298
+{txt}95%    {res} 82.16305       96.49487       {txt}Skewness      {res}-1.372786
+{txt}99%    {res} 87.02669        97.5682       {txt}Kurtosis      {res} 6.841217
+
+{txt}
+{com}. by networktype,s: sum cs_baseline if urban==0, d
+
+{txt}{hline}
+-> networktype = 1: Urban 1
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> networktype = 2: Urban 2
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> networktype = 3: Urban 3
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> networktype = 4: Urban 4
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> networktype = 5: Urban 5
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> networktype = 6: Rural 1
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}  23.4562       9.088046
+{txt} 5%    {res} 36.94565       10.04722
+{txt}10%    {res}  42.3113       11.14943       {txt}Obs         {res}        942
+{txt}25%    {res} 58.46163       16.56502       {txt}Sum of wgt. {res}        942
+
+{txt}50%    {res} 66.17945                      {txt}Mean          {res}  64.2619
+                        {txt}Largest       Std. dev.     {res} 13.87472
+{txt}75%    {res} 73.35208       90.61343
+{txt}90%    {res} 80.77629       90.64897       {txt}Variance      {res} 192.5077
+{txt}95%    {res} 83.01735       91.04171       {txt}Skewness      {res}-.8782389
+{txt}99%    {res} 89.55851       93.51563       {txt}Kurtosis      {res} 3.923758
+
+{txt}{hline}
+-> networktype = 7: Rural 2
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 12.42411      -37.81836
+{txt} 5%    {res} 28.84863      -34.54259
+{txt}10%    {res}  33.4763      -32.27747       {txt}Obs         {res}      1,481
+{txt}25%    {res} 43.45381      -26.24423       {txt}Sum of wgt. {res}      1,481
+
+{txt}50%    {res} 59.57971                      {txt}Mean          {res} 55.43137
+                        {txt}Largest       Std. dev.     {res} 16.34113
+{txt}75%    {res} 66.75376       85.62288
+{txt}90%    {res} 73.76601        86.1788       {txt}Variance      {res} 267.0326
+{txt}95%    {res} 78.45312       86.56474       {txt}Skewness      {res}-.9088502
+{txt}99%    {res} 83.11816       87.24959       {txt}Kurtosis      {res} 4.953099
+
+{txt}{hline}
+-> networktype = 8: Rural 3
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 17.58644      -53.97449
+{txt} 5%    {res} 43.20454      -37.82252
+{txt}10%    {res} 54.15858      -30.76673       {txt}Obs         {res}      2,436
+{txt}25%    {res} 63.73433      -28.23656       {txt}Sum of wgt. {res}      2,436
+
+{txt}50%    {res} 70.69381                      {txt}Mean          {res} 69.15848
+                        {txt}Largest       Std. dev.     {res} 14.24147
+{txt}75%    {res} 77.16909       101.3835
+{txt}90%    {res} 83.92531       101.9226       {txt}Variance      {res} 202.8194
+{txt}95%    {res} 86.80441        102.115       {txt}Skewness      {res} -1.88759
+{txt}99%    {res} 98.15441       102.4808       {txt}Kurtosis      {res} 11.89984
+
+{txt}
+{com}. by geotype,s: sum cs_baseline if urban==0, d
+
+{txt}{hline}
+-> geotype = A
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> geotype = B
+
+                         CS_baseline
+{hline 61}
+no observations
+
+{hline}
+-> geotype = C
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 24.96775      -53.97449
+{txt} 5%    {res} 39.16517      -37.82252
+{txt}10%    {res} 47.60104      -30.76673       {txt}Obs         {res}      4,008
+{txt}25%    {res} 60.35912      -28.23656       {txt}Sum of wgt. {res}      4,008
+
+{txt}50%    {res} 68.17508                      {txt}Mean          {res}  66.4243
+                        {txt}Largest       Std. dev.     {res} 14.43435
+{txt}75%    {res} 75.52754       101.3835
+{txt}90%    {res}  82.4699       101.9226       {txt}Variance      {res} 208.3504
+{txt}95%    {res} 85.25726        102.115       {txt}Skewness      {res}-1.288687
+{txt}99%    {res} 95.22924       102.4808       {txt}Kurtosis      {res} 7.832602
+
+{txt}{hline}
+-> geotype = D
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 2.903702      -37.81836
+{txt} 5%    {res} 25.03817      -34.54259
+{txt}10%    {res} 30.02043      -32.27747       {txt}Obs         {res}        851
+{txt}25%    {res} 38.40869      -4.950405       {txt}Sum of wgt. {res}        851
+
+{txt}50%    {res} 57.92654                      {txt}Mean          {res} 52.72626
+                        {txt}Largest       Std. dev.     {res} 18.06105
+{txt}75%    {res}  66.7821         82.539
+{txt}90%    {res} 72.01192       82.77605       {txt}Variance      {res} 326.2014
+{txt}95%    {res} 75.84415       83.22289       {txt}Skewness      {res}-.8637258
+{txt}99%    {res} 81.26724       84.88337       {txt}Kurtosis      {res} 4.172475
+
+{txt}
+{com}. by transavail2,s: sum cs_baseline if urban==0, d
+
+{txt}{hline}
+-> transavail2 = bin1: 0
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 16.27268      -53.97449
+{txt} 5%    {res} 33.57142      -37.82252
+{txt}10%    {res} 40.11352      -37.81836       {txt}Obs         {res}      4,573
+{txt}25%    {res} 57.22331      -34.54259       {txt}Sum of wgt. {res}      4,573
+
+{txt}50%    {res} 66.24397                      {txt}Mean          {res} 63.66915
+                        {txt}Largest       Std. dev.     {res} 16.11987
+{txt}75%    {res} 73.79206       101.3835
+{txt}90%    {res} 81.52047       101.9226       {txt}Variance      {res}   259.85
+{txt}95%    {res} 84.44491        102.115       {txt}Skewness      {res}-1.224975
+{txt}99%    {res} 93.97681       102.4808       {txt}Kurtosis      {res} 6.426535
+
+{txt}{hline}
+-> transavail2 = bin2: above 0
+
+                         CS_baseline
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 35.01022       28.58171
+{txt} 5%    {res} 43.41346       34.97041
+{txt}10%    {res} 49.17538       35.01022       {txt}Obs         {res}        286
+{txt}25%    {res} 65.91374        35.8091       {txt}Sum of wgt. {res}        286
+
+{txt}50%    {res} 71.60852                      {txt}Mean          {res} 69.71892
+                        {txt}Largest       Std. dev.     {res} 12.69866
+{txt}75%    {res} 78.26553       89.88853
+{txt}90%    {res} 83.99341       90.55073       {txt}Variance      {res} 161.2559
+{txt}95%    {res} 86.87666        90.5931       {txt}Skewness      {res}-.8998583
+{txt}99%    {res} 90.55073       91.04171       {txt}Kurtosis      {res} 3.452881
+
+{txt}
+{com}. 
+. 
+. ** Generate figures for urban regions
+. 
+. /*Generate and save each plot individually*/
+. cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(orange*1.4 orange*1.2 orange orange*.6 orange*.3) ytitle("Cumulative % Distribution") xtitle("CS Metric" "(b)") legend(lab(1 "Urban 1") lab(2 "Urban 2") lab(3 "Urban 3") lab(4 "Urban 4") lab(5 "Urban 5") position(10) ring(0))) name(network_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(microtype) opt1(lc("22 22 156" blue purple gold dkorange) xtitle("CS Metric" "(c)") legend(lab(1 "Urban center") lab(2 "Urban mixed-use") lab(3 "Suburban") lab(4 "Rural town center") lab(5 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("213 122 100" emerald) xtitle("CS Metric" "(a)") legend(lab(1 "A") lab(2 "B") position(10) ring(0))) name(geo_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. cdfplot cs_baseline if urban==1 & cs_baseline_nooutliers==1, by(transavail) opt1(lc(edkblue*.2 edkblue*.4 edkblue*.6 edkblue*.8 edkblue) xtitle("CS Metric" "(d)") legend(lab(1 "0") lab(2 "0 - 0.30") lab(3 "0.30 - 0.60") lab(4 "0.60 - 0.90") lab(5 "above 0.90") position(10) ring(0))) name(transit_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. 
+. /*Combine plots into single figure*/
+. graph combine geo_plot network_plot micro_plot transit_plot, ///
+>     col(2) row(2) ///
+>     title("") ///
+>     ycommon ///
+>     xcommon iscale(*.88)
+{res}{txt}
+{com}. 
+. /*Export combined figure*/
+. graph export "$fig\combined_cs_urban.png", replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\combined_cs_urban.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. ** Generate figures for rural regions
+. 
+. /*Generate and save each plot individually*/
+. cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(networktype) opt1(lc(emerald*1.2 emerald*.6 emerald*.4) xtitle("CS Metric" "(b)") legend(lab(1 "Rural 1") lab(2 "Rural 2") lab(3 "Rural 3") position(10) ring(0))) name(network_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1 & microtype!="1: Urban center", by(microtype) opt1(lc(blue purple gold dkorange) xtitle("CS Metric" "(c)") legend(lab(1 "Urban mixed-use") lab(2 "Suburban") lab(3 "Rural town center") lab(4 "Rural agriculture") position(10) ring(0))) name(micro_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(geotype) opt1(lc("49 67 76" sand) xtitle("CS Metric" "(a)") legend(lab(1 "C") lab(2 "D") position(10) ring(0))) name(geo_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. cdfplot cs_baseline if urban==0 & cs_baseline_nooutliers==1, by(transavail2) opt1(lc(edkblue*.4 edkblue) xtitle("CS Metric" "(d)") legend(lab(1 "0") lab(2 "above 0") position(10) ring(0))) name(transit_plot, replace)
+{txt}(0 observations deleted)
+
+{com}. 
+. /*Combine plots into single figure*/
+. graph combine geo_plot network_plot micro_plot transit_plot, ///
+>     col(2) row(2) ///
+>     title("") ///
+>     ycommon ///
+>     xcommon iscale(*.88)
+{res}{txt}
+{com}. 
+. /*Export combined figure*/
+. graph export "$fig\combined_cs_rural.png", replace
+{txt}{p 0 4 2}
+file {bf}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\combined_cs_rural.png{rm}
+saved as
+PNG
+format
+{p_end}
+
+{com}. 
+. /*Define global containing all controls included in subsequent step*/
+. global socioec="c.frac_age_above_65 c.edu_above_bs c.frac_hh_no_veh c.frac_tenure_renter  c.frac_below_poverty c.frac_hh_inc_below_40k c.frac_hh_inc_above_100k c.job_density c.pop_density"
+{txt}
+{com}. 
+. /*ANOVA Analysis*/
+. 
+. outreg2 using "$tab\cs_overall", excel replace: reg cs_baseline i.geotype_enc
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    73,056
+{txt}{hline 13}{c +}{hline 34}   F(3, 73052)     = {res}  9472.11
+{txt}       Model {c |} {res} 3598867.42         3  1199622.47   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 9251874.93    73,052  126.647798   {txt}R-squared       ={res}    0.2801
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.2800
+{txt}       Total {c |} {res} 12850742.4    73,055  175.905035   {txt}Root MSE        =   {res} 11.254
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} cs_baseline{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}geotype_enc {c |}
+{space 10}B  {c |}{col 14}{res}{space 2}-14.00371{col 26}{space 2} .0926133{col 37}{space 1} -151.21{col 46}{space 3}0.000{col 54}{space 4}-14.18524{col 67}{space 3}-13.82219
+{txt}{space 10}C  {c |}{col 14}{res}{space 2}-13.26566{col 26}{space 2} .1852506{col 37}{space 1}  -71.61{col 46}{space 3}0.000{col 54}{space 4}-13.62875{col 67}{space 3}-12.90257
+{txt}{space 10}D  {c |}{col 14}{res}{space 2} -26.9637{col 26}{space 2} .3892832{col 37}{space 1}  -69.27{col 46}{space 3}0.000{col 54}{space 4} -27.7267{col 67}{space 3}-26.20071
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 79.68996{col 26}{space 2} .0521445{col 37}{space 1} 1528.25{col 46}{space 3}0.000{col 54}{space 4} 79.58776{col 67}{space 3} 79.79216
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.txt""':seeout}
+
+{com}. outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    73,056
+{txt}{hline 13}{c +}{hline 34}   F(4, 73051)     = {res}  7728.60
+{txt}       Model {c |} {res}  3821202.5         4  955300.626   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 9029539.85    73,051  123.605972   {txt}R-squared       ={res}    0.2974
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.2973
+{txt}       Total {c |} {res} 12850742.4    73,055  175.905035   {txt}Root MSE        =   {res} 11.118
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          cs_baseline{col 23}{c |} Coefficient{col 35}  Std. err.{col 47}      t{col 55}   P>|t|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}microtype_enc {c |}
+{space 2}2: Urban mixed-use  {c |}{col 23}{res}{space 2}-12.78055{col 35}{space 2} .1067406{col 46}{space 1} -119.73{col 55}{space 3}0.000{col 63}{space 4}-12.98976{col 76}{space 3}-12.57134
+{txt}{space 9}3: Suburban  {c |}{col 23}{res}{space 2}-13.72248{col 35}{space 2}  .113727{col 46}{space 1} -120.66{col 55}{space 3}0.000{col 63}{space 4}-13.94539{col 76}{space 3}-13.49958
+{txt}4: Rural town center  {c |}{col 23}{res}{space 2}-14.33076{col 35}{space 2} .1915092{col 46}{space 1}  -74.83{col 55}{space 3}0.000{col 63}{space 4}-14.70612{col 76}{space 3} -13.9554
+{txt}5: Rural agriculture  {c |}{col 23}{res}{space 2}-24.47124{col 35}{space 2} .1586653{col 46}{space 1} -154.23{col 55}{space 3}0.000{col 63}{space 4}-24.78222{col 76}{space 3}-24.16025
+{txt}{space 21} {c |}
+{space 16}_cons {c |}{col 23}{res}{space 2} 85.21612{col 35}{space 2} .0792676{col 46}{space 1} 1075.04{col 55}{space 3}0.000{col 63}{space 4} 85.06076{col 76}{space 3} 85.37149
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.txt""':seeout}
+
+{com}. outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.network_enc
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    73,056
+{txt}{hline 13}{c +}{hline 34}   F(7, 73048)     = {res}  3733.90
+{txt}       Model {c |} {res} 3386427.56         7  483775.365   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  9464314.8    73,048  129.562956   {txt}R-squared       ={res}    0.2635
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.2634
+{txt}       Total {c |} {res} 12850742.4    73,055  175.905035   {txt}Root MSE        =   {res} 11.383
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} cs_baseline{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}network_enc {c |}
+{space 1}2: Urban 2  {c |}{col 14}{res}{space 2}-12.84681{col 26}{space 2} .1442564{col 37}{space 1}  -89.06{col 46}{space 3}0.000{col 54}{space 4}-13.12955{col 67}{space 3}-12.56407
+{txt}{space 1}3: Urban 3  {c |}{col 14}{res}{space 2}-12.01847{col 26}{space 2} .1403894{col 37}{space 1}  -85.61{col 46}{space 3}0.000{col 54}{space 4}-12.29363{col 67}{space 3} -11.7433
+{txt}{space 1}4: Urban 4  {c |}{col 14}{res}{space 2}-13.17463{col 26}{space 2} .1491713{col 37}{space 1}  -88.32{col 46}{space 3}0.000{col 54}{space 4}  -13.467{col 67}{space 3}-12.88225
+{txt}{space 1}5: Urban 5  {c |}{col 14}{res}{space 2}-19.70243{col 26}{space 2}  .138826{col 37}{space 1} -141.92{col 46}{space 3}0.000{col 54}{space 4}-19.97453{col 67}{space 3}-19.43033
+{txt}{space 1}6: Rural 1  {c |}{col 14}{res}{space 2}-23.15191{col 26}{space 2} .3857053{col 37}{space 1}  -60.02{col 46}{space 3}0.000{col 54}{space 4}-23.90789{col 67}{space 3}-22.39593
+{txt}{space 1}7: Rural 2  {c |}{col 14}{res}{space 2}-31.98243{col 26}{space 2} .3141842{col 37}{space 1} -101.80{col 46}{space 3}0.000{col 54}{space 4}-32.59823{col 67}{space 3}-31.36663
+{txt}{space 1}8: Rural 3  {c |}{col 14}{res}{space 2}-18.25532{col 26}{space 2} .2538012{col 37}{space 1}  -71.93{col 46}{space 3}0.000{col 54}{space 4}-18.75277{col 67}{space 3}-17.75787
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  87.4138{col 26}{space 2} .1059635{col 37}{space 1}  824.94{col 46}{space 3}0.000{col 54}{space 4} 87.20612{col 67}{space 3} 87.62149
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.txt""':seeout}
+
+{com}. 
+. outreg2 using "$tab\cs_overall", ct(Geo A) excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_A==1
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    46,578
+{txt}{hline 13}{c +}{hline 34}   F(8, 46569)     = {res}  3654.80
+{txt}       Model {c |} {res} 2140209.23         8  267526.154   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  3408786.9    46,569  73.1986279   {txt}R-squared       ={res}    0.3857
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.3856
+{txt}       Total {c |} {res} 5548996.13    46,577  119.135971   {txt}Root MSE        =   {res} 8.5556
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          cs_baseline{col 23}{c |} Coefficient{col 35}  Std. err.{col 47}      t{col 55}   P>|t|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}microtype_enc {c |}
+{space 2}2: Urban mixed-use  {c |}{col 23}{res}{space 2}-8.672333{col 35}{space 2} .1117164{col 46}{space 1}  -77.63{col 55}{space 3}0.000{col 63}{space 4}-8.891299{col 76}{space 3}-8.453368
+{txt}{space 9}3: Suburban  {c |}{col 23}{res}{space 2}-10.75695{col 35}{space 2} .1176787{col 46}{space 1}  -91.41{col 55}{space 3}0.000{col 63}{space 4} -10.9876{col 76}{space 3}-10.52629
+{txt}4: Rural town center  {c |}{col 23}{res}{space 2}-10.38103{col 35}{space 2} .2700971{col 46}{space 1}  -38.43{col 55}{space 3}0.000{col 63}{space 4}-10.91043{col 76}{space 3}-9.851638
+{txt}5: Rural agriculture  {c |}{col 23}{res}{space 2}-14.89874{col 35}{space 2} .3194476{col 46}{space 1}  -46.64{col 55}{space 3}0.000{col 63}{space 4}-15.52486{col 76}{space 3}-14.27262
+{txt}{space 21} {c |}
+{space 10}network_enc {c |}
+{space 10}2: Urban 2  {c |}{col 23}{res}{space 2}-6.270559{col 35}{space 2} .1379579{col 46}{space 1}  -45.45{col 55}{space 3}0.000{col 63}{space 4}-6.540958{col 76}{space 3}-6.000159
+{txt}{space 10}3: Urban 3  {c |}{col 23}{res}{space 2}-6.480663{col 35}{space 2} .1294942{col 46}{space 1}  -50.05{col 55}{space 3}0.000{col 63}{space 4}-6.734473{col 76}{space 3}-6.226852
+{txt}{space 10}4: Urban 4  {c |}{col 23}{res}{space 2} -7.19784{col 35}{space 2} .1411599{col 46}{space 1}  -50.99{col 55}{space 3}0.000{col 63}{space 4}-7.474516{col 76}{space 3}-6.921164
+{txt}{space 10}5: Urban 5  {c |}{col 23}{res}{space 2}-7.832673{col 35}{space 2} .1638269{col 46}{space 1}  -47.81{col 55}{space 3}0.000{col 63}{space 4}-8.153776{col 76}{space 3} -7.51157
+{txt}{space 21} {c |}
+{space 16}_cons {c |}{col 23}{res}{space 2} 91.52509{col 35}{space 2} .0872512{col 46}{space 1} 1048.98{col 55}{space 3}0.000{col 63}{space 4} 91.35408{col 76}{space 3} 91.69611
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.txt""':seeout}
+
+{com}. outreg2 using "$tab\cs_overall", ct(Geo B)  excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_B==1
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}    21,619
+{txt}{hline 13}{c +}{hline 34}   F(8, 21610)     = {res}   386.76
+{txt}       Model {c |} {res}  324482.06         8  40560.2575   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res}  2266265.6    21,610  104.871152   {txt}R-squared       ={res}    0.1252
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.1249
+{txt}       Total {c |} {res} 2590747.67    21,618  119.842153   {txt}Root MSE        =   {res} 10.241
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          cs_baseline{col 23}{c |} Coefficient{col 35}  Std. err.{col 47}      t{col 55}   P>|t|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}microtype_enc {c |}
+{space 2}2: Urban mixed-use  {c |}{col 23}{res}{space 2}-6.198353{col 35}{space 2} .2205813{col 46}{space 1}  -28.10{col 55}{space 3}0.000{col 63}{space 4}-6.630709{col 76}{space 3}-5.765998
+{txt}{space 9}3: Suburban  {c |}{col 23}{res}{space 2}-6.109098{col 35}{space 2} .2632626{col 46}{space 1}  -23.21{col 55}{space 3}0.000{col 63}{space 4}-6.625112{col 76}{space 3}-5.593084
+{txt}4: Rural town center  {c |}{col 23}{res}{space 2}-2.124475{col 35}{space 2}  .347828{col 46}{space 1}   -6.11{col 55}{space 3}0.000{col 63}{space 4}-2.806243{col 76}{space 3}-1.442706
+{txt}5: Rural agriculture  {c |}{col 23}{res}{space 2}-11.57643{col 35}{space 2} .3114782{col 46}{space 1}  -37.17{col 55}{space 3}0.000{col 63}{space 4}-12.18695{col 76}{space 3}-10.96591
+{txt}{space 21} {c |}
+{space 10}network_enc {c |}
+{space 10}2: Urban 2  {c |}{col 23}{res}{space 2}-.9196325{col 35}{space 2} .3377283{col 46}{space 1}   -2.72{col 55}{space 3}0.006{col 63}{space 4}-1.581605{col 76}{space 3}-.2576601
+{txt}{space 10}3: Urban 3  {c |}{col 23}{res}{space 2}-1.380419{col 35}{space 2} .3233659{col 46}{space 1}   -4.27{col 55}{space 3}0.000{col 63}{space 4} -2.01424{col 76}{space 3}-.7465979
+{txt}{space 10}4: Urban 4  {c |}{col 23}{res}{space 2}-.4695433{col 35}{space 2} .3331051{col 46}{space 1}   -1.41{col 55}{space 3}0.159{col 63}{space 4}-1.122454{col 76}{space 3} .1833673
+{txt}{space 10}5: Urban 5  {c |}{col 23}{res}{space 2}-2.454815{col 35}{space 2}  .343942{col 46}{space 1}   -7.14{col 55}{space 3}0.000{col 63}{space 4}-3.128967{col 76}{space 3}-1.780664
+{txt}{space 21} {c |}
+{space 16}_cons {c |}{col 23}{res}{space 2} 72.74539{col 35}{space 2} .2655571{col 46}{space 1}  273.94{col 55}{space 3}0.000{col 63}{space 4} 72.22488{col 76}{space 3}  73.2659
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.txt""':seeout}
+
+{com}. outreg2 using "$tab\cs_overall", ct(Geo C)  excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_C==1
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}     4,008
+{txt}{hline 13}{c +}{hline 34}   F(6, 4001)      = {res}   107.67
+{txt}       Model {c |} {res} 116062.322         6  19343.7204   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 718797.623     4,001  179.654492   {txt}R-squared       ={res}    0.1390
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.1377
+{txt}       Total {c |} {res} 834859.945     4,007  208.350373   {txt}Root MSE        =   {res} 13.404
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          cs_baseline{col 23}{c |} Coefficient{col 35}  Std. err.{col 47}      t{col 55}   P>|t|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}microtype_enc {c |}
+{space 2}2: Urban mixed-use  {c |}{col 23}{res}{space 2}-1.961301{col 35}{space 2}  2.68937{col 46}{space 1}   -0.73{col 55}{space 3}0.466{col 63}{space 4}-7.233965{col 76}{space 3} 3.311363
+{txt}{space 9}3: Suburban  {c |}{col 23}{res}{space 2}-2.390789{col 35}{space 2} 2.717252{col 46}{space 1}   -0.88{col 55}{space 3}0.379{col 63}{space 4}-7.718118{col 76}{space 3} 2.936539
+{txt}4: Rural town center  {c |}{col 23}{res}{space 2} 2.699922{col 35}{space 2} 2.690324{col 46}{space 1}    1.00{col 55}{space 3}0.316{col 63}{space 4}-2.574611{col 76}{space 3} 7.974455
+{txt}5: Rural agriculture  {c |}{col 23}{res}{space 2}-4.086268{col 35}{space 2} 2.684201{col 46}{space 1}   -1.52{col 55}{space 3}0.128{col 63}{space 4}-9.348797{col 76}{space 3} 1.176261
+{txt}{space 21} {c |}
+{space 10}network_enc {c |}
+{space 10}7: Rural 2  {c |}{col 23}{res}{space 2}-4.858087{col 35}{space 2} .7424891{col 46}{space 1}   -6.54{col 55}{space 3}0.000{col 63}{space 4} -6.31378{col 76}{space 3}-3.402395
+{txt}{space 10}8: Rural 3  {c |}{col 23}{res}{space 2}  4.66904{col 35}{space 2} .6345208{col 46}{space 1}    7.36{col 55}{space 3}0.000{col 63}{space 4} 3.425026{col 76}{space 3} 5.913054
+{txt}{space 21} {c |}
+{space 16}_cons {c |}{col 23}{res}{space 2} 67.04646{col 35}{space 2} 2.632723{col 46}{space 1}   25.47{col 55}{space 3}0.000{col 63}{space 4} 61.88486{col 76}{space 3} 72.20806
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.txt""':seeout}
+
+{com}. outreg2 using "$tab\cs_overall", ct(Geo D)  excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_D==1
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       851
+{txt}{hline 13}{c +}{hline 34}   F(6, 844)       = {res}    18.67
+{txt}       Model {c |} {res} 32488.2079         6  5414.70132   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 244782.977       844  290.027224   {txt}R-squared       ={res}    0.1172
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.1109
+{txt}       Total {c |} {res} 277271.185       850  326.201394   {txt}Root MSE        =   {res}  17.03
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          cs_baseline{col 23}{c |} Coefficient{col 35}  Std. err.{col 47}      t{col 55}   P>|t|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}microtype_enc {c |}
+{space 2}2: Urban mixed-use  {c |}{col 23}{res}{space 2}-7.675388{col 35}{space 2} 12.29607{col 46}{space 1}   -0.62{col 55}{space 3}0.533{col 63}{space 4}-31.80985{col 76}{space 3} 16.45907
+{txt}{space 9}3: Suburban  {c |}{col 23}{res}{space 2} -3.57153{col 35}{space 2} 12.45488{col 46}{space 1}   -0.29{col 55}{space 3}0.774{col 63}{space 4}-28.01771{col 76}{space 3} 20.87465
+{txt}4: Rural town center  {c |}{col 23}{res}{space 2}-8.472979{col 35}{space 2} 12.25766{col 46}{space 1}   -0.69{col 55}{space 3}0.490{col 63}{space 4}-32.53205{col 76}{space 3} 15.58609
+{txt}5: Rural agriculture  {c |}{col 23}{res}{space 2}-10.99273{col 35}{space 2} 12.22021{col 46}{space 1}   -0.90{col 55}{space 3}0.369{col 63}{space 4} -34.9783{col 76}{space 3} 12.99285
+{txt}{space 21} {c |}
+{space 10}network_enc {c |}
+{space 10}7: Rural 2  {c |}{col 23}{res}{space 2}  -6.5437{col 35}{space 2} 2.189093{col 46}{space 1}   -2.99{col 55}{space 3}0.003{col 63}{space 4}-10.84041{col 76}{space 3}-2.246995
+{txt}{space 10}8: Rural 3  {c |}{col 23}{res}{space 2} 6.043571{col 35}{space 2} 2.216391{col 46}{space 1}    2.73{col 55}{space 3}0.007{col 63}{space 4} 1.693285{col 76}{space 3} 10.39386
+{txt}{space 21} {c |}
+{space 16}_cons {c |}{col 23}{res}{space 2} 64.53642{col 35}{space 2} 12.04216{col 46}{space 1}    5.36{col 55}{space 3}0.000{col 63}{space 4} 40.90032{col 76}{space 3} 88.17251
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\cs_overall.txt""':seeout}
+
+{com}. 
+. anova cs_baseline c.job_density c.pop_density
+
+                         {txt}Number of obs = {res}    72,575    {txt}R-squared     ={res}  0.2590
+                         {txt}Root MSE      =   {res} 11.3654    {txt}Adj R-squared ={res}  0.2590
+
+                  {txt}Source {c |} Partial SS         df         MS        F    Prob>F
+             {hline 12}{c +}{hline 52}
+                   Model {c |} {res} 3276545.7          2   1638272.8  12682.86  0.0000
+                         {txt}{c |}
+             job_density {c |} {res} 30150.551          1   30150.551    233.41  0.0000
+{txt}             pop_density {c |} {res} 2940417.7          1   2940417.7  22763.56  0.0000
+                         {txt}{c |}
+                Residual {c |} {res} 9374281.3     72,572   129.17215  
+             {txt}{hline 12}{c +}{hline 52}
+                   Total {c |} {res}  12650827     72,574   174.31624  
+{txt}
+{com}. estat esize
+{res}
+{txt}Effect sizes for linear models
+
+{res}{col 1}{text}{hline 20}{c TT}{hline 13}{hline 7}{hline 12}{hline 12}
+{col 1}{text}             Source{col 21}{c |} Eta-squared{col 35}    df{col 42}    [95% conf. interval]
+{res}{col 1}{text}{hline 20}{c +}{hline 13}{hline 7}{hline 12}{hline 12}
+{space 14}Model {col 21}{text}{c |}{result}{space 2} .2589985{col 35}{space 1}    2{col 42}{space 3}        .{col 54}{space 3}        .
+{col 21}{text}{c |}
+{res}{txt}{space 8}job_density {col 21}{text}{c |}{result}{space 2}  .003206{col 35}{space 1}    1{col 42}{space 3} .0024374{col 54}{space 3} .0040784
+{txt}{space 8}pop_density {col 21}{text}{c |}{result}{space 2}  .238773{col 35}{space 1}    1{col 42}{space 3}        .{col 54}{space 3}        .
+{col 1}{text}{hline 20}{c BT}{hline 13}{hline 7}{hline 12}{hline 12}
+{res}{txt}{p 0 6 2}
+Note: Eta-squared values for individual model terms are partial.
+{p_end}
+{res}{txt}
+{com}. 
+. anova cs_baseline i.microtype_enc i.network_enc if geo_A==1
+
+                         {txt}Number of obs = {res}    46,578    {txt}R-squared     ={res}  0.3857
+                         {txt}Root MSE      =   {res} 8.55562    {txt}Adj R-squared ={res}  0.3856
+
+                  {txt}Source {c |} Partial SS         df         MS        F    Prob>F
+             {hline 12}{c +}{hline 52}
+                   Model {c |} {res} 2140209.2          8   267526.15   3654.80  0.0000
+                         {txt}{c |}
+             microtype~c {c |} {res} 701861.61          4    175465.4   2397.11  0.0000
+{txt}             network_enc {c |} {res} 259226.88          4   64806.721    885.35  0.0000
+                         {txt}{c |}
+                Residual {c |} {res} 3408786.9     46,569   73.198628  
+             {txt}{hline 12}{c +}{hline 52}
+                   Total {c |} {res} 5548996.1     46,577   119.13597  
+{txt}
+{com}. estat esize
+{res}
+{txt}Effect sizes for linear models
+
+{res}{col 1}{text}{hline 20}{c TT}{hline 13}{hline 7}{hline 12}{hline 12}
+{col 1}{text}             Source{col 21}{c |} Eta-squared{col 35}    df{col 42}    [95% conf. interval]
+{res}{col 1}{text}{hline 20}{c +}{hline 13}{hline 7}{hline 12}{hline 12}
+{space 14}Model {col 21}{text}{c |}{result}{space 2}  .385693{col 35}{space 1}    8{col 42}{space 3}        .{col 54}{space 3}        .
+{col 21}{text}{c |}
+{res}{txt}{space 6}microtype_enc {col 21}{text}{c |}{result}{space 2} .1707423{col 35}{space 1}    4{col 42}{space 3} .1647494{col 54}{space 3} .1766531
+{txt}{space 8}network_enc {col 21}{text}{c |}{result}{space 2} .0706723{col 35}{space 1}    4{col 42}{space 3} .0662557{col 54}{space 3} .0750683
+{col 1}{text}{hline 20}{c BT}{hline 13}{hline 7}{hline 12}{hline 12}
+{res}{txt}{p 0 6 2}
+Note: Eta-squared values for individual model terms are partial.
+{p_end}
+{res}{txt}
+{com}. anova cs_baseline i.microtype_enc i.network_enc if geo_B==1
+
+                         {txt}Number of obs = {res}    21,619    {txt}R-squared     ={res}  0.1252
+                         {txt}Root MSE      =   {res} 10.2407    {txt}Adj R-squared ={res}  0.1249
+
+                  {txt}Source {c |} Partial SS         df         MS        F    Prob>F
+             {hline 12}{c +}{hline 52}
+                   Model {c |} {res} 324482.06          8   40560.258    386.76  0.0000
+                         {txt}{c |}
+             microtype~c {c |} {res} 198054.88          4   49513.721    472.14  0.0000
+{txt}             network_enc {c |} {res} 10046.545          4   2511.6362     23.95  0.0000
+                         {txt}{c |}
+                Residual {c |} {res} 2266265.6     21,610   104.87115  
+             {txt}{hline 12}{c +}{hline 52}
+                   Total {c |} {res} 2590747.7     21,618   119.84215  
+{txt}
+{com}. estat esize
+{res}
+{txt}Effect sizes for linear models
+
+{res}{col 1}{text}{hline 20}{c TT}{hline 13}{hline 7}{hline 12}{hline 12}
+{col 1}{text}             Source{col 21}{c |} Eta-squared{col 35}    df{col 42}    [95% conf. interval]
+{res}{col 1}{text}{hline 20}{c +}{hline 13}{hline 7}{hline 12}{hline 12}
+{space 14}Model {col 21}{text}{c |}{result}{space 2} .1252465{col 35}{space 1}    8{col 42}{space 3} .1170354{col 54}{space 3} .1330117
+{col 21}{text}{c |}
+{res}{txt}{space 6}microtype_enc {col 21}{text}{c |}{result}{space 2}  .080369{col 35}{space 1}    4{col 42}{space 3} .0735327{col 54}{space 3} .0871461
+{txt}{space 8}network_enc {col 21}{text}{c |}{result}{space 2} .0044135{col 35}{space 1}    4{col 42}{space 3} .0027017{col 54}{space 3} .0061963
+{col 1}{text}{hline 20}{c BT}{hline 13}{hline 7}{hline 12}{hline 12}
+{res}{txt}{p 0 6 2}
+Note: Eta-squared values for individual model terms are partial.
+{p_end}
+{res}{txt}
+{com}. anova cs_baseline i.microtype_enc i.network_enc if geo_C==1 
+
+                         {txt}Number of obs = {res}     4,008    {txt}R-squared     ={res}  0.1390
+                         {txt}Root MSE      =   {res} 13.4035    {txt}Adj R-squared ={res}  0.1377
+
+                  {txt}Source {c |} Partial SS         df         MS        F    Prob>F
+             {hline 12}{c +}{hline 52}
+                   Model {c |} {res} 116062.32          6    19343.72    107.67  0.0000
+                         {txt}{c |}
+             microtype~c {c |} {res} 27326.392          4    6831.598     38.03  0.0000
+{txt}             network_enc {c |} {res} 61049.355          2   30524.678    169.91  0.0000
+                         {txt}{c |}
+                Residual {c |} {res} 718797.62      4,001   179.65449  
+             {txt}{hline 12}{c +}{hline 52}
+                   Total {c |} {res} 834859.95      4,007   208.35037  
+{txt}
+{com}. estat esize
+{res}
+{txt}Effect sizes for linear models
+
+{res}{col 1}{text}{hline 20}{c TT}{hline 13}{hline 7}{hline 12}{hline 12}
+{col 1}{text}             Source{col 21}{c |} Eta-squared{col 35}    df{col 42}    [95% conf. interval]
+{res}{col 1}{text}{hline 20}{c +}{hline 13}{hline 7}{hline 12}{hline 12}
+{space 14}Model {col 21}{text}{c |}{result}{space 2} .1390201{col 35}{space 1}    6{col 42}{space 3} .1190679{col 54}{space 3}  .157363
+{col 21}{text}{c |}
+{res}{txt}{space 6}microtype_enc {col 21}{text}{c |}{result}{space 2} .0366245{col 35}{space 1}    4{col 42}{space 3} .0254107{col 54}{space 3} .0479071
+{txt}{space 8}network_enc {col 21}{text}{c |}{result}{space 2} .0782838{col 35}{space 1}    2{col 42}{space 3} .0629663{col 54}{space 3} .0942206
+{col 1}{text}{hline 20}{c BT}{hline 13}{hline 7}{hline 12}{hline 12}
+{res}{txt}{p 0 6 2}
+Note: Eta-squared values for individual model terms are partial.
+{p_end}
+{res}{txt}
+{com}. anova cs_baseline i.microtype_enc i.network_enc if geo_D==1
+
+                         {txt}Number of obs = {res}       851    {txt}R-squared     ={res}  0.1172
+                         {txt}Root MSE      =   {res} 17.0302    {txt}Adj R-squared ={res}  0.1109
+
+                  {txt}Source {c |} Partial SS         df         MS        F    Prob>F
+             {hline 12}{c +}{hline 52}
+                   Model {c |} {res} 32488.208          6   5414.7013     18.67  0.0000
+                         {txt}{c |}
+             microtype~c {c |} {res} 2532.6784          4   633.16959      2.18  0.0691
+{txt}             network_enc {c |} {res} 26044.494          2   13022.247     44.90  0.0000
+                         {txt}{c |}
+                Residual {c |} {res} 244782.98        844   290.02722  
+             {txt}{hline 12}{c +}{hline 52}
+                   Total {c |} {res} 277271.19        850   326.20139  
+{txt}
+{com}. estat esize
+{res}
+{txt}Effect sizes for linear models
+
+{res}{col 1}{text}{hline 20}{c TT}{hline 13}{hline 7}{hline 12}{hline 12}
+{col 1}{text}             Source{col 21}{c |} Eta-squared{col 35}    df{col 42}    [95% conf. interval]
+{res}{col 1}{text}{hline 20}{c +}{hline 13}{hline 7}{hline 12}{hline 12}
+{space 14}Model {col 21}{text}{c |}{result}{space 2} .1171712{col 35}{space 1}    6{col 42}{space 3} .0746977{col 54}{space 3} .1527728
+{col 21}{text}{c |}
+{res}{txt}{space 6}microtype_enc {col 21}{text}{c |}{result}{space 2} .0102407{col 35}{space 1}    4{col 42}{space 3}        .{col 54}{space 3} .0233551
+{txt}{space 8}network_enc {col 21}{text}{c |}{result}{space 2} .0961664{col 35}{space 1}    2{col 42}{space 3} .0607592{col 54}{space 3} .1337788
+{col 1}{text}{hline 20}{c BT}{hline 13}{hline 7}{hline 12}{hline 12}
+{res}{txt}{p 0 6 2}
+Note: Eta-squared values for individual model terms are partial.
+{p_end}
+{res}{txt}
+{com}. 
+. /*Define panel data structure with units being counties, and tracts within counties as within-unit observations*/
+. xtset county_enc o_geoid
+{res}
+{col 1}{txt:Panel variable: }{res:county_enc}{txt: (unbalanced)}
+{p 1 16 2}{txt:Time variable: }{res:o_geoid}{txt:, }{res:{bind:1.001e+09}}{txt: to }{res:{bind:5.605e+10}}{txt:, but with gaps}{p_end}
+{txt}{col 10}Delta: {res}1 unit
+{txt}
+{com}. 
+. *Table 2 Regressions: Regression results for median household income
+. outreg2 using "$tab\hhmedianincome", excel replace: xtreg hhmedianincome ///
+> cs_baseline, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,061
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,142
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.0926{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.0144{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.0223{col 63}{txt}max{col 67}={col 69}{res}     2,307
+
+{txt}{col 49}F({res}1{txt}, {res}3141{txt}){col 67}={col 70}{res}   227.28
+{txt}corr(u_i, Xb) = {res}-0.8621{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 78:(Std. err. adjusted for {res:3,142} clusters in {res:county_enc})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}hhmedianin~e{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}cs_baseline {c |}{col 14}{res}{space 2}-2078.845{col 26}{space 2} 137.8929{col 37}{space 1}  -15.08{col 46}{space 3}0.000{col 54}{space 4}-2349.214{col 67}{space 3}-1808.476
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 216707.5{col 26}{space 2} 10282.02{col 37}{space 1}   21.08{col 46}{space 3}0.000{col 54}{space 4} 196547.4{col 67}{space 3} 236867.7
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res}  36148.89
+     {txt}sigma_e {c |} {res} 24393.196
+         {txt}rho {c |} {res} .68711888{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.txt""':seeout}
+
+{com}. outreg2 using "$tab\hhmedianincome", excel append: xtreg hhmedianincome ///
+> cs_baseline $socioec unemployment_rate, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.8889{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.9478{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.9192{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}11{txt}, {res}3139{txt}){col 67}={col 70}{res}  8849.46
+{txt}corr(u_i, Xb) = {res}0.1304{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 88:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}        hhmedianincome{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}cs_baseline {c |}{col 24}{res}{space 2}  29.6621{col 36}{space 2} 17.16319{col 47}{space 1}    1.73{col 56}{space 3}0.084{col 64}{space 4}-3.990105{col 77}{space 3} 63.31431
+{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2}-13777.26{col 36}{space 2}  1477.96{col 47}{space 1}   -9.32{col 56}{space 3}0.000{col 64}{space 4}-16675.12{col 77}{space 3}-10879.39
+{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2} 10975.81{col 36}{space 2}  1351.68{col 47}{space 1}    8.12{col 56}{space 3}0.000{col 64}{space 4} 8325.544{col 77}{space 3} 13626.07
+{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2}-2556.275{col 36}{space 2} 2059.667{col 47}{space 1}   -1.24{col 56}{space 3}0.215{col 64}{space 4}-6594.705{col 77}{space 3} 1482.155
+{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-9366.023{col 36}{space 2} 888.2836{col 47}{space 1}  -10.54{col 56}{space 3}0.000{col 64}{space 4} -11107.7{col 77}{space 3}-7624.348
+{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2}-28079.77{col 36}{space 2} 2600.617{col 47}{space 1}  -10.80{col 56}{space 3}0.000{col 64}{space 4}-33178.85{col 77}{space 3}-22980.69
+{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2}-15167.36{col 36}{space 2} 2916.212{col 47}{space 1}   -5.20{col 56}{space 3}0.000{col 64}{space 4}-20885.23{col 77}{space 3} -9449.48
+{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2}   133917{col 36}{space 2} 2837.489{col 47}{space 1}   47.20{col 56}{space 3}0.000{col 64}{space 4} 128353.5{col 77}{space 3} 139480.5
+{txt}{space 11}job_density {c |}{col 24}{res}{space 2} .0331707{col 36}{space 2} .0283386{col 47}{space 1}    1.17{col 56}{space 3}0.242{col 64}{space 4}-.0223933{col 77}{space 3} .0887346
+{txt}{space 11}pop_density {c |}{col 24}{res}{space 2}-.0574854{col 36}{space 2} .0417059{col 47}{space 1}   -1.38{col 56}{space 3}0.168{col 64}{space 4} -.139259{col 77}{space 3} .0242883
+{txt}{space 5}unemployment_rate {c |}{col 24}{res}{space 2} 133.0313{col 36}{space 2} 22.71178{col 47}{space 1}    5.86{col 56}{space 3}0.000{col 64}{space 4} 88.49989{col 77}{space 3} 177.5628
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2} 35533.27{col 36}{space 2} 2190.925{col 47}{space 1}   16.22{col 56}{space 3}0.000{col 64}{space 4} 31237.48{col 77}{space 3} 39829.06
+{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+               sigma_u {c |} {res} 3156.2373
+               {txt}sigma_e {c |} {res} 8535.1238
+                   {txt}rho {c |} {res} .12029723{txt}   (fraction of variance due to u_i)
+{hline 23}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.txt""':seeout}
+
+{com}. outreg2 using "$tab\hhmedianincome", excel append: xtreg hhmedianincome ///
+> cs_baseline ///
+> geo_B geo_C geo_D ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+> $socioec unemployment_rate, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.8891{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.9415{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.9183{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}26{txt}, {res}3139{txt}){col 67}={col 70}{res}  3979.59
+{txt}corr(u_i, Xb) = {res}0.1312{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 88:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}        hhmedianincome{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}cs_baseline {c |}{col 24}{res}{space 2} 82.14851{col 36}{space 2} 24.42748{col 47}{space 1}    3.36{col 56}{space 3}0.001{col 64}{space 4} 34.25306{col 77}{space 3}  130.044
+{txt}{space 17}geo_B {c |}{col 24}{res}{space 2} 647.9659{col 36}{space 2} 401.4197{col 47}{space 1}    1.61{col 56}{space 3}0.107{col 64}{space 4}-139.1057{col 77}{space 3} 1435.038
+{txt}{space 17}geo_C {c |}{col 24}{res}{space 2} 273.1692{col 36}{space 2} 584.5177{col 47}{space 1}    0.47{col 56}{space 3}0.640{col 64}{space 4}-872.9064{col 77}{space 3} 1419.245
+{txt}{space 17}geo_D {c |}{col 24}{res}{space 2}-277.6141{col 36}{space 2} 775.6282{col 47}{space 1}   -0.36{col 56}{space 3}0.720{col 64}{space 4}-1798.404{col 77}{space 3} 1243.176
+{txt}{space 12}network_U2 {c |}{col 24}{res}{space 2} 500.6925{col 36}{space 2} 225.4408{col 47}{space 1}    2.22{col 56}{space 3}0.026{col 64}{space 4} 58.66632{col 77}{space 3} 942.7188
+{txt}{space 12}network_U3 {c |}{col 24}{res}{space 2} 442.6921{col 36}{space 2} 235.1105{col 47}{space 1}    1.88{col 56}{space 3}0.060{col 64}{space 4}-18.29371{col 77}{space 3} 903.6779
+{txt}{space 12}network_U4 {c |}{col 24}{res}{space 2} 489.6297{col 36}{space 2} 241.6127{col 47}{space 1}    2.03{col 56}{space 3}0.043{col 64}{space 4} 15.89496{col 77}{space 3} 963.3645
+{txt}{space 12}network_U5 {c |}{col 24}{res}{space 2} 321.8343{col 36}{space 2}  322.037{col 47}{space 1}    1.00{col 56}{space 3}0.318{col 64}{space 4}-309.5901{col 77}{space 3} 953.2587
+{txt}{space 12}network_R1 {c |}{col 24}{res}{space 2} 453.6833{col 36}{space 2} 251.6917{col 47}{space 1}    1.80{col 56}{space 3}0.072{col 64}{space 4}-39.81351{col 77}{space 3} 947.1802
+{txt}{space 12}network_R2 {c |}{col 24}{res}{space 2} 545.7428{col 36}{space 2} 238.0679{col 47}{space 1}    2.29{col 56}{space 3}0.022{col 64}{space 4} 78.95818{col 77}{space 3} 1012.527
+{txt}{space 15}micro_2 {c |}{col 24}{res}{space 2} 425.8624{col 36}{space 2} 230.3852{col 47}{space 1}    1.85{col 56}{space 3}0.065{col 64}{space 4}-25.85833{col 77}{space 3} 877.5832
+{txt}{space 15}micro_3 {c |}{col 24}{res}{space 2} 531.1271{col 36}{space 2} 276.7015{col 47}{space 1}    1.92{col 56}{space 3}0.055{col 64}{space 4}-11.40704{col 77}{space 3} 1073.661
+{txt}{space 15}micro_4 {c |}{col 24}{res}{space 2} 64.62462{col 36}{space 2} 256.4929{col 47}{space 1}    0.25{col 56}{space 3}0.801{col 64}{space 4}-438.2861{col 77}{space 3} 567.5354
+{txt}{space 15}micro_5 {c |}{col 24}{res}{space 2} 182.5858{col 36}{space 2} 296.5048{col 47}{space 1}    0.62{col 56}{space 3}0.538{col 64}{space 4}-398.7771{col 77}{space 3} 763.9487
+{txt}{space 7}busavailability {c |}{col 24}{res}{space 2} 4680.183{col 36}{space 2} 1334.558{col 47}{space 1}    3.51{col 56}{space 3}0.000{col 64}{space 4} 2063.488{col 77}{space 3} 7296.877
+{txt}{space 6}busavailability2 {c |}{col 24}{res}{space 2}-7640.712{col 36}{space 2} 1846.634{col 47}{space 1}   -4.14{col 56}{space 3}0.000{col 64}{space 4}-11261.44{col 77}{space 3}-4019.979
+{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2} -13926.5{col 36}{space 2} 1476.889{col 47}{space 1}   -9.43{col 56}{space 3}0.000{col 64}{space 4}-16822.26{col 77}{space 3}-11030.73
+{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2} 10997.23{col 36}{space 2} 1370.917{col 47}{space 1}    8.02{col 56}{space 3}0.000{col 64}{space 4} 8309.248{col 77}{space 3} 13685.22
+{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2}-2959.959{col 36}{space 2} 1953.662{col 47}{space 1}   -1.52{col 56}{space 3}0.130{col 64}{space 4}-6790.544{col 77}{space 3} 870.6252
+{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-9450.283{col 36}{space 2} 879.2875{col 47}{space 1}  -10.75{col 56}{space 3}0.000{col 64}{space 4}-11174.32{col 77}{space 3}-7726.246
+{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2}-27882.91{col 36}{space 2} 2582.782{col 47}{space 1}  -10.80{col 56}{space 3}0.000{col 64}{space 4}-32947.02{col 77}{space 3} -22818.8
+{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2}-15329.17{col 36}{space 2} 2897.617{col 47}{space 1}   -5.29{col 56}{space 3}0.000{col 64}{space 4}-21010.58{col 77}{space 3}-9647.751
+{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2} 133590.8{col 36}{space 2} 2852.462{col 47}{space 1}   46.83{col 56}{space 3}0.000{col 64}{space 4} 127997.9{col 77}{space 3} 139183.7
+{txt}{space 11}job_density {c |}{col 24}{res}{space 2} .0358593{col 36}{space 2} .0273663{col 47}{space 1}    1.31{col 56}{space 3}0.190{col 64}{space 4}-.0177984{col 77}{space 3}  .089517
+{txt}{space 11}pop_density {c |}{col 24}{res}{space 2}-.0463982{col 36}{space 2} .0416396{col 47}{space 1}   -1.11{col 56}{space 3}0.265{col 64}{space 4}-.1280419{col 77}{space 3} .0352455
+{txt}{space 5}unemployment_rate {c |}{col 24}{res}{space 2} 131.7351{col 36}{space 2} 22.18263{col 47}{space 1}    5.94{col 56}{space 3}0.000{col 64}{space 4} 88.24113{col 77}{space 3}  175.229
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2} 31295.22{col 36}{space 2} 2833.252{col 47}{space 1}   11.05{col 56}{space 3}0.000{col 64}{space 4} 25740.01{col 77}{space 3} 36850.43
+{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+               sigma_u {c |} {res} 3350.7989
+               {txt}sigma_e {c |} {res} 8529.4232
+                   {txt}rho {c |} {res} .13369848{txt}   (fraction of variance due to u_i)
+{hline 23}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.txt""':seeout}
+
+{com}. 
+. outreg2 using "$tab\hhmedianincome", excel append: xtreg hhmedianincome ///
+> geo_B geo_C geo_D c.geo_A#c.cs_baseline c.geo_B#c.cs_baseline c.geo_C#c.cs_baseline c.geo_D#c.cs_baseline ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+> $socioec  unemployment_rate, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.8892{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.9364{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.9176{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}29{txt}, {res}3139{txt}){col 67}={col 70}{res}  3747.26
+{txt}corr(u_i, Xb) = {res}0.1446{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 88:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}        hhmedianincome{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}geo_B {c |}{col 24}{res}{space 2}-6762.987{col 36}{space 2} 2009.765{col 47}{space 1}   -3.37{col 56}{space 3}0.001{col 64}{space 4}-10703.57{col 77}{space 3}  -2822.4
+{txt}{space 17}geo_C {c |}{col 24}{res}{space 2}-2555.317{col 36}{space 2} 2425.525{col 47}{space 1}   -1.05{col 56}{space 3}0.292{col 64}{space 4}-7311.091{col 77}{space 3} 2200.458
+{txt}{space 17}geo_D {c |}{col 24}{res}{space 2}-6982.976{col 36}{space 2} 2357.552{col 47}{space 1}   -2.96{col 56}{space 3}0.003{col 64}{space 4}-11605.47{col 77}{space 3}-2360.477
+{txt}{space 22} {c |}
+{space 1}c.geo_A#c.cs_baseline {c |}{col 24}{res}{space 2} 26.97779{col 36}{space 2}  36.8292{col 47}{space 1}    0.73{col 56}{space 3}0.464{col 64}{space 4}-45.23396{col 77}{space 3} 99.18954
+{txt}{space 22} {c |}
+{space 1}c.geo_B#c.cs_baseline {c |}{col 24}{res}{space 2} 133.1285{col 36}{space 2} 22.42296{col 47}{space 1}    5.94{col 56}{space 3}0.000{col 64}{space 4} 89.16336{col 77}{space 3} 177.0937
+{txt}{space 22} {c |}
+{space 1}c.geo_C#c.cs_baseline {c |}{col 24}{res}{space 2} 58.01616{col 36}{space 2} 23.19972{col 47}{space 1}    2.50{col 56}{space 3}0.012{col 64}{space 4} 12.52801{col 77}{space 3} 103.5043
+{txt}{space 22} {c |}
+{space 1}c.geo_D#c.cs_baseline {c |}{col 24}{res}{space 2} 122.3719{col 36}{space 2} 28.70869{col 47}{space 1}    4.26{col 56}{space 3}0.000{col 64}{space 4} 66.08216{col 77}{space 3} 178.6616
+{txt}{space 22} {c |}
+{space 12}network_U2 {c |}{col 24}{res}{space 2} 489.9034{col 36}{space 2} 223.7478{col 47}{space 1}    2.19{col 56}{space 3}0.029{col 64}{space 4} 51.19656{col 77}{space 3} 928.6103
+{txt}{space 12}network_U3 {c |}{col 24}{res}{space 2} 432.6173{col 36}{space 2} 233.6352{col 47}{space 1}    1.85{col 56}{space 3}0.064{col 64}{space 4}-25.47582{col 77}{space 3} 890.7105
+{txt}{space 12}network_U4 {c |}{col 24}{res}{space 2} 469.5226{col 36}{space 2} 239.6819{col 47}{space 1}    1.96{col 56}{space 3}0.050{col 64}{space 4}-.4264422{col 77}{space 3} 939.4717
+{txt}{space 12}network_U5 {c |}{col 24}{res}{space 2} 353.6938{col 36}{space 2} 320.5724{col 47}{space 1}    1.10{col 56}{space 3}0.270{col 64}{space 4} -274.859{col 77}{space 3} 982.2465
+{txt}{space 12}network_R1 {c |}{col 24}{res}{space 2}  419.862{col 36}{space 2} 252.4503{col 47}{space 1}    1.66{col 56}{space 3}0.096{col 64}{space 4}-75.12235{col 77}{space 3} 914.8464
+{txt}{space 12}network_R2 {c |}{col 24}{res}{space 2} 449.5225{col 36}{space 2}  240.293{col 47}{space 1}    1.87{col 56}{space 3}0.061{col 64}{space 4}-21.62472{col 77}{space 3} 920.6698
+{txt}{space 15}micro_2 {c |}{col 24}{res}{space 2} 284.0243{col 36}{space 2} 249.2238{col 47}{space 1}    1.14{col 56}{space 3}0.255{col 64}{space 4}-204.6337{col 77}{space 3} 772.6823
+{txt}{space 15}micro_3 {c |}{col 24}{res}{space 2} 308.8518{col 36}{space 2} 306.4317{col 47}{space 1}    1.01{col 56}{space 3}0.314{col 64}{space 4}-291.9751{col 77}{space 3} 909.6786
+{txt}{space 15}micro_4 {c |}{col 24}{res}{space 2}-89.29128{col 36}{space 2} 278.9926{col 47}{space 1}   -0.32{col 56}{space 3}0.749{col 64}{space 4}-636.3177{col 77}{space 3} 457.7352
+{txt}{space 15}micro_5 {c |}{col 24}{res}{space 2} 83.64046{col 36}{space 2} 312.9084{col 47}{space 1}    0.27{col 56}{space 3}0.789{col 64}{space 4}-529.8853{col 77}{space 3} 697.1662
+{txt}{space 7}busavailability {c |}{col 24}{res}{space 2} 4824.304{col 36}{space 2} 1333.504{col 47}{space 1}    3.62{col 56}{space 3}0.000{col 64}{space 4} 2209.676{col 77}{space 3} 7438.933
+{txt}{space 6}busavailability2 {c |}{col 24}{res}{space 2}-7783.177{col 36}{space 2} 1838.476{col 47}{space 1}   -4.23{col 56}{space 3}0.000{col 64}{space 4}-11387.91{col 77}{space 3}-4178.439
+{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2} -13892.7{col 36}{space 2} 1467.287{col 47}{space 1}   -9.47{col 56}{space 3}0.000{col 64}{space 4}-16769.63{col 77}{space 3}-11015.76
+{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2} 11022.35{col 36}{space 2} 1373.445{col 47}{space 1}    8.03{col 56}{space 3}0.000{col 64}{space 4} 8329.408{col 77}{space 3} 13715.29
+{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2}-2294.598{col 36}{space 2} 1966.512{col 47}{space 1}   -1.17{col 56}{space 3}0.243{col 64}{space 4}-6150.377{col 77}{space 3} 1561.181
+{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-9475.179{col 36}{space 2} 878.8741{col 47}{space 1}  -10.78{col 56}{space 3}0.000{col 64}{space 4} -11198.4{col 77}{space 3}-7751.953
+{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2}-28313.83{col 36}{space 2} 2606.569{col 47}{space 1}  -10.86{col 56}{space 3}0.000{col 64}{space 4}-33424.59{col 77}{space 3}-23203.08
+{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2} -15362.5{col 36}{space 2} 2899.768{col 47}{space 1}   -5.30{col 56}{space 3}0.000{col 64}{space 4}-21048.13{col 77}{space 3} -9676.87
+{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2} 133460.5{col 36}{space 2} 2852.987{col 47}{space 1}   46.78{col 56}{space 3}0.000{col 64}{space 4} 127866.6{col 77}{space 3} 139054.4
+{txt}{space 11}job_density {c |}{col 24}{res}{space 2}  .036103{col 36}{space 2} .0273383{col 47}{space 1}    1.32{col 56}{space 3}0.187{col 64}{space 4}-.0174998{col 77}{space 3} .0897058
+{txt}{space 11}pop_density {c |}{col 24}{res}{space 2} -.042282{col 36}{space 2} .0412775{col 47}{space 1}   -1.02{col 56}{space 3}0.306{col 64}{space 4}-.1232156{col 77}{space 3} .0386515
+{txt}{space 5}unemployment_rate {c |}{col 24}{res}{space 2} 132.2418{col 36}{space 2} 22.21601{col 47}{space 1}    5.95{col 56}{space 3}0.000{col 64}{space 4} 88.68241{col 77}{space 3} 175.8012
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2}  35697.5{col 36}{space 2} 3653.338{col 47}{space 1}    9.77{col 56}{space 3}0.000{col 64}{space 4} 28534.33{col 77}{space 3} 42860.67
+{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+               sigma_u {c |} {res} 3501.6241
+               {txt}sigma_e {c |} {res}  8527.643
+                   {txt}rho {c |} {res} .14428187{txt}   (fraction of variance due to u_i)
+{hline 23}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.txt""':seeout}
+
+{com}. 
+. outreg2 using "$tab\hhmedianincome", excel append: xtreg hhmedianincome ///
+> micro_2 micro_3 micro_4 micro_5 c.micro_1#c.cs_baseline c.micro_2#c.cs_baseline c.micro_3#c.cs_baseline c.micro_4#c.cs_baseline c.micro_5#c.cs_baseline ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> geo_B geo_C geo_D busavailability busavailability2 ///
+> $socioec unemployment_rate, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.8893{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.9431{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.9184{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}30{txt}, {res}3139{txt}){col 67}={col 70}{res}  3601.32
+{txt}corr(u_i, Xb) = {res}0.1405{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 89:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 25}{c |}{col 37}    Robust
+{col 1}         hhmedianincome{col 25}{c |} Coefficient{col 37}  std. err.{col 49}      t{col 57}   P>|t|{col 65}     [95% con{col 78}f. interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 16}micro_2 {c |}{col 25}{res}{space 2}-5752.934{col 37}{space 2} 1400.312{col 48}{space 1}   -4.11{col 57}{space 3}0.000{col 65}{space 4}-8498.553{col 78}{space 3}-3007.314
+{txt}{space 16}micro_3 {c |}{col 25}{res}{space 2}-8655.486{col 37}{space 2} 1523.234{col 48}{space 1}   -5.68{col 57}{space 3}0.000{col 65}{space 4}-11642.12{col 78}{space 3}-5668.851
+{txt}{space 16}micro_4 {c |}{col 25}{res}{space 2}-4579.629{col 37}{space 2} 1600.763{col 48}{space 1}   -2.86{col 57}{space 3}0.004{col 65}{space 4}-7718.278{col 78}{space 3} -1440.98
+{txt}{space 16}micro_5 {c |}{col 25}{res}{space 2} -5478.48{col 37}{space 2} 1489.499{col 48}{space 1}   -3.68{col 57}{space 3}0.000{col 65}{space 4}-8398.971{col 78}{space 3} -2557.99
+{txt}{space 23} {c |}
+c.micro_1#c.cs_baseline {c |}{col 25}{res}{space 2} 2.254144{col 37}{space 2} 31.16571{col 48}{space 1}    0.07{col 57}{space 3}0.942{col 65}{space 4}-58.85309{col 78}{space 3} 63.36138
+{txt}{space 23} {c |}
+c.micro_2#c.cs_baseline {c |}{col 25}{res}{space 2} 77.29556{col 37}{space 2} 26.16974{col 48}{space 1}    2.95{col 57}{space 3}0.003{col 65}{space 4} 25.98403{col 78}{space 3} 128.6071
+{txt}{space 23} {c |}
+c.micro_3#c.cs_baseline {c |}{col 25}{res}{space 2} 118.7617{col 37}{space 2} 28.95987{col 48}{space 1}    4.10{col 57}{space 3}0.000{col 65}{space 4} 61.97946{col 78}{space 3} 175.5439
+{txt}{space 23} {c |}
+c.micro_4#c.cs_baseline {c |}{col 25}{res}{space 2} 54.58796{col 37}{space 2} 26.43279{col 48}{space 1}    2.07{col 57}{space 3}0.039{col 65}{space 4} 2.760663{col 78}{space 3} 106.4153
+{txt}{space 23} {c |}
+c.micro_5#c.cs_baseline {c |}{col 25}{res}{space 2} 67.63653{col 37}{space 2}  23.3741{col 48}{space 1}    2.89{col 57}{space 3}0.004{col 65}{space 4} 21.80646{col 78}{space 3} 113.4666
+{txt}{space 23} {c |}
+{space 13}network_U2 {c |}{col 25}{res}{space 2} 439.7419{col 37}{space 2} 217.6806{col 48}{space 1}    2.02{col 57}{space 3}0.043{col 65}{space 4} 12.93109{col 78}{space 3} 866.5526
+{txt}{space 13}network_U3 {c |}{col 25}{res}{space 2}  375.441{col 37}{space 2} 227.2457{col 48}{space 1}    1.65{col 57}{space 3}0.099{col 65}{space 4}-70.12421{col 78}{space 3} 821.0062
+{txt}{space 13}network_U4 {c |}{col 25}{res}{space 2}  428.036{col 37}{space 2} 233.7478{col 48}{space 1}    1.83{col 57}{space 3}0.067{col 65}{space 4}-30.27794{col 78}{space 3} 886.3499
+{txt}{space 13}network_U5 {c |}{col 25}{res}{space 2} 393.2855{col 37}{space 2}  319.714{col 48}{space 1}    1.23{col 57}{space 3}0.219{col 65}{space 4}-233.5842{col 78}{space 3} 1020.155
+{txt}{space 13}network_R1 {c |}{col 25}{res}{space 2} 326.9809{col 37}{space 2} 252.9005{col 48}{space 1}    1.29{col 57}{space 3}0.196{col 65}{space 4}-168.8862{col 78}{space 3} 822.8481
+{txt}{space 13}network_R2 {c |}{col 25}{res}{space 2} 561.7776{col 37}{space 2} 239.4113{col 48}{space 1}    2.35{col 57}{space 3}0.019{col 65}{space 4} 92.35913{col 78}{space 3} 1031.196
+{txt}{space 18}geo_B {c |}{col 25}{res}{space 2} 669.2247{col 37}{space 2} 404.6347{col 48}{space 1}    1.65{col 57}{space 3}0.098{col 65}{space 4}-124.1507{col 78}{space 3}   1462.6
+{txt}{space 18}geo_C {c |}{col 25}{res}{space 2} 370.8412{col 37}{space 2}  584.653{col 48}{space 1}    0.63{col 57}{space 3}0.526{col 65}{space 4}-775.4996{col 78}{space 3} 1517.182
+{txt}{space 18}geo_D {c |}{col 25}{res}{space 2}-310.0871{col 37}{space 2} 776.4755{col 48}{space 1}   -0.40{col 57}{space 3}0.690{col 65}{space 4}-1832.538{col 78}{space 3} 1212.364
+{txt}{space 8}busavailability {c |}{col 25}{res}{space 2}  4337.04{col 37}{space 2}  1325.09{col 48}{space 1}    3.27{col 57}{space 3}0.001{col 65}{space 4}  1738.91{col 78}{space 3} 6935.171
+{txt}{space 7}busavailability2 {c |}{col 25}{res}{space 2}-7218.336{col 37}{space 2} 1824.759{col 48}{space 1}   -3.96{col 57}{space 3}0.000{col 65}{space 4}-10796.18{col 78}{space 3}-3640.495
+{txt}{space 6}frac_age_above_65 {c |}{col 25}{res}{space 2}-13983.81{col 37}{space 2} 1487.474{col 48}{space 1}   -9.40{col 57}{space 3}0.000{col 65}{space 4}-16900.34{col 78}{space 3}-11067.29
+{txt}{space 11}edu_above_bs {c |}{col 25}{res}{space 2} 10774.09{col 37}{space 2} 1356.873{col 48}{space 1}    7.94{col 57}{space 3}0.000{col 65}{space 4} 8113.641{col 78}{space 3} 13434.54
+{txt}{space 9}frac_hh_no_veh {c |}{col 25}{res}{space 2}-2039.159{col 37}{space 2} 1955.651{col 48}{space 1}   -1.04{col 57}{space 3}0.297{col 65}{space 4}-5873.643{col 78}{space 3} 1795.325
+{txt}{space 5}frac_tenure_renter {c |}{col 25}{res}{space 2}-9466.271{col 37}{space 2} 879.2016{col 48}{space 1}  -10.77{col 57}{space 3}0.000{col 65}{space 4}-11190.14{col 78}{space 3}-7742.403
+{txt}{space 5}frac_below_poverty {c |}{col 25}{res}{space 2}-28515.83{col 37}{space 2} 2594.163{col 48}{space 1}  -10.99{col 57}{space 3}0.000{col 65}{space 4}-33602.26{col 78}{space 3} -23429.4
+{txt}{space 2}frac_hh_inc_below_40k {c |}{col 25}{res}{space 2}-15564.18{col 37}{space 2} 2884.207{col 48}{space 1}   -5.40{col 57}{space 3}0.000{col 65}{space 4}-21219.31{col 78}{space 3}-9909.062
+{txt}{space 1}frac_hh_inc_above_100k {c |}{col 25}{res}{space 2} 133552.1{col 37}{space 2} 2853.864{col 48}{space 1}   46.80{col 57}{space 3}0.000{col 65}{space 4} 127956.4{col 78}{space 3} 139147.7
+{txt}{space 12}job_density {c |}{col 25}{res}{space 2} .0374188{col 37}{space 2} .0277647{col 48}{space 1}    1.35{col 57}{space 3}0.178{col 65}{space 4}  -.01702{col 78}{space 3} .0918576
+{txt}{space 12}pop_density {c |}{col 25}{res}{space 2}-.0308585{col 37}{space 2} .0416485{col 48}{space 1}   -0.74{col 57}{space 3}0.459{col 65}{space 4}-.1125196{col 78}{space 3} .0508026
+{txt}{space 6}unemployment_rate {c |}{col 25}{res}{space 2} 131.7552{col 37}{space 2} 22.10526{col 48}{space 1}    5.96{col 57}{space 3}0.000{col 65}{space 4} 88.41293{col 78}{space 3} 175.0974
+{txt}{space 18}_cons {c |}{col 25}{res}{space 2}  38031.7{col 37}{space 2} 3175.106{col 48}{space 1}   11.98{col 57}{space 3}0.000{col 65}{space 4} 31806.21{col 78}{space 3} 44257.19
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+                sigma_u {c |} {res} 3303.3894
+                {txt}sigma_e {c |} {res} 8521.7738
+                    {txt}rho {c |} {res} .13063556{txt}   (fraction of variance due to u_i)
+{hline 24}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome.txt""':seeout}
+
+{com}. 
+. 
+. replace hhmedianincome=hhmedianincome/1000
+{txt}variable {bf}{res}hhmedianincome{sf}{txt} was {bf}{res}long{sf}{txt} now {bf}{res}double{sf}
+{txt}(72,061 real changes made)
+
+{com}. replace pop_density=pop_density/1000
+{txt}(72,417 real changes made)
+
+{com}. replace job_density=job_density/1000
+{txt}(72,575 real changes made)
+
+{com}. 
+. *Table 2 Regressions: Regression results for unemployment rate
+. outreg2 using "$tab\unemployment_rate", excel replace: xtreg unemployment_rate ///
+> cs_baseline, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,418
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,142
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.0439{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.0146{col 63}{txt}avg{col 67}={col 69}{res}      23.0
+{txt}     Overall = {res}0.0313{col 63}{txt}max{col 67}={col 69}{res}     2,326
+
+{txt}{col 49}F({res}1{txt}, {res}3141{txt}){col 67}={col 70}{res}   255.74
+{txt}corr(u_i, Xb) = {res}-0.7487{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 78:(Std. err. adjusted for {res:3,142} clusters in {res:county_enc})}
+{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}unemployme~e{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}cs_baseline {c |}{col 14}{res}{space 2} .1418249{col 26}{space 2} .0088685{col 37}{space 1}   15.99{col 46}{space 3}0.000{col 54}{space 4} .1244363{col 67}{space 3} .1592136
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -6.28882{col 26}{space 2} .6612627{col 37}{space 1}   -9.51{col 46}{space 3}0.000{col 54}{space 4}-7.585371{col 67}{space 3} -4.99227
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res} 2.5592987
+     {txt}sigma_e {c |} {res} 2.4887471
+         {txt}rho {c |} {res} .51397329{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.txt""':seeout}
+
+{com}. outreg2 using "$tab\unemployment_rate", excel append: xtreg unemployment_rate ///
+> cs_baseline $socioec hhmedianincome, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.3157{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.2178{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.3044{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}11{txt}, {res}3139{txt}){col 67}={col 70}{res}   205.77
+{txt}corr(u_i, Xb) = {res}-0.0840{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 88:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}     unemployment_rate{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}cs_baseline {c |}{col 24}{res}{space 2} .0127175{col 36}{space 2} .0037458{col 47}{space 1}    3.40{col 56}{space 3}0.001{col 64}{space 4} .0053731{col 77}{space 3} .0200619
+{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2}-6.860155{col 36}{space 2} .2858496{col 47}{space 1}  -24.00{col 56}{space 3}0.000{col 64}{space 4}-7.420626{col 77}{space 3}-6.299684
+{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2}-2.678057{col 36}{space 2} .2324876{col 47}{space 1}  -11.52{col 56}{space 3}0.000{col 64}{space 4}-3.133901{col 77}{space 3}-2.222214
+{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2} 3.216819{col 36}{space 2} .6807272{col 47}{space 1}    4.73{col 56}{space 3}0.000{col 64}{space 4} 1.882104{col 77}{space 3} 4.551535
+{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-1.397774{col 36}{space 2}  .172498{col 47}{space 1}   -8.10{col 56}{space 3}0.000{col 64}{space 4}-1.735994{col 77}{space 3}-1.059554
+{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2} 6.244553{col 36}{space 2} 1.021295{col 47}{space 1}    6.11{col 56}{space 3}0.000{col 64}{space 4}  4.24208{col 77}{space 3} 8.247027
+{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2} 5.176331{col 36}{space 2} .4199192{col 47}{space 1}   12.33{col 56}{space 3}0.000{col 64}{space 4} 4.352987{col 77}{space 3} 5.999675
+{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2}-.9519081{col 36}{space 2} .2574079{col 47}{space 1}   -3.70{col 56}{space 3}0.000{col 64}{space 4}-1.456613{col 77}{space 3}-.4472033
+{txt}{space 11}job_density {c |}{col 24}{res}{space 2}-.0147511{col 36}{space 2} .0057014{col 47}{space 1}   -2.59{col 56}{space 3}0.010{col 64}{space 4}  -.02593{col 77}{space 3}-.0035722
+{txt}{space 11}pop_density {c |}{col 24}{res}{space 2}-.0399742{col 36}{space 2} .0126864{col 47}{space 1}   -3.15{col 56}{space 3}0.002{col 64}{space 4}-.0648487{col 77}{space 3}-.0150997
+{txt}{space 8}hhmedianincome {c |}{col 24}{res}{space 2} .0078312{col 36}{space 2} .0015227{col 47}{space 1}    5.14{col 56}{space 3}0.000{col 64}{space 4} .0048456{col 77}{space 3} .0108169
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2} 2.987011{col 36}{space 2}  .330603{col 47}{space 1}    9.04{col 56}{space 3}0.000{col 64}{space 4} 2.338791{col 77}{space 3} 3.635231
+{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+               sigma_u {c |} {res} 1.4241438
+               {txt}sigma_e {c |} {res}  2.070845
+                   {txt}rho {c |} {res} .32108897{txt}   (fraction of variance due to u_i)
+{hline 23}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.txt""':seeout}
+
+{com}. outreg2 using "$tab\unemployment_rate", excel append: xtreg unemployment_rate ///
+> cs_baseline ///
+> geo_B geo_C geo_D ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+>  $socioec hhmedianincome, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.3170{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.1807{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.2811{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}26{txt}, {res}3139{txt}){col 67}={col 70}{res}   113.39
+{txt}corr(u_i, Xb) = {res}-0.1602{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 88:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}     unemployment_rate{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}cs_baseline {c |}{col 24}{res}{space 2}-.0031161{col 36}{space 2} .0062158{col 47}{space 1}   -0.50{col 56}{space 3}0.616{col 64}{space 4}-.0153036{col 77}{space 3} .0090714
+{txt}{space 17}geo_B {c |}{col 24}{res}{space 2} .1939279{col 36}{space 2} .1480855{col 47}{space 1}    1.31{col 56}{space 3}0.190{col 64}{space 4}-.0964262{col 77}{space 3}  .484282
+{txt}{space 17}geo_C {c |}{col 24}{res}{space 2} .1792552{col 36}{space 2} .1897342{col 47}{space 1}    0.94{col 56}{space 3}0.345{col 64}{space 4}-.1927604{col 77}{space 3} .5512709
+{txt}{space 17}geo_D {c |}{col 24}{res}{space 2} .5962627{col 36}{space 2} .2533766{col 47}{space 1}    2.35{col 56}{space 3}0.019{col 64}{space 4} .0994622{col 77}{space 3} 1.093063
+{txt}{space 12}network_U2 {c |}{col 24}{res}{space 2}-.0465528{col 36}{space 2} .0530491{col 47}{space 1}   -0.88{col 56}{space 3}0.380{col 64}{space 4}-.1505673{col 77}{space 3} .0574618
+{txt}{space 12}network_U3 {c |}{col 24}{res}{space 2}-.0261062{col 36}{space 2} .0577647{col 47}{space 1}   -0.45{col 56}{space 3}0.651{col 64}{space 4}-.1393667{col 77}{space 3} .0871543
+{txt}{space 12}network_U4 {c |}{col 24}{res}{space 2}  .053484{col 36}{space 2}  .054831{col 47}{space 1}    0.98{col 56}{space 3}0.329{col 64}{space 4}-.0540242{col 77}{space 3} .1609921
+{txt}{space 12}network_U5 {c |}{col 24}{res}{space 2}-.0843688{col 36}{space 2} .0560337{col 47}{space 1}   -1.51{col 56}{space 3}0.132{col 64}{space 4}-.1942352{col 77}{space 3} .0254977
+{txt}{space 12}network_R1 {c |}{col 24}{res}{space 2} -.036238{col 36}{space 2}  .087382{col 47}{space 1}   -0.41{col 56}{space 3}0.678{col 64}{space 4}-.2075697{col 77}{space 3} .1350937
+{txt}{space 12}network_R2 {c |}{col 24}{res}{space 2} -.033552{col 36}{space 2} .0874943{col 47}{space 1}   -0.38{col 56}{space 3}0.701{col 64}{space 4}-.2051037{col 77}{space 3} .1379998
+{txt}{space 15}micro_2 {c |}{col 24}{res}{space 2}-.1416624{col 36}{space 2} .0518142{col 47}{space 1}   -2.73{col 56}{space 3}0.006{col 64}{space 4}-.2432556{col 77}{space 3}-.0400693
+{txt}{space 15}micro_3 {c |}{col 24}{res}{space 2}-.1780576{col 36}{space 2} .0662455{col 47}{space 1}   -2.69{col 56}{space 3}0.007{col 64}{space 4}-.3079466{col 77}{space 3}-.0481687
+{txt}{space 15}micro_4 {c |}{col 24}{res}{space 2}-.3562833{col 36}{space 2} .0622472{col 47}{space 1}   -5.72{col 56}{space 3}0.000{col 64}{space 4}-.4783326{col 77}{space 3} -.234234
+{txt}{space 15}micro_5 {c |}{col 24}{res}{space 2} -.359194{col 36}{space 2} .0726061{col 47}{space 1}   -4.95{col 56}{space 3}0.000{col 64}{space 4}-.5015542{col 77}{space 3}-.2168338
+{txt}{space 7}busavailability {c |}{col 24}{res}{space 2} .8211964{col 36}{space 2} .3958686{col 47}{space 1}    2.07{col 56}{space 3}0.038{col 64}{space 4}  .045009{col 77}{space 3} 1.597384
+{txt}{space 6}busavailability2 {c |}{col 24}{res}{space 2}-.9652276{col 36}{space 2}  .532865{col 47}{space 1}   -1.81{col 56}{space 3}0.070{col 64}{space 4}-2.010027{col 77}{space 3} .0795714
+{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2}-6.855123{col 36}{space 2} .2814821{col 47}{space 1}  -24.35{col 56}{space 3}0.000{col 64}{space 4} -7.40703{col 77}{space 3}-6.303215
+{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2}-2.787172{col 36}{space 2} .2428167{col 47}{space 1}  -11.48{col 56}{space 3}0.000{col 64}{space 4}-3.263268{col 77}{space 3}-2.311076
+{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2} 3.475724{col 36}{space 2} .6702632{col 47}{space 1}    5.19{col 56}{space 3}0.000{col 64}{space 4} 2.161526{col 77}{space 3} 4.789923
+{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-1.486109{col 36}{space 2} .1784605{col 47}{space 1}   -8.33{col 56}{space 3}0.000{col 64}{space 4} -1.83602{col 77}{space 3}-1.136198
+{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2} 6.229967{col 36}{space 2} 1.016405{col 47}{space 1}    6.13{col 56}{space 3}0.000{col 64}{space 4} 4.237082{col 77}{space 3} 8.222853
+{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2} 5.089312{col 36}{space 2} .4074818{col 47}{space 1}   12.49{col 56}{space 3}0.000{col 64}{space 4} 4.290354{col 77}{space 3}  5.88827
+{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2}-.8817578{col 36}{space 2}  .259597{col 47}{space 1}   -3.40{col 56}{space 3}0.001{col 64}{space 4}-1.390755{col 77}{space 3}-.3727608
+{txt}{space 11}job_density {c |}{col 24}{res}{space 2} -.014891{col 36}{space 2} .0056163{col 47}{space 1}   -2.65{col 56}{space 3}0.008{col 64}{space 4}-.0259031{col 77}{space 3}-.0038789
+{txt}{space 11}pop_density {c |}{col 24}{res}{space 2}-.0418673{col 36}{space 2} .0133117{col 47}{space 1}   -3.15{col 56}{space 3}0.002{col 64}{space 4}-.0679678{col 77}{space 3}-.0157668
+{txt}{space 8}hhmedianincome {c |}{col 24}{res}{space 2} .0077513{col 36}{space 2} .0014898{col 47}{space 1}    5.20{col 56}{space 3}0.000{col 64}{space 4} .0048303{col 77}{space 3} .0106724
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2}  4.28263{col 36}{space 2} .5602271{col 47}{space 1}    7.64{col 56}{space 3}0.000{col 64}{space 4} 3.184181{col 77}{space 3} 5.381078
+{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+               sigma_u {c |} {res} 1.4633588
+               {txt}sigma_e {c |} {res} 2.0689853
+                   {txt}rho {c |} {res} .33344427{txt}   (fraction of variance due to u_i)
+{hline 23}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.txt""':seeout}
+
+{com}. 
+. outreg2 using "$tab\unemployment_rate", excel append: xtreg unemployment_rate ///
+> geo_B geo_C geo_D c.geo_A#c.cs_baseline c.geo_B#c.cs_baseline c.geo_C#c.cs_baseline c.geo_D#c.cs_baseline ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+> $socioec  hhmedianincome, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.3171{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.1756{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.2838{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}29{txt}, {res}3139{txt}){col 67}={col 70}{res}   105.19
+{txt}corr(u_i, Xb) = {res}-0.1531{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 88:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 24}{c |}{col 36}    Robust
+{col 1}     unemployment_rate{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
+{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 17}geo_B {c |}{col 24}{res}{space 2} .7576093{col 36}{space 2} .6154078{col 47}{space 1}    1.23{col 56}{space 3}0.218{col 64}{space 4}-.4490332{col 77}{space 3} 1.964252
+{txt}{space 17}geo_C {c |}{col 24}{res}{space 2} .5724425{col 36}{space 2} .7811739{col 47}{space 1}    0.73{col 56}{space 3}0.464{col 64}{space 4}-.9592208{col 77}{space 3} 2.104106
+{txt}{space 17}geo_D {c |}{col 24}{res}{space 2} 1.670512{col 36}{space 2} .8523938{col 47}{space 1}    1.96{col 56}{space 3}0.050{col 64}{space 4}-.0007937{col 77}{space 3} 3.341818
+{txt}{space 22} {c |}
+{space 1}c.geo_A#c.cs_baseline {c |}{col 24}{res}{space 2} .0014099{col 36}{space 2} .0091562{col 47}{space 1}    0.15{col 56}{space 3}0.878{col 64}{space 4} -.016543{col 77}{space 3} .0193627
+{txt}{space 22} {c |}
+{space 1}c.geo_B#c.cs_baseline {c |}{col 24}{res}{space 2}-.0065836{col 36}{space 2} .0065819{col 47}{space 1}   -1.00{col 56}{space 3}0.317{col 64}{space 4}-.0194889{col 77}{space 3} .0063218
+{txt}{space 22} {c |}
+{space 1}c.geo_C#c.cs_baseline {c |}{col 24}{res}{space 2}-.0036922{col 36}{space 2} .0083524{col 47}{space 1}   -0.44{col 56}{space 3}0.658{col 64}{space 4} -.020069{col 77}{space 3} .0126846
+{txt}{space 22} {c |}
+{space 1}c.geo_D#c.cs_baseline {c |}{col 24}{res}{space 2}-.0165348{col 36}{space 2} .0117028{col 47}{space 1}   -1.41{col 56}{space 3}0.158{col 64}{space 4}-.0394806{col 77}{space 3} .0064111
+{txt}{space 22} {c |}
+{space 12}network_U2 {c |}{col 24}{res}{space 2}-.0456396{col 36}{space 2} .0528446{col 47}{space 1}   -0.86{col 56}{space 3}0.388{col 64}{space 4}-.1492532{col 77}{space 3} .0579739
+{txt}{space 12}network_U3 {c |}{col 24}{res}{space 2}-.0253852{col 36}{space 2} .0575297{col 47}{space 1}   -0.44{col 56}{space 3}0.659{col 64}{space 4}-.1381848{col 77}{space 3} .0874144
+{txt}{space 12}network_U4 {c |}{col 24}{res}{space 2} .0551942{col 36}{space 2} .0547142{col 47}{space 1}    1.01{col 56}{space 3}0.313{col 64}{space 4}-.0520852{col 77}{space 3} .1624735
+{txt}{space 12}network_U5 {c |}{col 24}{res}{space 2}-.0865446{col 36}{space 2}  .056204{col 47}{space 1}   -1.54{col 56}{space 3}0.124{col 64}{space 4}-.1967448{col 77}{space 3} .0236557
+{txt}{space 12}network_R1 {c |}{col 24}{res}{space 2}-.0343212{col 36}{space 2} .0873681{col 47}{space 1}   -0.39{col 56}{space 3}0.694{col 64}{space 4}-.2056255{col 77}{space 3} .1369831
+{txt}{space 12}network_R2 {c |}{col 24}{res}{space 2}-.0354553{col 36}{space 2} .0885387{col 47}{space 1}   -0.40{col 56}{space 3}0.689{col 64}{space 4}-.2090549{col 77}{space 3} .1381443
+{txt}{space 15}micro_2 {c |}{col 24}{res}{space 2}-.1289042{col 36}{space 2} .0573711{col 47}{space 1}   -2.25{col 56}{space 3}0.025{col 64}{space 4}-.2413928{col 77}{space 3}-.0164156
+{txt}{space 15}micro_3 {c |}{col 24}{res}{space 2}-.1586185{col 36}{space 2}  .076854{col 47}{space 1}   -2.06{col 56}{space 3}0.039{col 64}{space 4}-.3093076{col 77}{space 3}-.0079293
+{txt}{space 15}micro_4 {c |}{col 24}{res}{space 2}-.3420358{col 36}{space 2} .0693577{col 47}{space 1}   -4.93{col 56}{space 3}0.000{col 64}{space 4}-.4780268{col 77}{space 3}-.2060448
+{txt}{space 15}micro_5 {c |}{col 24}{res}{space 2}-.3498451{col 36}{space 2} .0777651{col 47}{space 1}   -4.50{col 56}{space 3}0.000{col 64}{space 4}-.5023207{col 77}{space 3}-.1973695
+{txt}{space 7}busavailability {c |}{col 24}{res}{space 2} .8103235{col 36}{space 2}  .393669{col 47}{space 1}    2.06{col 56}{space 3}0.040{col 64}{space 4} .0384488{col 77}{space 3} 1.582198
+{txt}{space 6}busavailability2 {c |}{col 24}{res}{space 2}-.9549736{col 36}{space 2} .5331621{col 47}{space 1}   -1.79{col 56}{space 3}0.073{col 64}{space 4}-2.000355{col 77}{space 3}  .090408
+{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2} -6.85606{col 36}{space 2} .2824974{col 47}{space 1}  -24.27{col 56}{space 3}0.000{col 64}{space 4}-7.409959{col 77}{space 3}-6.302162
+{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2}-2.789566{col 36}{space 2} .2430022{col 47}{space 1}  -11.48{col 56}{space 3}0.000{col 64}{space 4}-3.266025{col 77}{space 3}-2.313107
+{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2}  3.41991{col 36}{space 2} .6688995{col 47}{space 1}    5.11{col 56}{space 3}0.000{col 64}{space 4} 2.108385{col 77}{space 3} 4.731435
+{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-1.483585{col 36}{space 2} .1776376{col 47}{space 1}   -8.35{col 56}{space 3}0.000{col 64}{space 4}-1.831883{col 77}{space 3}-1.135288
+{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2} 6.264494{col 36}{space 2} 1.017713{col 47}{space 1}    6.16{col 56}{space 3}0.000{col 64}{space 4} 4.269044{col 77}{space 3} 8.259945
+{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2} 5.092089{col 36}{space 2}  .409098{col 47}{space 1}   12.45{col 56}{space 3}0.000{col 64}{space 4} 4.289962{col 77}{space 3} 5.894216
+{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2}-.8761526{col 36}{space 2} .2609992{col 47}{space 1}   -3.36{col 56}{space 3}0.001{col 64}{space 4}-1.387899{col 77}{space 3}-.3644062
+{txt}{space 11}job_density {c |}{col 24}{res}{space 2} -.014908{col 36}{space 2} .0056196{col 47}{space 1}   -2.65{col 56}{space 3}0.008{col 64}{space 4}-.0259264{col 77}{space 3}-.0038897
+{txt}{space 11}pop_density {c |}{col 24}{res}{space 2}-.0421774{col 36}{space 2} .0133607{col 47}{space 1}   -3.16{col 56}{space 3}0.002{col 64}{space 4}-.0683739{col 77}{space 3}-.0159809
+{txt}{space 8}hhmedianincome {c |}{col 24}{res}{space 2} .0077843{col 36}{space 2} .0014951{col 47}{space 1}    5.21{col 56}{space 3}0.000{col 64}{space 4} .0048529{col 77}{space 3} .0107157
+{txt}{space 17}_cons {c |}{col 24}{res}{space 2} 3.919344{col 36}{space 2}  .804789{col 47}{space 1}    4.87{col 56}{space 3}0.000{col 64}{space 4} 2.341378{col 77}{space 3}  5.49731
+{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+               sigma_u {c |} {res} 1.4691367
+               {txt}sigma_e {c |} {res} 2.0689732
+                   {txt}rho {c |} {res} .33520087{txt}   (fraction of variance due to u_i)
+{hline 23}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.txt""':seeout}
+
+{com}. 
+. outreg2 using "$tab\unemployment_rate", excel append: xtreg unemployment_rate ///
+> micro_2 micro_3 micro_4 micro_5 c.micro_1#c.cs_baseline c.micro_2#c.cs_baseline c.micro_3#c.cs_baseline c.micro_4#c.cs_baseline c.micro_5#c.cs_baseline ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> geo_B geo_C geo_D busavailability busavailability2 ///
+> $socioec hhmedianincome, fe vce(cl county_enc)
+{res}
+{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,018
+{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,140
+
+{txt}R-squared:{col 49}Obs per group:
+     Within  = {res}0.3172{col 63}{txt}min{col 67}={col 69}{res}         1
+{txt}     Between = {res}0.1711{col 63}{txt}avg{col 67}={col 69}{res}      22.9
+{txt}     Overall = {res}0.2839{col 63}{txt}max{col 67}={col 69}{res}     2,306
+
+{txt}{col 49}F({res}30{txt}, {res}3139{txt}){col 67}={col 70}{res}   101.01
+{txt}corr(u_i, Xb) = {res}-0.1536{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
+
+{txt}{ralign 89:(Std. err. adjusted for {res:3,140} clusters in {res:county_enc})}
+{hline 24}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 25}{c |}{col 37}    Robust
+{col 1}      unemployment_rate{col 25}{c |} Coefficient{col 37}  std. err.{col 49}      t{col 57}   P>|t|{col 65}     [95% con{col 78}f. interval]
+{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 16}micro_2 {c |}{col 25}{res}{space 2}-.0448702{col 37}{space 2} .2777049{col 48}{space 1}   -0.16{col 57}{space 3}0.872{col 65}{space 4}-.5893716{col 78}{space 3} .4996313
+{txt}{space 16}micro_3 {c |}{col 25}{res}{space 2} .0249484{col 37}{space 2} .2878891{col 48}{space 1}    0.09{col 57}{space 3}0.931{col 65}{space 4}-.5395216{col 78}{space 3} .5894184
+{txt}{space 16}micro_4 {c |}{col 25}{res}{space 2} .3198292{col 37}{space 2} .4046008{col 48}{space 1}    0.79{col 57}{space 3}0.429{col 65}{space 4}-.4734797{col 78}{space 3} 1.113138
+{txt}{space 16}micro_5 {c |}{col 25}{res}{space 2} .5327237{col 37}{space 2} .3465509{col 48}{space 1}    1.54{col 57}{space 3}0.124{col 65}{space 4}-.1467657{col 78}{space 3} 1.212213
+{txt}{space 23} {c |}
+c.micro_1#c.cs_baseline {c |}{col 25}{res}{space 2} .0015399{col 37}{space 2} .0077972{col 48}{space 1}    0.20{col 57}{space 3}0.843{col 65}{space 4}-.0137481{col 78}{space 3}  .016828
+{txt}{space 23} {c |}
+c.micro_2#c.cs_baseline {c |}{col 25}{res}{space 2} .0006266{col 37}{space 2} .0063962{col 48}{space 1}    0.10{col 57}{space 3}0.922{col 65}{space 4}-.0119146{col 78}{space 3} .0131677
+{txt}{space 23} {c |}
+c.micro_3#c.cs_baseline {c |}{col 25}{res}{space 2}-.0007736{col 37}{space 2} .0071588{col 48}{space 1}   -0.11{col 57}{space 3}0.914{col 65}{space 4}  -.01481{col 78}{space 3} .0132628
+{txt}{space 23} {c |}
+c.micro_4#c.cs_baseline {c |}{col 25}{res}{space 2}-.0076646{col 37}{space 2} .0071634{col 48}{space 1}   -1.07{col 57}{space 3}0.285{col 65}{space 4}  -.02171{col 78}{space 3} .0063808
+{txt}{space 23} {c |}
+c.micro_5#c.cs_baseline {c |}{col 25}{res}{space 2}-.0116703{col 37}{space 2} .0065044{col 48}{space 1}   -1.79{col 57}{space 3}0.073{col 65}{space 4}-.0244235{col 78}{space 3} .0010829
+{txt}{space 23} {c |}
+{space 13}network_U2 {c |}{col 25}{res}{space 2}-.0452087{col 37}{space 2} .0528941{col 48}{space 1}   -0.85{col 57}{space 3}0.393{col 65}{space 4}-.1489192{col 78}{space 3} .0585018
+{txt}{space 13}network_U3 {c |}{col 25}{res}{space 2}-.0252229{col 37}{space 2} .0575531{col 48}{space 1}   -0.44{col 57}{space 3}0.661{col 65}{space 4}-.1380685{col 78}{space 3} .0876226
+{txt}{space 13}network_U4 {c |}{col 25}{res}{space 2} .0558867{col 37}{space 2} .0546301{col 48}{space 1}    1.02{col 57}{space 3}0.306{col 65}{space 4}-.0512276{col 78}{space 3}  .163001
+{txt}{space 13}network_U5 {c |}{col 25}{res}{space 2}-.0878131{col 37}{space 2} .0557596{col 48}{space 1}   -1.57{col 57}{space 3}0.115{col 65}{space 4}-.1971421{col 78}{space 3} .0215159
+{txt}{space 13}network_R1 {c |}{col 25}{res}{space 2}-.0371852{col 37}{space 2} .0874622{col 48}{space 1}   -0.43{col 57}{space 3}0.671{col 65}{space 4}-.2086741{col 78}{space 3} .1343036
+{txt}{space 13}network_R2 {c |}{col 25}{res}{space 2}-.0506411{col 37}{space 2} .0879101{col 48}{space 1}   -0.58{col 57}{space 3}0.565{col 65}{space 4}-.2230083{col 78}{space 3} .1217261
+{txt}{space 18}geo_B {c |}{col 25}{res}{space 2} .2055767{col 37}{space 2} .1485805{col 48}{space 1}    1.38{col 57}{space 3}0.167{col 65}{space 4}-.0857481{col 78}{space 3} .4969015
+{txt}{space 18}geo_C {c |}{col 25}{res}{space 2} .2192519{col 37}{space 2} .1906077{col 48}{space 1}    1.15{col 57}{space 3}0.250{col 65}{space 4}-.1544764{col 78}{space 3} .5929801
+{txt}{space 18}geo_D {c |}{col 25}{res}{space 2} .6094105{col 37}{space 2} .2513513{col 48}{space 1}    2.42{col 57}{space 3}0.015{col 65}{space 4} .1165809{col 78}{space 3}  1.10224
+{txt}{space 8}busavailability {c |}{col 25}{res}{space 2} .8283743{col 37}{space 2} .3947523{col 48}{space 1}    2.10{col 57}{space 3}0.036{col 65}{space 4} .0543756{col 78}{space 3} 1.602373
+{txt}{space 7}busavailability2 {c |}{col 25}{res}{space 2}-.9868959{col 37}{space 2} .5323947{col 48}{space 1}   -1.85{col 57}{space 3}0.064{col 65}{space 4}-2.030773{col 78}{space 3} .0569811
+{txt}{space 6}frac_age_above_65 {c |}{col 25}{res}{space 2}-6.850721{col 37}{space 2} .2814082{col 48}{space 1}  -24.34{col 57}{space 3}0.000{col 65}{space 4}-7.402484{col 78}{space 3}-6.298959
+{txt}{space 11}edu_above_bs {c |}{col 25}{res}{space 2}-2.788421{col 37}{space 2} .2431429{col 48}{space 1}  -11.47{col 57}{space 3}0.000{col 65}{space 4}-3.265156{col 78}{space 3}-2.311686
+{txt}{space 9}frac_hh_no_veh {c |}{col 25}{res}{space 2} 3.410044{col 37}{space 2} .6714653{col 48}{space 1}    5.08{col 57}{space 3}0.000{col 65}{space 4} 2.093488{col 78}{space 3} 4.726599
+{txt}{space 5}frac_tenure_renter {c |}{col 25}{res}{space 2}-1.480607{col 37}{space 2} .1788116{col 48}{space 1}   -8.28{col 57}{space 3}0.000{col 65}{space 4}-1.831206{col 78}{space 3}-1.130007
+{txt}{space 5}frac_below_poverty {c |}{col 25}{res}{space 2}  6.26054{col 37}{space 2} 1.017431{col 48}{space 1}    6.15{col 57}{space 3}0.000{col 65}{space 4} 4.265642{col 78}{space 3} 8.255438
+{txt}{space 2}frac_hh_inc_below_40k {c |}{col 25}{res}{space 2} 5.081015{col 37}{space 2} .4070844{col 48}{space 1}   12.48{col 57}{space 3}0.000{col 65}{space 4} 4.282837{col 78}{space 3} 5.879194
+{txt}{space 1}frac_hh_inc_above_100k {c |}{col 25}{res}{space 2}-.8821964{col 37}{space 2} .2594611{col 48}{space 1}   -3.40{col 57}{space 3}0.001{col 65}{space 4}-1.390927{col 78}{space 3}-.3734659
+{txt}{space 12}job_density {c |}{col 25}{res}{space 2}-.0149067{col 37}{space 2} .0056155{col 48}{space 1}   -2.65{col 57}{space 3}0.008{col 65}{space 4}-.0259172{col 78}{space 3}-.0038962
+{txt}{space 12}pop_density {c |}{col 25}{res}{space 2} -.042257{col 37}{space 2} .0133251{col 48}{space 1}   -3.17{col 57}{space 3}0.002{col 65}{space 4}-.0683838{col 78}{space 3}-.0161302
+{txt}{space 9}hhmedianincome {c |}{col 25}{res}{space 2} .0077652{col 37}{space 2} .0014868{col 48}{space 1}    5.22{col 57}{space 3}0.000{col 65}{space 4} .0048499{col 78}{space 3} .0106804
+{txt}{space 18}_cons {c |}{col 25}{res}{space 2} 3.909703{col 37}{space 2} .6851623{col 48}{space 1}    5.71{col 57}{space 3}0.000{col 65}{space 4} 2.566292{col 78}{space 3} 5.253114
+{txt}{hline 24}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+                sigma_u {c |} {res} 1.4742304
+                {txt}sigma_e {c |} {res} 2.0688177
+                    {txt}rho {c |} {res} .33677877{txt}   (fraction of variance due to u_i)
+{hline 24}{c BT}{hline 64}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.xml"'}
+{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\unemployment_rate.txt""':seeout}
+
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\log_cqm_paper_analysis.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}29 Jun 2026, 12:48:53
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

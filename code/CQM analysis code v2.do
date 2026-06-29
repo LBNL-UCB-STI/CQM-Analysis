@@ -101,7 +101,7 @@ encode county, gen(county_enc)
 replace unemployment_rate=unemployment_rate*100
 
 /*keep varibles used in following analysis*/
-keep o_geoid cs_baseline microtype networktype geotype geo_A geo_B geo_C geo_D micro_1 micro_2 micro_3 micro_4 micro_5 network_U1 network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 transavail transavail2 urban busavailability busavailability2 geotype_enc microtype_enc network_enc transavail_enc st_code county county_enc frac_age_above_65 edu_above_bs frac_hh_no_veh frac_tenure_renter  frac_below_poverty frac_hh_inc_below_40k frac_hh_inc_above_100k job_density hhmedianincome unemployment_rate
+keep o_geoid cs_baseline microtype networktype geotype geo_A geo_B geo_C geo_D micro_1 micro_2 micro_3 micro_4 micro_5 network_U1 network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 transavail transavail2 urban busavailability busavailability2 geotype_enc microtype_enc network_enc transavail_enc st_code county county_enc frac_age_above_65 edu_above_bs frac_hh_no_veh frac_tenure_renter  frac_below_poverty frac_hh_inc_below_40k frac_hh_inc_above_100k job_density pop_density hhmedianincome unemployment_rate
 
 /*generate an indicator for observations where the cs_baseline is between the .05 percentile and the 99.95 percentile in order to be able to generate plots without more extreme outliers - this tags 0.1% of the data (72 observations) as outliers*/
 egen lower_outlier=pctile(cs_baseline), p(.05)
@@ -176,34 +176,33 @@ graph combine geo_plot network_plot micro_plot transit_plot, ///
 graph export "$fig\combined_cs_rural.png", replace
 
 /*Define global containing all controls included in subsequent step*/
-global socioec="frac_age_above_65 edu_above_bs frac_hh_no_veh frac_tenure_renter  frac_below_poverty frac_hh_inc_below_40k frac_hh_inc_above_100k job_density"
+global socioec="c.frac_age_above_65 c.edu_above_bs c.frac_hh_no_veh c.frac_tenure_renter  c.frac_below_poverty c.frac_hh_inc_below_40k c.frac_hh_inc_above_100k c.job_density c.pop_density"
+
+/*ANOVA Analysis*/
+
+outreg2 using "$tab\cs_overall", excel replace: reg cs_baseline i.geotype_enc
+outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc
+outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.network_enc
+
+outreg2 using "$tab\cs_overall", ct(Geo A) excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_A==1
+outreg2 using "$tab\cs_overall", ct(Geo B)  excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_B==1
+outreg2 using "$tab\cs_overall", ct(Geo C)  excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_C==1
+outreg2 using "$tab\cs_overall", ct(Geo D)  excel append: reg cs_baseline i.microtype_enc i.network_enc if geo_D==1
+
+anova cs_baseline c.job_density c.pop_density
+estat esize
+
+anova cs_baseline i.microtype_enc i.network_enc if geo_A==1
+estat esize
+anova cs_baseline i.microtype_enc i.network_enc if geo_B==1
+estat esize
+anova cs_baseline i.microtype_enc i.network_enc if geo_C==1 
+estat esize
+anova cs_baseline i.microtype_enc i.network_enc if geo_D==1
+estat esize
 
 /*Define panel data structure with units being counties, and tracts within counties as within-unit observations*/
 xtset county_enc o_geoid
-
-*Table 1 Regressions: Regression results for commute quality on location characteristics
-outreg2 using "$tab\cs_overall_n", excel replace: reg cs_baseline i.geotype_enc,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.geotype_enc busavailability busavailability2 $socioec,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc if geotype_enc==1,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc if geotype_enc==2,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc if geotype_enc==3,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc if geotype_enc==4,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc busavailability busavailability2 $socioec if geotype_enc==1,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc busavailability busavailability2 $socioec if geotype_enc==2,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc busavailability busavailability2 $socioec if geotype_enc==3,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall_n", excel append: reg cs_baseline i.network_enc busavailability busavailability2 $socioec if geotype_enc==4,  vce(cl county_enc)
-
-*Table 1 Regressions: Regression results for commute quality on location characteristics
-outreg2 using "$tab\cs_overall", excel replace: reg cs_baseline i.geotype_enc,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.geotype_enc busavailability busavailability2 $socioec,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc if geotype_enc==1,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc if geotype_enc==2,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc if geotype_enc==3,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc if geotype_enc==4,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc busavailability busavailability2 $socioec if geotype_enc==1,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc busavailability busavailability2 $socioec if geotype_enc==2,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc busavailability busavailability2 $socioec if geotype_enc==3,  vce(cl county_enc)
-outreg2 using "$tab\cs_overall", excel append: reg cs_baseline i.microtype_enc busavailability busavailability2 $socioec if geotype_enc==4,  vce(cl county_enc)
 
 *Table 2 Regressions: Regression results for median household income
 outreg2 using "$tab\hhmedianincome", excel replace: xtreg hhmedianincome ///
@@ -228,6 +227,11 @@ micro_2 micro_3 micro_4 micro_5 c.micro_1#c.cs_baseline c.micro_2#c.cs_baseline 
 network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
 geo_B geo_C geo_D busavailability busavailability2 ///
 $socioec unemployment_rate, fe vce(cl county_enc)
+
+
+replace hhmedianincome=hhmedianincome/1000
+replace pop_density=pop_density/1000
+replace job_density=job_density/1000
 
 *Table 2 Regressions: Regression results for unemployment rate
 outreg2 using "$tab\unemployment_rate", excel replace: xtreg unemployment_rate ///
