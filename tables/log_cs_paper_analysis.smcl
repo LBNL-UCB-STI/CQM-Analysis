@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\log_cs_paper_analysis.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}12 Jul 2026, 23:18:04
+ {txt}opened on:  {res}13 Jul 2026, 08:39:57
 {txt}
 {com}. use "$proc\cs_paper_data_for_regressions"
 {txt}
@@ -1805,40 +1805,22 @@ c.network_R3#c.cs_baseline {c |}{col 28}{res}{space 2}-.0057541{col 40}{space 2}
 . preserve
 {txt}
 {com}. 
-. collapse (mean) cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(geotype)
-{err}option {bf:over()} not allowed
-{txt}{search r(198), local:r(198);}
-
-end of do-file
-
-{search r(198), local:r(198);}
-
-{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\9\STD7b7c_000000.tmp"
-{txt}
-{com}. 
-. preserve
-{txt}
-{com}. 
 . collapse (mean) cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, by(geotype)
 {res}{txt}
 {com}. 
 . graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cumulative Accessibility (10,000)") lab(3 "Cumulative Bus Accessibility (1,000)") lab(4 "Cumulative Bike Accessibility (1,000)"))
 {res}{txt}
-{com}. save "$fig\cumulative_geo.png", replace
+{com}. graph export "$fig\cumulative_geo.png", replace
 {txt}{p 0 4 2}
 file {bf}
 C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cumulative_geo.png{rm}
-saved
-as .dta format
+saved as
+PNG
+format
 {p_end}
 
 {com}. 
 . restore
-{txt}
-{com}. 
-{txt}end of do-file
-
-{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\9\STD7b7c_000000.tmp"
 {txt}
 {com}. 
 . preserve
@@ -1849,21 +1831,17 @@ as .dta format
 {com}. 
 . graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cumulative Accessibility (10,000)") lab(3 "Cumulative Bus Accessibility (1,000)") lab(4 "Cumulative Bike Accessibility (1,000)"))
 {res}{txt}
-{com}. save "$fig\cumulative_micro.png", replace
+{com}. graph export "$fig\cumulative_micro.png", replace
 {txt}{p 0 4 2}
 file {bf}
 C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cumulative_micro.png{rm}
-saved
-as .dta format
+saved as
+PNG
+format
 {p_end}
 
 {com}. 
 . restore 
-{txt}
-{com}. 
-{txt}end of do-file
-
-{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\9\STD7b7c_000000.tmp"
 {txt}
 {com}. 
 . preserve
@@ -1874,29 +1852,88 @@ as .dta format
 {com}. 
 . graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cumulative Auto Accessibility (10,000)") lab(3 "Cumulative Bus Accessibility (1,000)") lab(4 "Cumulative Bike Accessibility (1,000)")) 
 {res}{txt}
-{com}. save "$fig\cumulative_network.png", replace
+{com}. graph export "$fig\cumulative_network.png", replace
 {txt}{p 0 4 2}
 file {bf}
 C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cumulative_network.png{rm}
-saved
-as .dta format
+saved as
+PNG
+format
 {p_end}
 
 {com}. 
 . restore
 {txt}
-{com}. 
-{txt}end of do-file
-
-{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\9\STD7b7c_000000.tmp"
-{txt}
-{com}. 
+{com}. /*
+> graph bar cs_baseline cummulative_acc45_auto, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)"))
+> save $fig\cummulative_auto_geo.png, replace
+> graph bar cs_baseline cummulative_acc45_auto, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)")) 
+> save $fig\cummulative_auto_micro.png, replace
+> graph bar cs_baseline cummulative_acc45_auto, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)")) 
+> save $fig\cummulative_auto_network.png, replace
+> 
+> graph bar cs_baseline cummulative_acc45_bus, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)"))
+> save $fig\cummulative_bus_geo.png, replace
+> 
+> graph bar cs_baseline cummulative_acc45_bus, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+> save $fig\cummulative_bus_micro.png, replace
+> 
+> graph bar cs_baseline cummulative_acc45_bus, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+> save $fig\cummulative_bus_network.png, replace
+> 
+> graph bar cs_baseline cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)"))
+> save $fig\cummulative_bike_geo.png, replace
+> 
+> graph bar cs_baseline cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+> save $fig\cummulative_bike_micro.png, replace
+> 
+> graph bar cs_baseline cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+> save $fig\cummulative_bike_network.png, replace
+> 
+> 
+> replace cummulative_acc45_auto=cummulative_acc45_auto/100
+> 
+> outreg2 using "$tab\hhmedianincome_cummulativeacc", excel replace: xtreg hhmedianincome ///
+> cummulative_acc45_auto, fe vce(cl county_enc)
+> outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+> cummulative_acc45_auto $socioec unemployment_rate, fe vce(cl county_enc)
+> outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+> cummulative_acc45_auto ///
+> geo_B geo_C geo_D ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+> $socioec unemployment_rate, fe vce(cl county_enc)
+> 
+> outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+> geo_B geo_C geo_D c.geo_A#c.cummulative_acc45_auto c.geo_B#c.cummulative_acc45_auto c.geo_C#c.cummulative_acc45_auto c.geo_D#c.cummulative_acc45_auto ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+> $socioec  unemployment_rate, fe vce(cl county_enc)
+> 
+> outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+> c.micro_1#urban#c.cummulative_acc45_auto c.micro_2#urban#c.cummulative_acc45_auto c.micro_3#urban#c.cummulative_acc45_auto c.micro_4#urban#c.cummulative_acc45_auto c.micro_5#urban#c.cummulative_acc45_auto ///
+> geo_B geo_C geo_D ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+> micro_2 micro_3 micro_4 micro_5 ///
+> busavailability busavailability2 ///
+> $socioec unemployment_rate, fe vce(cl county_enc)
+> 
+> outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+> c.network_U1#c.cummulative_acc45_auto c.network_U2#c.cummulative_acc45_auto c.network_U3#c.cummulative_acc45_auto c.network_U4#c.cummulative_acc45_auto c.network_U5#c.cummulative_acc45_auto ///
+> c.network_R1#c.cummulative_acc45_auto c.network_R2#c.cummulative_acc45_auto c.network_R3#c.cummulative_acc45_auto ///
+> geo_B geo_C geo_D ///
+> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+> micro_2 micro_3 micro_4 micro_5 ///
+> busavailability busavailability2 ///
+> $socioec unemployment_rate, fe vce(cl county_enc)
+> */
+. 
 . 
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\log_cs_paper_analysis.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}12 Jul 2026, 23:19:28
+ {txt}closed on:  {res}13 Jul 2026, 08:40:27
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
