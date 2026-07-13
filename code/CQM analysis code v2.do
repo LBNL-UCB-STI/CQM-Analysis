@@ -267,12 +267,32 @@ replace cummulative_acc45_bike=cummulative_acc45_bike/1000
 
 corr cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike
 
-graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)"))
-save $fig\cummulative_geo.png, replace
-graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)"))
-save $fig\cummulative_micro.png, replace
-graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Auto Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)")) 
-save $fig\cummulative_network.png, replace
+preserve
+
+collapse (mean) cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, by(geotype)
+
+graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cumulative Accessibility (10,000)") lab(3 "Cumulative Bus Accessibility (1,000)") lab(4 "Cumulative Bike Accessibility (1,000)"))
+save "$fig\cumulative_geo.png", replace
+
+restore
+
+preserve
+
+collapse (mean) cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, by(microtype)
+
+graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cumulative Accessibility (10,000)") lab(3 "Cumulative Bus Accessibility (1,000)") lab(4 "Cumulative Bike Accessibility (1,000)"))
+save "$fig\cumulative_micro.png", replace
+
+restore 
+
+preserve
+
+collapse (mean) cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, by(networktype)
+
+graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cumulative Auto Accessibility (10,000)") lab(3 "Cumulative Bus Accessibility (1,000)") lab(4 "Cumulative Bike Accessibility (1,000)")) 
+save "$fig\cumulative_network.png", replace
+
+restore
 /*
 graph bar cs_baseline cummulative_acc45_auto, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)"))
 save $fig\cummulative_auto_geo.png, replace
