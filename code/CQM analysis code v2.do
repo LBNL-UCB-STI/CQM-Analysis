@@ -267,6 +267,13 @@ replace cummulative_acc45_bike=cummulative_acc45_bike/1000
 
 corr cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike
 
+graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)"))
+save $fig\cummulative_geo.png, replace
+graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)"))
+save $fig\cummulative_micro.png, replace
+graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Auto Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)")) 
+save $fig\cummulative_network.png, replace
+/*
 graph bar cs_baseline cummulative_acc45_auto, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)"))
 save $fig\cummulative_auto_geo.png, replace
 graph bar cs_baseline cummulative_acc45_auto, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)")) 
@@ -328,7 +335,7 @@ network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
 micro_2 micro_3 micro_4 micro_5 ///
 busavailability busavailability2 ///
 $socioec unemployment_rate, fe vce(cl county_enc)
-
+*/
 
 
 log close

@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\log_cs_paper_analysis.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}12 Jul 2026, 22:46:33
+ {txt}opened on:  {res}12 Jul 2026, 22:56:07
 {txt}
 {com}. use "$proc\cs_paper_data_for_regressions"
 {txt}
@@ -1802,484 +1802,82 @@ c.network_R3#c.cs_baseline {c |}{col 28}{res}{space 2}-.0057541{col 40}{space 2}
 
 {txt}
 {com}. 
-. graph bar cs_baseline cummulative_acc45_auto, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)"))
-{res}{txt}
-{com}. save $fig\cummulative_auto_geo.png, replace
-{txt}{p 0 4 2}
-file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_auto_geo.png{rm}
-saved
-as .dta format
-{p_end}
+. graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)")
+{err}parentheses do not balance
+{txt}{search r(198), local:r(198);}
 
-{com}. graph bar cs_baseline cummulative_acc45_auto, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)")) 
-{res}{txt}
-{com}. save $fig\cummulative_auto_micro.png, replace
-{txt}{p 0 4 2}
-file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_auto_micro.png{rm}
-saved
-as .dta format
-{p_end}
+end of do-file
 
-{com}. graph bar cs_baseline cummulative_acc45_auto, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)")) 
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\7\STD7950_000000.tmp"
+{txt}
+{com}. graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)"))
 {res}{txt}
-{com}. save $fig\cummulative_auto_network.png, replace
+{com}. save $fig\cummulative_geo.png, replace
 {txt}{p 0 4 2}
+(file {bf}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_geo.png{rm}
+not found)
+{p_end}
+{p 0 4 2}
 file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_auto_network.png{rm}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_geo.png{rm}
 saved
 as .dta format
 {p_end}
 
 {com}. 
-. graph bar cs_baseline cummulative_acc45_bus, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)"))
+{txt}end of do-file
+
+{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\7\STD7950_000000.tmp"
+{txt}
+{com}. graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)"))
 {res}{txt}
-{com}. save $fig\cummulative_bus_geo.png, replace
+{com}. save $fig\cummulative_micro.png, replace
 {txt}{p 0 4 2}
+(file {bf}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_micro.png{rm}
+not found)
+{p_end}
+{p 0 4 2}
 file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_bus_geo.png{rm}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_micro.png{rm}
 saved
 as .dta format
 {p_end}
 
 {com}. 
-. graph bar cs_baseline cummulative_acc45_bus, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+{txt}end of do-file
+
+{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\7\STD7950_000000.tmp"
+{txt}
+{com}. graph bar cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Auto Accessibility (10,000)") lab(3 "Cummulative Bus Accessibility (1,000)") lab(4 "Cummulative Bike Accessibility (1,000)")) 
 {res}{txt}
-{com}. save $fig\cummulative_bus_micro.png, replace
+{com}. save $fig\cummulative_network.png, replace
 {txt}{p 0 4 2}
+(file {bf}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_network.png{rm}
+not found)
+{p_end}
+{p 0 4 2}
 file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_bus_micro.png{rm}
+C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_network.png{rm}
 saved
 as .dta format
 {p_end}
 
 {com}. 
-. graph bar cs_baseline cummulative_acc45_bus, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
-{res}{txt}
-{com}. save $fig\cummulative_bus_network.png, replace
-{txt}{p 0 4 2}
-file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_bus_network.png{rm}
-saved
-as .dta format
-{p_end}
+{txt}end of do-file
 
+{com}. do "C:\Users\CASPUR~1\AppData\Local\Temp\7\STD7950_000000.tmp"
+{txt}
 {com}. 
-. graph bar cs_baseline cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)"))
-{res}{txt}
-{com}. save $fig\cummulative_bike_geo.png, replace
-{txt}{p 0 4 2}
-file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_bike_geo.png{rm}
-saved
-as .dta format
-{p_end}
-
-{com}. 
-. graph bar cs_baseline cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
-{res}{txt}
-{com}. save $fig\cummulative_bike_micro.png, replace
-{txt}{p 0 4 2}
-file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_bike_micro.png{rm}
-saved
-as .dta format
-{p_end}
-
-{com}. 
-. graph bar cs_baseline cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
-{res}{txt}
-{com}. save $fig\cummulative_bike_network.png, replace
-{txt}{p 0 4 2}
-file {bf}
-C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\figures\cummulative_bike_network.png{rm}
-saved
-as .dta format
-{p_end}
-
-{com}. 
-. 
-. replace cummulative_acc45_auto=cummulative_acc45_auto/100
-{txt}(72,987 real changes made)
-
-{com}. 
-. outreg2 using "$tab\hhmedianincome_cummulativeacc", excel replace: xtreg hhmedianincome ///
-> cummulative_acc45_auto, fe vce(cl county_enc)
-{res}
-{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    72,006
-{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,127
-
-{txt}R-squared:{col 49}Obs per group:
-     Within  = {res}0.0046{col 63}{txt}min{col 67}={col 69}{res}         1
-{txt}     Between = {res}0.2713{col 63}{txt}avg{col 67}={col 69}{res}      23.0
-{txt}     Overall = {res}0.0710{col 63}{txt}max{col 67}={col 69}{res}     2,307
-
-{txt}{col 49}F({res}1{txt}, {res}3126{txt}){col 67}={col 70}{res}     9.87
-{txt}corr(u_i, Xb) = {res}0.2697{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0017
-
-{txt}{ralign 88:(Std. err. adjusted for {res:3,127} clusters in {res:county_enc})}
-{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 24}{c |}{col 36}    Robust
-{col 1}        hhmedianincome{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
-{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-cummulative_acc45_auto {c |}{col 24}{res}{space 2} 3.805747{col 36}{space 2} 1.211626{col 47}{space 1}    3.14{col 56}{space 3}0.002{col 64}{space 4} 1.430083{col 77}{space 3} 6.181411
-{txt}{space 17}_cons {c |}{col 24}{res}{space 2}  58.5985{col 36}{space 2}  .989206{col 47}{space 1}   59.24{col 56}{space 3}0.000{col 64}{space 4} 56.65894{col 77}{space 3} 60.53806
-{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-               sigma_u {c |} {res} 13.104105
-               {txt}sigma_e {c |} {res} 25.552592
-                   {txt}rho {c |} {res} .20823021{txt}   (fraction of variance due to u_i)
-{hline 23}{c BT}{hline 64}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.xml"'}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.txt""':seeout}
-
-{com}. outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
-> cummulative_acc45_auto $socioec unemployment_rate, fe vce(cl county_enc)
-{res}
-{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    71,964
-{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,126
-
-{txt}R-squared:{col 49}Obs per group:
-     Within  = {res}0.8892{col 63}{txt}min{col 67}={col 69}{res}         1
-{txt}     Between = {res}0.9491{col 63}{txt}avg{col 67}={col 69}{res}      23.0
-{txt}     Overall = {res}0.9198{col 63}{txt}max{col 67}={col 69}{res}     2,306
-
-{txt}{col 49}F({res}11{txt}, {res}3125{txt}){col 67}={col 70}{res}  8379.11
-{txt}corr(u_i, Xb) = {res}0.0938{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
-
-{txt}{ralign 88:(Std. err. adjusted for {res:3,126} clusters in {res:county_enc})}
-{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 24}{c |}{col 36}    Robust
-{col 1}        hhmedianincome{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
-{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-cummulative_acc45_auto {c |}{col 24}{res}{space 2} .9147081{col 36}{space 2} .2166236{col 47}{space 1}    4.22{col 56}{space 3}0.000{col 64}{space 4} .4899691{col 77}{space 3} 1.339447
-{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2}-13.71736{col 36}{space 2} 1.482543{col 47}{space 1}   -9.25{col 56}{space 3}0.000{col 64}{space 4}-16.62422{col 77}{space 3}-10.81051
-{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2}   10.895{col 36}{space 2} 1.341945{col 47}{space 1}    8.12{col 56}{space 3}0.000{col 64}{space 4} 8.263817{col 77}{space 3} 13.52618
-{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2} -2.57951{col 36}{space 2} 1.742844{col 47}{space 1}   -1.48{col 56}{space 3}0.139{col 64}{space 4}-5.996746{col 77}{space 3} .8377255
-{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-9.401488{col 36}{space 2} .8850478{col 47}{space 1}  -10.62{col 56}{space 3}0.000{col 64}{space 4}-11.13682{col 77}{space 3}-7.666154
-{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2}-27.19745{col 36}{space 2} 2.473968{col 47}{space 1}  -10.99{col 56}{space 3}0.000{col 64}{space 4}-32.04822{col 77}{space 3}-22.34669
-{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2}-15.19955{col 36}{space 2} 2.882007{col 47}{space 1}   -5.27{col 56}{space 3}0.000{col 64}{space 4}-20.85036{col 77}{space 3}-9.548728
-{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2} 133.7317{col 36}{space 2} 2.829612{col 47}{space 1}   47.26{col 56}{space 3}0.000{col 64}{space 4} 128.1836{col 77}{space 3} 139.2798
-{txt}{space 11}job_density {c |}{col 24}{res}{space 2} .0333738{col 36}{space 2} .0281036{col 47}{space 1}    1.19{col 56}{space 3}0.235{col 64}{space 4}-.0217296{col 77}{space 3} .0884773
-{txt}{space 11}pop_density {c |}{col 24}{res}{space 2}-.0531531{col 36}{space 2}   .04057{col 47}{space 1}   -1.31{col 56}{space 3}0.190{col 64}{space 4}-.1326996{col 77}{space 3} .0263935
-{txt}{space 5}unemployment_rate {c |}{col 24}{res}{space 2} .1383665{col 36}{space 2} .0220102{col 47}{space 1}    6.29{col 56}{space 3}0.000{col 64}{space 4} .0952106{col 77}{space 3} .1815224
-{txt}{space 17}_cons {c |}{col 24}{res}{space 2}  37.0037{col 36}{space 2}  1.60186{col 47}{space 1}   23.10{col 56}{space 3}0.000{col 64}{space 4}  33.8629{col 77}{space 3}  40.1445
-{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-               sigma_u {c |} {res} 3.1362836
-               {txt}sigma_e {c |} {res} 8.5269772
-                   {txt}rho {c |} {res} .11916169{txt}   (fraction of variance due to u_i)
-{hline 23}{c BT}{hline 64}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.xml"'}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.txt""':seeout}
-
-{com}. outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
-> cummulative_acc45_auto ///
-> geo_B geo_C geo_D ///
-> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
-> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
-> $socioec unemployment_rate, fe vce(cl county_enc)
-{res}
-{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    71,964
-{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,126
-
-{txt}R-squared:{col 49}Obs per group:
-     Within  = {res}0.8893{col 63}{txt}min{col 67}={col 69}{res}         1
-{txt}     Between = {res}0.9476{col 63}{txt}avg{col 67}={col 69}{res}      23.0
-{txt}     Overall = {res}0.9190{col 63}{txt}max{col 67}={col 69}{res}     2,306
-
-{txt}{col 49}F({res}26{txt}, {res}3125{txt}){col 67}={col 70}{res}  4031.75
-{txt}corr(u_i, Xb) = {res}0.1491{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
-
-{txt}{ralign 88:(Std. err. adjusted for {res:3,126} clusters in {res:county_enc})}
-{hline 23}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 24}{c |}{col 36}    Robust
-{col 1}        hhmedianincome{col 24}{c |} Coefficient{col 36}  std. err.{col 48}      t{col 56}   P>|t|{col 64}     [95% con{col 77}f. interval]
-{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-cummulative_acc45_auto {c |}{col 24}{res}{space 2} .9329428{col 36}{space 2} .2374291{col 47}{space 1}    3.93{col 56}{space 3}0.000{col 64}{space 4}   .46741{col 77}{space 3} 1.398476
-{txt}{space 17}geo_B {c |}{col 24}{res}{space 2} .6730334{col 36}{space 2} .4060878{col 47}{space 1}    1.66{col 56}{space 3}0.098{col 64}{space 4}-.1231924{col 77}{space 3} 1.469259
-{txt}{space 17}geo_C {c |}{col 24}{res}{space 2} .0306306{col 36}{space 2} .5755241{col 47}{space 1}    0.05{col 56}{space 3}0.958{col 64}{space 4}-1.097813{col 77}{space 3} 1.159074
-{txt}{space 17}geo_D {c |}{col 24}{res}{space 2}-.7954555{col 36}{space 2}  .781507{col 47}{space 1}   -1.02{col 56}{space 3}0.309{col 64}{space 4}-2.327775{col 77}{space 3} .7368636
-{txt}{space 12}network_U2 {c |}{col 24}{res}{space 2}-.0089502{col 36}{space 2} .2198231{col 47}{space 1}   -0.04{col 56}{space 3}0.968{col 64}{space 4}-.4399626{col 77}{space 3} .4220622
-{txt}{space 12}network_U3 {c |}{col 24}{res}{space 2}  .100147{col 36}{space 2} .2191734{col 47}{space 1}    0.46{col 56}{space 3}0.648{col 64}{space 4}-.3295914{col 77}{space 3} .5298853
-{txt}{space 12}network_U4 {c |}{col 24}{res}{space 2}-.1062304{col 36}{space 2} .2362185{col 47}{space 1}   -0.45{col 56}{space 3}0.653{col 64}{space 4}-.5693895{col 77}{space 3} .3569286
-{txt}{space 12}network_U5 {c |}{col 24}{res}{space 2} -.289431{col 36}{space 2} .3056056{col 47}{space 1}   -0.95{col 56}{space 3}0.344{col 64}{space 4}-.8886391{col 77}{space 3} .3097772
-{txt}{space 12}network_R1 {c |}{col 24}{res}{space 2} .4609618{col 36}{space 2} .2526901{col 47}{space 1}    1.82{col 56}{space 3}0.068{col 64}{space 4}-.0344936{col 77}{space 3} .9564173
-{txt}{space 12}network_R2 {c |}{col 24}{res}{space 2} .4633578{col 36}{space 2} .2384347{col 47}{space 1}    1.94{col 56}{space 3}0.052{col 64}{space 4}-.0041466{col 77}{space 3} .9308623
-{txt}{space 15}micro_2 {c |}{col 24}{res}{space 2} .0369464{col 36}{space 2} .1585781{col 47}{space 1}    0.23{col 56}{space 3}0.816{col 64}{space 4}-.2739813{col 77}{space 3} .3478742
-{txt}{space 15}micro_3 {c |}{col 24}{res}{space 2} .0184538{col 36}{space 2} .1928239{col 47}{space 1}    0.10{col 56}{space 3}0.924{col 64}{space 4}-.3596205{col 77}{space 3} .3965282
-{txt}{space 15}micro_4 {c |}{col 24}{res}{space 2}-.2163046{col 36}{space 2} .2039068{col 47}{space 1}   -1.06{col 56}{space 3}0.289{col 64}{space 4}-.6161095{col 77}{space 3} .1835003
-{txt}{space 15}micro_5 {c |}{col 24}{res}{space 2}-.3002651{col 36}{space 2} .1968974{col 47}{space 1}   -1.52{col 56}{space 3}0.127{col 64}{space 4}-.6863265{col 77}{space 3} .0857963
-{txt}{space 7}busavailability {c |}{col 24}{res}{space 2} 4.105373{col 36}{space 2}  1.30484{col 47}{space 1}    3.15{col 56}{space 3}0.002{col 64}{space 4} 1.546942{col 77}{space 3} 6.663804
-{txt}{space 6}busavailability2 {c |}{col 24}{res}{space 2}-6.822781{col 36}{space 2} 1.827241{col 47}{space 1}   -3.73{col 56}{space 3}0.000{col 64}{space 4}-10.40549{col 77}{space 3}-3.240067
-{txt}{space 5}frac_age_above_65 {c |}{col 24}{res}{space 2}-13.80796{col 36}{space 2} 1.489716{col 47}{space 1}   -9.27{col 56}{space 3}0.000{col 64}{space 4}-16.72888{col 77}{space 3}-10.88704
-{txt}{space 10}edu_above_bs {c |}{col 24}{res}{space 2} 10.71692{col 36}{space 2} 1.362263{col 47}{space 1}    7.87{col 56}{space 3}0.000{col 64}{space 4} 8.045896{col 77}{space 3} 13.38794
-{txt}{space 8}frac_hh_no_veh {c |}{col 24}{res}{space 2}-2.400924{col 36}{space 2} 1.766844{col 47}{space 1}   -1.36{col 56}{space 3}0.174{col 64}{space 4}-5.865216{col 77}{space 3} 1.063367
-{txt}{space 4}frac_tenure_renter {c |}{col 24}{res}{space 2}-9.569161{col 36}{space 2} .8784274{col 47}{space 1}  -10.89{col 56}{space 3}0.000{col 64}{space 4}-11.29151{col 77}{space 3}-7.846808
-{txt}{space 4}frac_below_poverty {c |}{col 24}{res}{space 2}-27.29683{col 36}{space 2} 2.481646{col 47}{space 1}  -11.00{col 56}{space 3}0.000{col 64}{space 4}-32.16265{col 77}{space 3}-22.43101
-{txt}{space 1}frac_hh_inc_below_40k {c |}{col 24}{res}{space 2}-15.40442{col 36}{space 2} 2.868078{col 47}{space 1}   -5.37{col 56}{space 3}0.000{col 64}{space 4}-21.02793{col 77}{space 3}-9.780912
-{txt}frac_hh_inc_above_100k {c |}{col 24}{res}{space 2} 133.6255{col 36}{space 2} 2.852763{col 47}{space 1}   46.84{col 56}{space 3}0.000{col 64}{space 4} 128.0321{col 77}{space 3}  139.219
-{txt}{space 11}job_density {c |}{col 24}{res}{space 2} .0339419{col 36}{space 2}  .027505{col 47}{space 1}    1.23{col 56}{space 3}0.217{col 64}{space 4}-.0199877{col 77}{space 3} .0878715
-{txt}{space 11}pop_density {c |}{col 24}{res}{space 2}-.0532353{col 36}{space 2} .0425856{col 47}{space 1}   -1.25{col 56}{space 3}0.211{col 64}{space 4}-.1367339{col 77}{space 3} .0302633
-{txt}{space 5}unemployment_rate {c |}{col 24}{res}{space 2} .1360716{col 36}{space 2} .0216312{col 47}{space 1}    6.29{col 56}{space 3}0.000{col 64}{space 4} .0936589{col 77}{space 3} .1784844
-{txt}{space 17}_cons {c |}{col 24}{res}{space 2} 37.41731{col 36}{space 2} 1.633064{col 47}{space 1}   22.91{col 56}{space 3}0.000{col 64}{space 4} 34.21533{col 77}{space 3}  40.6193
-{txt}{hline 23}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-               sigma_u {c |} {res} 3.1725373
-               {txt}sigma_e {c |} {res} 8.5231992
-                   {txt}rho {c |} {res} .12169028{txt}   (fraction of variance due to u_i)
-{hline 23}{c BT}{hline 64}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.xml"'}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.txt""':seeout}
-
-{com}. 
-. outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
-> geo_B geo_C geo_D c.geo_A#c.cummulative_acc45_auto c.geo_B#c.cummulative_acc45_auto c.geo_C#c.cummulative_acc45_auto c.geo_D#c.cummulative_acc45_auto ///
-> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
-> micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
-> $socioec  unemployment_rate, fe vce(cl county_enc)
-{res}
-{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    71,964
-{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,126
-
-{txt}R-squared:{col 49}Obs per group:
-     Within  = {res}0.8893{col 63}{txt}min{col 67}={col 69}{res}         1
-{txt}     Between = {res}0.9474{col 63}{txt}avg{col 67}={col 69}{res}      23.0
-{txt}     Overall = {res}0.9190{col 63}{txt}max{col 67}={col 69}{res}     2,306
-
-{txt}{col 49}F({res}29{txt}, {res}3125{txt}){col 67}={col 70}{res}  3680.42
-{txt}corr(u_i, Xb) = {res}0.1521{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
-
-{txt}{ralign 90:(Std. err. adjusted for {res:3,126} clusters in {res:county_enc})}
-{hline 25}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 26}{c |}{col 38}    Robust
-{col 1}          hhmedianincome{col 26}{c |} Coefficient{col 38}  std. err.{col 50}      t{col 58}   P>|t|{col 66}     [95% con{col 79}f. interval]
-{hline 25}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 19}geo_B {c |}{col 26}{res}{space 2} 1.063218{col 38}{space 2} .4444322{col 49}{space 1}    2.39{col 58}{space 3}0.017{col 66}{space 4} .1918093{col 79}{space 3} 1.934626
-{txt}{space 19}geo_C {c |}{col 26}{res}{space 2} .2683688{col 38}{space 2} .5988385{col 49}{space 1}    0.45{col 58}{space 3}0.654{col 66}{space 4}-.9057879{col 79}{space 3} 1.442525
-{txt}{space 19}geo_D {c |}{col 26}{res}{space 2}-.7288127{col 38}{space 2} .8236839{col 49}{space 1}   -0.88{col 58}{space 3}0.376{col 66}{space 4}-2.343829{col 79}{space 3} .8862037
-{txt}{space 24} {c |}
-{space 17}c.geo_A#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} 1.015897{col 38}{space 2} .2610965{col 49}{space 1}    3.89{col 58}{space 3}0.000{col 66}{space 4}  .503959{col 79}{space 3} 1.527835
-{txt}{space 24} {c |}
-{space 17}c.geo_B#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2}-.0584285{col 38}{space 2}  .354036{col 49}{space 1}   -0.17{col 58}{space 3}0.869{col 66}{space 4}-.7525951{col 79}{space 3} .6357381
-{txt}{space 24} {c |}
-{space 17}c.geo_C#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} .9588604{col 38}{space 2} 2.042989{col 49}{space 1}    0.47{col 58}{space 3}0.639{col 66}{space 4}-3.046875{col 79}{space 3} 4.964596
-{txt}{space 24} {c |}
-{space 17}c.geo_D#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} 6.998676{col 38}{space 2} 7.506766{col 49}{space 1}    0.93{col 58}{space 3}0.351{col 66}{space 4}-7.720016{col 79}{space 3} 21.71737
-{txt}{space 24} {c |}
-{space 14}network_U2 {c |}{col 26}{res}{space 2}-.0474495{col 38}{space 2}  .223222{col 49}{space 1}   -0.21{col 58}{space 3}0.832{col 66}{space 4}-.4851261{col 79}{space 3}  .390227
-{txt}{space 14}network_U3 {c |}{col 26}{res}{space 2} .0685239{col 38}{space 2}  .221267{col 49}{space 1}    0.31{col 58}{space 3}0.757{col 66}{space 4}-.3653195{col 79}{space 3} .5023673
-{txt}{space 14}network_U4 {c |}{col 26}{res}{space 2}-.1616165{col 38}{space 2} .2410696{col 49}{space 1}   -0.67{col 58}{space 3}0.503{col 66}{space 4}-.6342873{col 79}{space 3} .3110543
-{txt}{space 14}network_U5 {c |}{col 26}{res}{space 2}-.3371824{col 38}{space 2}  .312473{col 49}{space 1}   -1.08{col 58}{space 3}0.281{col 66}{space 4}-.9498555{col 79}{space 3} .2754907
-{txt}{space 14}network_R1 {c |}{col 26}{res}{space 2} .4749193{col 38}{space 2} .2530911{col 49}{space 1}    1.88{col 58}{space 3}0.061{col 66}{space 4}-.0213223{col 79}{space 3} .9711609
-{txt}{space 14}network_R2 {c |}{col 26}{res}{space 2} .4648095{col 38}{space 2}  .239179{col 49}{space 1}    1.94{col 58}{space 3}0.052{col 66}{space 4}-.0041542{col 79}{space 3} .9337733
-{txt}{space 17}micro_2 {c |}{col 26}{res}{space 2} .0354421{col 38}{space 2} .1585524{col 49}{space 1}    0.22{col 58}{space 3}0.823{col 66}{space 4}-.2754354{col 79}{space 3} .3463196
-{txt}{space 17}micro_3 {c |}{col 26}{res}{space 2} .0263771{col 38}{space 2} .1925949{col 49}{space 1}    0.14{col 58}{space 3}0.891{col 66}{space 4}-.3512482{col 79}{space 3} .4040025
-{txt}{space 17}micro_4 {c |}{col 26}{res}{space 2}-.2125681{col 38}{space 2} .2033805{col 49}{space 1}   -1.05{col 58}{space 3}0.296{col 66}{space 4} -.611341{col 79}{space 3} .1862049
-{txt}{space 17}micro_5 {c |}{col 26}{res}{space 2}-.3021211{col 38}{space 2} .1962439{col 49}{space 1}   -1.54{col 58}{space 3}0.124{col 66}{space 4}-.6869011{col 79}{space 3}  .082659
-{txt}{space 9}busavailability {c |}{col 26}{res}{space 2} 4.039953{col 38}{space 2} 1.323004{col 49}{space 1}    3.05{col 58}{space 3}0.002{col 66}{space 4} 1.445909{col 79}{space 3} 6.633997
-{txt}{space 8}busavailability2 {c |}{col 26}{res}{space 2}-6.742943{col 38}{space 2} 1.854315{col 49}{space 1}   -3.64{col 58}{space 3}0.000{col 66}{space 4}-10.37874{col 79}{space 3}-3.107144
-{txt}{space 7}frac_age_above_65 {c |}{col 26}{res}{space 2}-13.86751{col 38}{space 2} 1.495883{col 49}{space 1}   -9.27{col 58}{space 3}0.000{col 66}{space 4}-16.80052{col 79}{space 3}-10.93449
-{txt}{space 12}edu_above_bs {c |}{col 26}{res}{space 2} 10.62401{col 38}{space 2} 1.360591{col 49}{space 1}    7.81{col 58}{space 3}0.000{col 66}{space 4}  7.95627{col 79}{space 3} 13.29176
-{txt}{space 10}frac_hh_no_veh {c |}{col 26}{res}{space 2}-2.420636{col 38}{space 2} 1.754028{col 49}{space 1}   -1.38{col 58}{space 3}0.168{col 66}{space 4}-5.859799{col 79}{space 3} 1.018527
-{txt}{space 6}frac_tenure_renter {c |}{col 26}{res}{space 2}-9.548546{col 38}{space 2} .8790268{col 49}{space 1}  -10.86{col 58}{space 3}0.000{col 66}{space 4}-11.27207{col 79}{space 3}-7.825018
-{txt}{space 6}frac_below_poverty {c |}{col 26}{res}{space 2}-27.22696{col 38}{space 2} 2.477514{col 49}{space 1}  -10.99{col 58}{space 3}0.000{col 66}{space 4}-32.08468{col 79}{space 3}-22.36924
-{txt}{space 3}frac_hh_inc_below_40k {c |}{col 26}{res}{space 2}-15.49704{col 38}{space 2} 2.865181{col 49}{space 1}   -5.41{col 58}{space 3}0.000{col 66}{space 4}-21.11487{col 79}{space 3}-9.879216
-{txt}{space 2}frac_hh_inc_above_100k {c |}{col 26}{res}{space 2} 133.7071{col 38}{space 2} 2.851461{col 49}{space 1}   46.89{col 58}{space 3}0.000{col 66}{space 4} 128.1162{col 79}{space 3} 139.2981
-{txt}{space 13}job_density {c |}{col 26}{res}{space 2} .0338308{col 38}{space 2}  .027502{col 49}{space 1}    1.23{col 58}{space 3}0.219{col 66}{space 4} -.020093{col 79}{space 3} .0877547
-{txt}{space 13}pop_density {c |}{col 26}{res}{space 2}-.0529851{col 38}{space 2} .0425384{col 49}{space 1}   -1.25{col 58}{space 3}0.213{col 66}{space 4}-.1363912{col 79}{space 3} .0304209
-{txt}{space 7}unemployment_rate {c |}{col 26}{res}{space 2} .1363373{col 38}{space 2} .0216083{col 49}{space 1}    6.31{col 58}{space 3}0.000{col 66}{space 4} .0939695{col 79}{space 3} .1787052
-{txt}{space 19}_cons {c |}{col 26}{res}{space 2} 37.36949{col 38}{space 2} 1.632969{col 49}{space 1}   22.88{col 58}{space 3}0.000{col 66}{space 4} 34.16769{col 79}{space 3} 40.57129
-{txt}{hline 25}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-                 sigma_u {c |} {res} 3.1733654
-                 {txt}sigma_e {c |} {res} 8.5224675
-                     {txt}rho {c |} {res} .12176444{txt}   (fraction of variance due to u_i)
-{hline 25}{c BT}{hline 64}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.xml"'}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.txt""':seeout}
-
-{com}. 
-. outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
-> c.micro_1#urban#c.cummulative_acc45_auto c.micro_2#urban#c.cummulative_acc45_auto c.micro_3#urban#c.cummulative_acc45_auto c.micro_4#urban#c.cummulative_acc45_auto c.micro_5#urban#c.cummulative_acc45_auto ///
-> geo_B geo_C geo_D ///
-> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
-> micro_2 micro_3 micro_4 micro_5 ///
-> busavailability busavailability2 ///
-> $socioec unemployment_rate, fe vce(cl county_enc)
-{txt}{p 0 6 2}note: {bf:network_R3} omitted because of collinearity.{p_end}
-{res}
-{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    71,964
-{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,126
-
-{txt}R-squared:{col 49}Obs per group:
-     Within  = {res}0.8897{col 63}{txt}min{col 67}={col 69}{res}         1
-{txt}     Between = {res}0.9487{col 63}{txt}avg{col 67}={col 69}{res}      23.0
-{txt}     Overall = {res}0.9196{col 63}{txt}max{col 67}={col 69}{res}     2,306
-
-{txt}{col 49}F({res}35{txt}, {res}3125{txt}){col 67}={col 70}{res}  3412.60
-{txt}corr(u_i, Xb) = {res}0.1298{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
-
-{txt}{ralign 90:(Std. err. adjusted for {res:3,126} clusters in {res:county_enc})}
-{hline 25}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 26}{c |}{col 38}    Robust
-{col 1}          hhmedianincome{col 26}{c |} Coefficient{col 38}  std. err.{col 50}      t{col 58}   P>|t|{col 66}     [95% con{col 79}f. interval]
-{hline 25}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 9}urban#c.micro_1#{c |}
-c.cummulative_acc45_auto {c |}
-{space 22}0  {c |}{col 26}{res}{space 2} 5.116915{col 38}{space 2} 8.145222{col 49}{space 1}    0.63{col 58}{space 3}0.530{col 66}{space 4}-10.85361{col 79}{space 3} 21.08744
-{txt}{space 22}1  {c |}{col 26}{res}{space 2} .3229867{col 38}{space 2}  .251942{col 49}{space 1}    1.28{col 58}{space 3}0.200{col 66}{space 4}-.1710019{col 79}{space 3} .8169754
-{txt}{space 24} {c |}
-{space 9}urban#c.micro_2#{c |}
-c.cummulative_acc45_auto {c |}
-{space 22}0  {c |}{col 26}{res}{space 2} 4.466631{col 38}{space 2} 3.621223{col 49}{space 1}    1.23{col 58}{space 3}0.217{col 66}{space 4}-2.633584{col 79}{space 3} 11.56685
-{txt}{space 22}1  {c |}{col 26}{res}{space 2} 1.336932{col 38}{space 2} .2896949{col 49}{space 1}    4.61{col 58}{space 3}0.000{col 66}{space 4}   .76892{col 79}{space 3} 1.904943
-{txt}{space 24} {c |}
-{space 9}urban#c.micro_3#{c |}
-c.cummulative_acc45_auto {c |}
-{space 22}0  {c |}{col 26}{res}{space 2} 4.459914{col 38}{space 2} 3.416409{col 49}{space 1}    1.31{col 58}{space 3}0.192{col 66}{space 4}-2.238719{col 79}{space 3} 11.15855
-{txt}{space 22}1  {c |}{col 26}{res}{space 2} 1.890103{col 38}{space 2} .2744386{col 49}{space 1}    6.89{col 58}{space 3}0.000{col 66}{space 4} 1.352005{col 79}{space 3} 2.428201
-{txt}{space 24} {c |}
-{space 9}urban#c.micro_4#{c |}
-c.cummulative_acc45_auto {c |}
-{space 22}0  {c |}{col 26}{res}{space 2} .0880997{col 38}{space 2}  2.27609{col 49}{space 1}    0.04{col 58}{space 3}0.969{col 66}{space 4}-4.374682{col 79}{space 3} 4.550882
-{txt}{space 22}1  {c |}{col 26}{res}{space 2}  1.61687{col 38}{space 2} 1.056306{col 49}{space 1}    1.53{col 58}{space 3}0.126{col 66}{space 4}-.4542539{col 79}{space 3} 3.687994
-{txt}{space 24} {c |}
-{space 9}urban#c.micro_5#{c |}
-c.cummulative_acc45_auto {c |}
-{space 22}0  {c |}{col 26}{res}{space 2} 1.913229{col 38}{space 2} 2.267775{col 49}{space 1}    0.84{col 58}{space 3}0.399{col 66}{space 4} -2.53325{col 79}{space 3} 6.359708
-{txt}{space 22}1  {c |}{col 26}{res}{space 2} .0125965{col 38}{space 2} .6797291{col 49}{space 1}    0.02{col 58}{space 3}0.985{col 66}{space 4}-1.320164{col 79}{space 3} 1.345357
-{txt}{space 24} {c |}
-{space 19}geo_B {c |}{col 26}{res}{space 2} .7233968{col 38}{space 2}  .401674{col 49}{space 1}    1.80{col 58}{space 3}0.072{col 66}{space 4}-.0641749{col 79}{space 3} 1.510968
-{txt}{space 19}geo_C {c |}{col 26}{res}{space 2} .2106964{col 38}{space 2}  .594033{col 49}{space 1}    0.35{col 58}{space 3}0.723{col 66}{space 4}-.9540381{col 79}{space 3} 1.375431
-{txt}{space 19}geo_D {c |}{col 26}{res}{space 2}-.6017822{col 38}{space 2} .7951171{col 49}{space 1}   -0.76{col 58}{space 3}0.449{col 66}{space 4}-2.160787{col 79}{space 3} .9572226
-{txt}{space 14}network_U2 {c |}{col 26}{res}{space 2} .1102991{col 38}{space 2} .2240272{col 49}{space 1}    0.49{col 58}{space 3}0.623{col 66}{space 4}-.3289563{col 79}{space 3} .5495545
-{txt}{space 14}network_U3 {c |}{col 26}{res}{space 2} .2231722{col 38}{space 2} .2276345{col 49}{space 1}    0.98{col 58}{space 3}0.327{col 66}{space 4} -.223156{col 79}{space 3} .6695005
-{txt}{space 14}network_U4 {c |}{col 26}{res}{space 2}-.0030199{col 38}{space 2} .2435379{col 49}{space 1}   -0.01{col 58}{space 3}0.990{col 66}{space 4}-.4805304{col 79}{space 3} .4744906
-{txt}{space 14}network_U5 {c |}{col 26}{res}{space 2} -.082897{col 38}{space 2} .3231599{col 49}{space 1}   -0.26{col 58}{space 3}0.798{col 66}{space 4}-.7165242{col 79}{space 3} .5507303
-{txt}{space 14}network_R1 {c |}{col 26}{res}{space 2} .3829711{col 38}{space 2} .2622774{col 49}{space 1}    1.46{col 58}{space 3}0.144{col 66}{space 4}-.1312823{col 79}{space 3} .8972245
-{txt}{space 14}network_R2 {c |}{col 26}{res}{space 2} .3973968{col 38}{space 2} .2399434{col 49}{space 1}    1.66{col 58}{space 3}0.098{col 66}{space 4}-.0730659{col 79}{space 3} .8678594
-{txt}{space 14}network_R3 {c |}{col 26}{res}{space 2}        0{col 38}{txt}  (omitted)
-{space 17}micro_2 {c |}{col 26}{res}{space 2}-1.051308{col 38}{space 2} .2088711{col 49}{space 1}   -5.03{col 58}{space 3}0.000{col 66}{space 4}-1.460846{col 79}{space 3}-.6417692
-{txt}{space 17}micro_3 {c |}{col 26}{res}{space 2}-1.534818{col 38}{space 2} .2438821{col 49}{space 1}   -6.29{col 58}{space 3}0.000{col 66}{space 4}-2.013004{col 79}{space 3}-1.056633
-{txt}{space 17}micro_4 {c |}{col 26}{res}{space 2}-1.402256{col 38}{space 2} .3425381{col 49}{space 1}   -4.09{col 58}{space 3}0.000{col 66}{space 4}-2.073879{col 79}{space 3}-.7306336
-{txt}{space 17}micro_5 {c |}{col 26}{res}{space 2} -1.27424{col 38}{space 2} .2616864{col 49}{space 1}   -4.87{col 58}{space 3}0.000{col 66}{space 4}-1.787335{col 79}{space 3}-.7611451
-{txt}{space 9}busavailability {c |}{col 26}{res}{space 2} 3.617523{col 38}{space 2} 1.267639{col 49}{space 1}    2.85{col 58}{space 3}0.004{col 66}{space 4} 1.132033{col 79}{space 3} 6.103013
-{txt}{space 8}busavailability2 {c |}{col 26}{res}{space 2} -6.24754{col 38}{space 2} 1.782715{col 49}{space 1}   -3.50{col 58}{space 3}0.000{col 66}{space 4}-9.742951{col 79}{space 3}-2.752129
-{txt}{space 7}frac_age_above_65 {c |}{col 26}{res}{space 2}-13.78655{col 38}{space 2} 1.497247{col 49}{space 1}   -9.21{col 58}{space 3}0.000{col 66}{space 4}-16.72224{col 79}{space 3}-10.85086
-{txt}{space 12}edu_above_bs {c |}{col 26}{res}{space 2}  10.4363{col 38}{space 2} 1.345707{col 49}{space 1}    7.76{col 58}{space 3}0.000{col 66}{space 4}  7.79774{col 79}{space 3} 13.07486
-{txt}{space 10}frac_hh_no_veh {c |}{col 26}{res}{space 2}-1.826829{col 38}{space 2} 1.821877{col 49}{space 1}   -1.00{col 58}{space 3}0.316{col 66}{space 4}-5.399027{col 79}{space 3} 1.745368
-{txt}{space 6}frac_tenure_renter {c |}{col 26}{res}{space 2}-9.565172{col 38}{space 2} .8729479{col 49}{space 1}  -10.96{col 58}{space 3}0.000{col 66}{space 4}-11.27678{col 79}{space 3}-7.853563
-{txt}{space 6}frac_below_poverty {c |}{col 26}{res}{space 2}-28.17916{col 38}{space 2} 2.456977{col 49}{space 1}  -11.47{col 58}{space 3}0.000{col 66}{space 4}-32.99662{col 79}{space 3}-23.36171
-{txt}{space 3}frac_hh_inc_below_40k {c |}{col 26}{res}{space 2}-15.74848{col 38}{space 2} 2.852639{col 49}{space 1}   -5.52{col 58}{space 3}0.000{col 66}{space 4}-21.34171{col 79}{space 3}-10.15524
-{txt}{space 2}frac_hh_inc_above_100k {c |}{col 26}{res}{space 2} 133.5034{col 38}{space 2} 2.866259{col 49}{space 1}   46.58{col 58}{space 3}0.000{col 66}{space 4} 127.8834{col 79}{space 3} 139.1233
-{txt}{space 13}job_density {c |}{col 26}{res}{space 2} .0369796{col 38}{space 2} .0280716{col 49}{space 1}    1.32{col 58}{space 3}0.188{col 66}{space 4}-.0180611{col 79}{space 3} .0920203
-{txt}{space 13}pop_density {c |}{col 26}{res}{space 2}-.0336463{col 38}{space 2} .0418635{col 49}{space 1}   -0.80{col 58}{space 3}0.422{col 66}{space 4} -.115729{col 79}{space 3} .0484365
-{txt}{space 7}unemployment_rate {c |}{col 26}{res}{space 2}  .131241{col 38}{space 2} .0219731{col 49}{space 1}    5.97{col 58}{space 3}0.000{col 66}{space 4} .0881577{col 79}{space 3} .1743242
-{txt}{space 19}_cons {c |}{col 26}{res}{space 2} 38.35847{col 38}{space 2} 1.597465{col 49}{space 1}   24.01{col 58}{space 3}0.000{col 66}{space 4} 35.22629{col 79}{space 3} 41.49066
-{txt}{hline 25}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-                 sigma_u {c |} {res} 3.1474252
-                 {txt}sigma_e {c |} {res} 8.5096625
-                     {txt}rho {c |} {res} .12033781{txt}   (fraction of variance due to u_i)
-{hline 25}{c BT}{hline 64}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.xml"'}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.txt""':seeout}
-
-{com}. 
-. outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
-> c.network_U1#c.cummulative_acc45_auto c.network_U2#c.cummulative_acc45_auto c.network_U3#c.cummulative_acc45_auto c.network_U4#c.cummulative_acc45_auto c.network_U5#c.cummulative_acc45_auto ///
-> c.network_R1#c.cummulative_acc45_auto c.network_R2#c.cummulative_acc45_auto c.network_R3#c.cummulative_acc45_auto ///
-> geo_B geo_C geo_D ///
-> network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
-> micro_2 micro_3 micro_4 micro_5 ///
-> busavailability busavailability2 ///
-> $socioec unemployment_rate, fe vce(cl county_enc)
-{txt}{p 0 6 2}note: {bf:network_R3} omitted because of collinearity.{p_end}
-{res}
-{txt}Fixed-effects (within) regression{col 49}Number of obs{col 67}={col 69}{res}    71,964
-{txt}Group variable: {res}county_enc{txt}{col 49}Number of groups{col 67}={col 69}{res}     3,126
-
-{txt}R-squared:{col 49}Obs per group:
-     Within  = {res}0.8901{col 63}{txt}min{col 67}={col 69}{res}         1
-{txt}     Between = {res}0.9477{col 63}{txt}avg{col 67}={col 69}{res}      23.0
-{txt}     Overall = {res}0.9197{col 63}{txt}max{col 67}={col 69}{res}     2,306
-
-{txt}{col 49}F({res}33{txt}, {res}3125{txt}){col 67}={col 70}{res}  3570.57
-{txt}corr(u_i, Xb) = {res}0.1195{txt}{col 49}Prob > F{col 67}={col 73}{res}0.0000
-
-{txt}{ralign 90:(Std. err. adjusted for {res:3,126} clusters in {res:county_enc})}
-{hline 25}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 26}{c |}{col 38}    Robust
-{col 1}          hhmedianincome{col 26}{c |} Coefficient{col 38}  std. err.{col 50}      t{col 58}   P>|t|{col 66}     [95% con{col 79}f. interval]
-{hline 25}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 12}c.network_U1#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} .8409206{col 38}{space 2} .3254625{col 49}{space 1}    2.58{col 58}{space 3}0.010{col 66}{space 4} .2027787{col 79}{space 3} 1.479063
-{txt}{space 24} {c |}
-{space 12}c.network_U2#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} .4534297{col 38}{space 2} .2059878{col 49}{space 1}    2.20{col 58}{space 3}0.028{col 66}{space 4} .0495446{col 79}{space 3} .8573148
-{txt}{space 24} {c |}
-{space 12}c.network_U3#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} .3610437{col 38}{space 2} .2743293{col 49}{space 1}    1.32{col 58}{space 3}0.188{col 66}{space 4}-.1768403{col 79}{space 3} .8989276
-{txt}{space 24} {c |}
-{space 12}c.network_U4#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} .8279379{col 38}{space 2} .3016888{col 49}{space 1}    2.74{col 58}{space 3}0.006{col 66}{space 4} .2364096{col 79}{space 3} 1.419466
-{txt}{space 24} {c |}
-{space 12}c.network_U5#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} 3.531173{col 38}{space 2} .4196099{col 49}{space 1}    8.42{col 58}{space 3}0.000{col 66}{space 4} 2.708434{col 79}{space 3} 4.353913
-{txt}{space 24} {c |}
-{space 12}c.network_R1#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} .7368964{col 38}{space 2} 3.814676{col 49}{space 1}    0.19{col 58}{space 3}0.847{col 66}{space 4}-6.742628{col 79}{space 3}  8.21642
-{txt}{space 24} {c |}
-{space 12}c.network_R2#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} 8.926739{col 38}{space 2} 4.470366{col 49}{space 1}    2.00{col 58}{space 3}0.046{col 66}{space 4} .1615874{col 79}{space 3} 17.69189
-{txt}{space 24} {c |}
-{space 12}c.network_R3#{c |}
-c.cummulative_acc45_auto {c |}{col 26}{res}{space 2} .7910803{col 38}{space 2} 2.203593{col 49}{space 1}    0.36{col 58}{space 3}0.720{col 66}{space 4}-3.529557{col 79}{space 3} 5.111717
-{txt}{space 24} {c |}
-{space 19}geo_B {c |}{col 26}{res}{space 2} .6997826{col 38}{space 2}  .398206{col 49}{space 1}    1.76{col 58}{space 3}0.079{col 66}{space 4}-.0809892{col 79}{space 3} 1.480554
-{txt}{space 19}geo_C {c |}{col 26}{res}{space 2}-1.107643{col 38}{space 2} .6058413{col 49}{space 1}   -1.83{col 58}{space 3}0.068{col 66}{space 4} -2.29553{col 79}{space 3} .0802444
-{txt}{space 19}geo_D {c |}{col 26}{res}{space 2}  -2.0441{col 38}{space 2} .8057468{col 49}{space 1}   -2.54{col 58}{space 3}0.011{col 66}{space 4}-3.623946{col 79}{space 3}-.4642529
-{txt}{space 14}network_U2 {c |}{col 26}{res}{space 2}  .478555{col 38}{space 2}  .263188{col 49}{space 1}    1.82{col 58}{space 3}0.069{col 66}{space 4}-.0374838{col 79}{space 3} .9945939
-{txt}{space 14}network_U3 {c |}{col 26}{res}{space 2} .5872394{col 38}{space 2} .2547249{col 49}{space 1}    2.31{col 58}{space 3}0.021{col 66}{space 4} .0877943{col 79}{space 3} 1.086684
-{txt}{space 14}network_U4 {c |}{col 26}{res}{space 2} .0449619{col 38}{space 2} .2836562{col 49}{space 1}    0.16{col 58}{space 3}0.874{col 66}{space 4}-.5112094{col 79}{space 3} .6011332
-{txt}{space 14}network_U5 {c |}{col 26}{res}{space 2}-1.766311{col 38}{space 2} .3042381{col 49}{space 1}   -5.81{col 58}{space 3}0.000{col 66}{space 4}-2.362838{col 79}{space 3}-1.169784
-{txt}{space 14}network_R1 {c |}{col 26}{res}{space 2} .6835888{col 38}{space 2} .3527263{col 49}{space 1}    1.94{col 58}{space 3}0.053{col 66}{space 4}-.0080099{col 79}{space 3} 1.375187
-{txt}{space 14}network_R2 {c |}{col 26}{res}{space 2}-.0102267{col 38}{space 2}  .356174{col 49}{space 1}   -0.03{col 58}{space 3}0.977{col 66}{space 4}-.7085853{col 79}{space 3} .6881319
-{txt}{space 14}network_R3 {c |}{col 26}{res}{space 2}        0{col 38}{txt}  (omitted)
-{space 17}micro_2 {c |}{col 26}{res}{space 2}-.0895088{col 38}{space 2} .1503098{col 49}{space 1}   -0.60{col 58}{space 3}0.552{col 66}{space 4}-.3842247{col 79}{space 3} .2052071
-{txt}{space 17}micro_3 {c |}{col 26}{res}{space 2} .0813392{col 38}{space 2} .1937991{col 49}{space 1}    0.42{col 58}{space 3}0.675{col 66}{space 4}-.2986472{col 79}{space 3} .4613256
-{txt}{space 17}micro_4 {c |}{col 26}{res}{space 2} .1472109{col 38}{space 2} .2109004{col 49}{space 1}    0.70{col 58}{space 3}0.485{col 66}{space 4}-.2663065{col 79}{space 3} .5607282
-{txt}{space 17}micro_5 {c |}{col 26}{res}{space 2} .2192736{col 38}{space 2} .2076099{col 49}{space 1}    1.06{col 58}{space 3}0.291{col 66}{space 4} -.187792{col 79}{space 3} .6263393
-{txt}{space 9}busavailability {c |}{col 26}{res}{space 2} 3.624263{col 38}{space 2} 1.327509{col 49}{space 1}    2.73{col 58}{space 3}0.006{col 66}{space 4} 1.021386{col 79}{space 3}  6.22714
-{txt}{space 8}busavailability2 {c |}{col 26}{res}{space 2}-5.877895{col 38}{space 2} 1.834329{col 49}{space 1}   -3.20{col 58}{space 3}0.001{col 66}{space 4}-9.474506{col 79}{space 3}-2.281283
-{txt}{space 7}frac_age_above_65 {c |}{col 26}{res}{space 2}-13.77869{col 38}{space 2} 1.474399{col 49}{space 1}   -9.35{col 58}{space 3}0.000{col 66}{space 4}-16.66958{col 79}{space 3} -10.8878
-{txt}{space 12}edu_above_bs {c |}{col 26}{res}{space 2} 10.56793{col 38}{space 2} 1.349489{col 49}{space 1}    7.83{col 58}{space 3}0.000{col 66}{space 4} 7.921957{col 79}{space 3} 13.21391
-{txt}{space 10}frac_hh_no_veh {c |}{col 26}{res}{space 2}-2.362275{col 38}{space 2}  1.75743{col 49}{space 1}   -1.34{col 58}{space 3}0.179{col 66}{space 4}-5.808108{col 79}{space 3} 1.083559
-{txt}{space 6}frac_tenure_renter {c |}{col 26}{res}{space 2}-9.555247{col 38}{space 2} .8773257{col 49}{space 1}  -10.89{col 58}{space 3}0.000{col 66}{space 4}-11.27544{col 79}{space 3}-7.835054
-{txt}{space 6}frac_below_poverty {c |}{col 26}{res}{space 2}-27.86861{col 38}{space 2} 2.487595{col 49}{space 1}  -11.20{col 58}{space 3}0.000{col 66}{space 4}-32.74609{col 79}{space 3}-22.99112
-{txt}{space 3}frac_hh_inc_below_40k {c |}{col 26}{res}{space 2}-15.85482{col 38}{space 2}  2.84657{col 49}{space 1}   -5.57{col 58}{space 3}0.000{col 66}{space 4}-21.43616{col 79}{space 3}-10.27349
-{txt}{space 2}frac_hh_inc_above_100k {c |}{col 26}{res}{space 2} 132.8731{col 38}{space 2} 2.846508{col 49}{space 1}   46.68{col 58}{space 3}0.000{col 66}{space 4} 127.2919{col 79}{space 3} 138.4543
-{txt}{space 13}job_density {c |}{col 26}{res}{space 2} .0357189{col 38}{space 2} .0265196{col 49}{space 1}    1.35{col 58}{space 3}0.178{col 66}{space 4}-.0162788{col 79}{space 3} .0877166
-{txt}{space 13}pop_density {c |}{col 26}{res}{space 2} -.050265{col 38}{space 2}  .040992{col 49}{space 1}   -1.23{col 58}{space 3}0.220{col 66}{space 4}-.1306389{col 79}{space 3} .0301089
-{txt}{space 7}unemployment_rate {c |}{col 26}{res}{space 2} .1312571{col 38}{space 2} .0222335{col 49}{space 1}    5.90{col 58}{space 3}0.000{col 66}{space 4} .0876633{col 79}{space 3}  .174851
-{txt}{space 19}_cons {c |}{col 26}{res}{space 2} 37.87796{col 38}{space 2}  1.64166{col 49}{space 1}   23.07{col 58}{space 3}0.000{col 66}{space 4} 34.65912{col 79}{space 3}  41.0968
-{txt}{hline 25}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-                 sigma_u {c |} {res} 3.2016255
-                 {txt}sigma_e {c |} {res}  8.493623
-                     {txt}rho {c |} {res} .12441015{txt}   (fraction of variance due to u_i)
-{hline 25}{c BT}{hline 64}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.xml"'}
-{browse `"C:\Users\caspurlock\Documents\GitHub\CQM-Analysis"' :dir}{com} : {txt}{stata `"seeout using "C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\hhmedianincome_cummulativeacc.txt""':seeout}
-
-{com}. 
-. 
-. 
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\caspurlock\Documents\GitHub\CQM-Analysis\tables\log_cs_paper_analysis.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}12 Jul 2026, 22:47:06
+ {txt}closed on:  {res}12 Jul 2026, 22:58:11
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
