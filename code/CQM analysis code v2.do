@@ -26,7 +26,7 @@ global code $dir\code
 
 ***********************Data loading and preparation*******************
 clear
-use "$raw\cqm_analysis_data"
+use "$raw\cs_analysis_data"
 
 /*define bins for transit availability*/
 *busavailability metric here is % of destinations that have that mode available
@@ -101,7 +101,7 @@ encode county, gen(county_enc)
 replace unemployment_rate=unemployment_rate*100
 
 /*keep varibles used in following analysis*/
-keep o_geoid cs_baseline microtype networktype geotype geo_A geo_B geo_C geo_D micro_1 micro_2 micro_3 micro_4 micro_5 network_U1 network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 transavail transavail2 urban busavailability busavailability2 geotype_enc microtype_enc network_enc transavail_enc st_code county county_enc frac_age_above_65 edu_above_bs frac_hh_no_veh frac_tenure_renter  frac_below_poverty frac_hh_inc_below_40k frac_hh_inc_above_100k job_density pop_density hhmedianincome unemployment_rate
+keep o_geoid cs_baseline microtype networktype geotype geo_A geo_B geo_C geo_D micro_1 micro_2 micro_3 micro_4 micro_5 network_U1 network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 transavail transavail2 urban busavailability busavailability2 geotype_enc microtype_enc network_enc transavail_enc st_code county county_enc frac_age_above_65 edu_above_bs frac_hh_no_veh frac_tenure_renter  frac_below_poverty frac_hh_inc_below_40k frac_hh_inc_above_100k job_density pop_density hhmedianincome unemployment_rate cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike
 
 /*generate an indicator for observations where the cs_baseline is between the .05 percentile and the 99.95 percentile in order to be able to generate plots without more extreme outliers - this tags 0.1% of the data (72 observations) as outliers*/
 egen lower_outlier=pctile(cs_baseline), p(.05)
@@ -111,14 +111,14 @@ replace cs_baseline_nooutliers=0 if cs_baseline<lower_outlier
 replace cs_baseline_nooutliers=0 if cs_baseline>upper_outlier
 drop lower_outlier upper_outlier
 
-save "$proc\cqm_paper_data_for_regressions", replace
-export delimited using "$proc\cqm_paper_data_for_regressions.csv", replace
+save "$proc\cs_paper_data_for_regressions", replace
+export delimited using "$proc\cs_paper_data_for_regressions.csv", replace
 
 ***********************Primary Analysis*******************
 clear all
 
-log using "$tab\log_cqm_paper_analysis", replace
-use "$proc\cqm_paper_data_for_regressions"
+log using "$tab\log_cs_paper_analysis", replace
+use "$proc\cs_paper_data_for_regressions"
 
 **summarize data
 sum cs_baseline, d
@@ -203,9 +203,20 @@ micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
 $socioec  unemployment_rate, fe vce(cl county_enc)
 
 outreg2 using "$tab\hhmedianincome", excel append: xtreg hhmedianincome ///
-micro_2 micro_3 micro_4 micro_5 c.micro_1#c.cs_baseline c.micro_2#c.cs_baseline c.micro_3#c.cs_baseline c.micro_4#c.cs_baseline c.micro_5#c.cs_baseline ///
-network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
-geo_B geo_C geo_D busavailability busavailability2 ///
+c.micro_1#urban#c.cs_baseline c.micro_2#urban#c.cs_baseline c.micro_3#urban#c.cs_baseline c.micro_4#urban#c.cs_baseline c.micro_5#urban#c.cs_baseline ///
+geo_B geo_C geo_D ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+micro_2 micro_3 micro_4 micro_5 ///
+busavailability busavailability2 ///
+$socioec unemployment_rate, fe vce(cl county_enc)
+
+outreg2 using "$tab\hhmedianincome", excel append: xtreg hhmedianincome ///
+c.network_U1#c.cs_baseline c.network_U2#c.cs_baseline c.network_U3#c.cs_baseline c.network_U4#c.cs_baseline c.network_U5#c.cs_baseline ///
+c.network_R1#c.cs_baseline c.network_R2#c.cs_baseline c.network_R3#c.cs_baseline ///
+geo_B geo_C geo_D ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+micro_2 micro_3 micro_4 micro_5 ///
+busavailability busavailability2 ///
 $socioec unemployment_rate, fe vce(cl county_enc)
 
 
@@ -232,10 +243,93 @@ micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
 $socioec  hhmedianincome, fe vce(cl county_enc)
 
 outreg2 using "$tab\unemployment_rate", excel append: xtreg unemployment_rate ///
-micro_2 micro_3 micro_4 micro_5 c.micro_1#c.cs_baseline c.micro_2#c.cs_baseline c.micro_3#c.cs_baseline c.micro_4#c.cs_baseline c.micro_5#c.cs_baseline ///
-network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
-geo_B geo_C geo_D busavailability busavailability2 ///
+c.micro_1#urban#c.cs_baseline c.micro_2#urban#c.cs_baseline c.micro_3#urban#c.cs_baseline c.micro_4#urban#c.cs_baseline c.micro_5#urban#c.cs_baseline ///
+geo_B geo_C geo_D ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+micro_2 micro_3 micro_4 micro_5 ///
+busavailability busavailability2 ///
 $socioec hhmedianincome, fe vce(cl county_enc)
+
+outreg2 using "$tab\unemployment_rate", excel append: xtreg unemployment_rate ///
+c.network_U1#c.cs_baseline c.network_U2#c.cs_baseline c.network_U3#c.cs_baseline c.network_U4#c.cs_baseline c.network_U5#c.cs_baseline ///
+c.network_R1#c.cs_baseline c.network_R2#c.cs_baseline c.network_R3#c.cs_baseline ///
+geo_B geo_C geo_D ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+micro_2 micro_3 micro_4 micro_5 ///
+busavailability busavailability2 ///
+$socioec hhmedianincome, fe vce(cl county_enc)
+
+***Validation comparison with cummulative accessibility***
+
+replace cummulative_acc45_auto=cummulative_acc45_auto/10000
+replace cummulative_acc45_bus=cummulative_acc45_bus/1000
+replace cummulative_acc45_bike=cummulative_acc45_bike/1000
+
+corr cs_baseline cummulative_acc45_auto cummulative_acc45_bus cummulative_acc45_bike
+
+graph bar cs_baseline cummulative_acc45_auto, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)"))
+save $fig\cummulative_auto_geo.png, replace
+graph bar cs_baseline cummulative_acc45_auto, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)")) 
+save $fig\cummulative_auto_micro.png, replace
+graph bar cs_baseline cummulative_acc45_auto, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (10,000)")) 
+save $fig\cummulative_auto_network.png, replace
+
+graph bar cs_baseline cummulative_acc45_bus, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)"))
+save $fig\cummulative_bus_geo.png, replace
+
+graph bar cs_baseline cummulative_acc45_bus, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+save $fig\cummulative_bus_micro.png, replace
+
+graph bar cs_baseline cummulative_acc45_bus, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+save $fig\cummulative_bus_network.png, replace
+
+graph bar cs_baseline cummulative_acc45_bike, over(geotype) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)"))
+save $fig\cummulative_bike_geo.png, replace
+
+graph bar cs_baseline cummulative_acc45_bike, over(microtype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+save $fig\cummulative_bike_micro.png, replace
+
+graph bar cs_baseline cummulative_acc45_bike, over(networktype, lab(angle(45))) legend(lab(1 "CS metric") lab(2 "Cummulative Accessibility (1,000)")) 
+save $fig\cummulative_bike_network.png, replace
+
+
+replace cummulative_acc45_auto=cummulative_acc45_auto/100
+
+outreg2 using "$tab\hhmedianincome_cummulativeacc", excel replace: xtreg hhmedianincome ///
+cummulative_acc45_auto, fe vce(cl county_enc)
+outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+cummulative_acc45_auto $socioec unemployment_rate, fe vce(cl county_enc)
+outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+cummulative_acc45_auto ///
+geo_B geo_C geo_D ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+$socioec unemployment_rate, fe vce(cl county_enc)
+
+outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+geo_B geo_C geo_D c.geo_A#c.cummulative_acc45_auto c.geo_B#c.cummulative_acc45_auto c.geo_C#c.cummulative_acc45_auto c.geo_D#c.cummulative_acc45_auto ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 ///
+micro_2 micro_3 micro_4 micro_5 busavailability busavailability2 ///
+$socioec  unemployment_rate, fe vce(cl county_enc)
+
+outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+c.micro_1#urban#c.cummulative_acc45_auto c.micro_2#urban#c.cummulative_acc45_auto c.micro_3#urban#c.cummulative_acc45_auto c.micro_4#urban#c.cummulative_acc45_auto c.micro_5#urban#c.cummulative_acc45_auto ///
+geo_B geo_C geo_D ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+micro_2 micro_3 micro_4 micro_5 ///
+busavailability busavailability2 ///
+$socioec unemployment_rate, fe vce(cl county_enc)
+
+outreg2 using "$tab\hhmedianincome_cummulativeacc", excel append: xtreg hhmedianincome ///
+c.network_U1#c.cummulative_acc45_auto c.network_U2#c.cummulative_acc45_auto c.network_U3#c.cummulative_acc45_auto c.network_U4#c.cummulative_acc45_auto c.network_U5#c.cummulative_acc45_auto ///
+c.network_R1#c.cummulative_acc45_auto c.network_R2#c.cummulative_acc45_auto c.network_R3#c.cummulative_acc45_auto ///
+geo_B geo_C geo_D ///
+network_U2 network_U3 network_U4 network_U5 network_R1 network_R2 network_R3 ///
+micro_2 micro_3 micro_4 micro_5 ///
+busavailability busavailability2 ///
+$socioec unemployment_rate, fe vce(cl county_enc)
+
+
 
 log close
 
